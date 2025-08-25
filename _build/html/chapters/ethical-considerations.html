@@ -1,0 +1,1509 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Ethical Considerations in AI Development &#8212; AI tools playground</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/ethical-considerations';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="References and Further Reading" href="../references.html" />
+    <link rel="prev" title="Evaluation Metrics for AI Models" href="evaluation-metrics.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">AI tools playground</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    AI Tools Playground
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamentals</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-ai.html">Introduction to Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="llm-basics.html">Large Language Models: Fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="prompt-engineering.html">Prompt Engineering: The Art of AI Communication</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">AI Tools &amp; Applications</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ai-development-tools.html">AI Development Tools and Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practical-applications.html">Practical Applications of AI Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="case-studies.html">Case Studies: Real-World AI Implementations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fine-tuning.html">Fine-Tuning AI Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="evaluation-metrics.html">Evaluation Metrics for AI Models</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ethical Considerations in AI Development</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References and Further Reading</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/skysheng7/ai_tools_playground" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/skysheng7/ai_tools_playground/issues/new?title=Issue%20on%20page%20%2Fchapters/ethical-considerations.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/ethical-considerations.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Ethical Considerations in AI Development</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-ai-ethics">Introduction to AI Ethics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-ethical-principles">Core Ethical Principles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beneficence-and-non-maleficence">Beneficence and Non-Maleficence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autonomy-and-human-agency">Autonomy and Human Agency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#justice-and-fairness">Justice and Fairness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transparency-and-explainability">Transparency and Explainability</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bias-and-fairness">Bias and Fairness</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-bias-in-ai-systems">Types of Bias in AI Systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#historical-bias">Historical Bias</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithmic-bias">Algorithmic Bias</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bias-mitigation-strategies">Bias Mitigation Strategies</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-processing-techniques">Pre-processing Techniques</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#in-processing-techniques">In-processing Techniques</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#privacy-and-data-protection">Privacy and Data Protection</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#privacy-preserving-techniques">Privacy-Preserving Techniques</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-privacy">Differential Privacy</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#federated-learning">Federated Learning</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-anonymization">Data Anonymization</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accountability-and-governance">Accountability and Governance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-governance-framework">AI Governance Framework</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#risk-assessment-framework">Risk Assessment Framework</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ethical-ai-development-checklist">Ethical AI Development Checklist</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-development-phase">Pre-Development Phase</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-and-best-practices">Conclusion and Best Practices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-recommendations">Key Recommendations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#organizational-considerations">Organizational Considerations</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ethical-considerations-in-ai-development">
+<h1>Ethical Considerations in AI Development<a class="headerlink" href="#ethical-considerations-in-ai-development" title="Link to this heading">#</a></h1>
+<section id="introduction-to-ai-ethics">
+<h2>Introduction to AI Ethics<a class="headerlink" href="#introduction-to-ai-ethics" title="Link to this heading">#</a></h2>
+<p>As artificial intelligence becomes increasingly powerful and pervasive, the ethical implications of AI systems have become paramount. This chapter explores the key ethical considerations, potential risks, and best practices for responsible AI development and deployment.</p>
+</section>
+<section id="core-ethical-principles">
+<h2>Core Ethical Principles<a class="headerlink" href="#core-ethical-principles" title="Link to this heading">#</a></h2>
+<section id="beneficence-and-non-maleficence">
+<h3>Beneficence and Non-Maleficence<a class="headerlink" href="#beneficence-and-non-maleficence" title="Link to this heading">#</a></h3>
+<p>AI systems should be designed to benefit humanity while avoiding harm.</p>
+<p><strong>Key Considerations:</strong></p>
+<ul class="simple">
+<li><p>Maximize positive outcomes for individuals and society</p></li>
+<li><p>Minimize potential risks and negative consequences</p></li>
+<li><p>Consider long-term implications of AI deployment</p></li>
+<li><p>Implement robust safety measures</p></li>
+</ul>
+</section>
+<section id="autonomy-and-human-agency">
+<h3>Autonomy and Human Agency<a class="headerlink" href="#autonomy-and-human-agency" title="Link to this heading">#</a></h3>
+<p>Respect for human decision-making and the right to meaningful choice.</p>
+<p><strong>Implementation Strategies:</strong></p>
+<ul class="simple">
+<li><p>Maintain human oversight in critical decisions</p></li>
+<li><p>Provide clear opt-out mechanisms</p></li>
+<li><p>Ensure humans retain control over AI systems</p></li>
+<li><p>Avoid manipulation or coercion through AI</p></li>
+</ul>
+</section>
+<section id="justice-and-fairness">
+<h3>Justice and Fairness<a class="headerlink" href="#justice-and-fairness" title="Link to this heading">#</a></h3>
+<p>AI systems should treat all individuals and groups fairly and equitably.</p>
+<p><strong>Fairness Dimensions:</strong></p>
+<ul class="simple">
+<li><p><strong>Individual fairness</strong>: Similar individuals should be treated similarly</p></li>
+<li><p><strong>Group fairness</strong>: Different demographic groups should be treated equitably</p></li>
+<li><p><strong>Procedural fairness</strong>: Fair and transparent processes</p></li>
+<li><p><strong>Distributive fairness</strong>: Fair allocation of benefits and burdens</p></li>
+</ul>
+</section>
+<section id="transparency-and-explainability">
+<h3>Transparency and Explainability<a class="headerlink" href="#transparency-and-explainability" title="Link to this heading">#</a></h3>
+<p>AI systems should be understandable and their decisions should be explainable.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">ExplainableAI</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">feature_names</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">feature_names</span> <span class="o">=</span> <span class="n">feature_names</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">explain_prediction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;lime&#39;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate explanations for model predictions&quot;&quot;&quot;</span>
+        
+        <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;lime&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lime_explanation</span><span class="p">(</span><span class="n">instance</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;shap&#39;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_shap_explanation</span><span class="p">(</span><span class="n">instance</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported explanation method: </span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_lime_explanation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate LIME explanations&quot;&quot;&quot;</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">lime.lime_tabular</span><span class="w"> </span><span class="kn">import</span> <span class="n">LimeTabularExplainer</span>
+        
+        <span class="n">explainer</span> <span class="o">=</span> <span class="n">LimeTabularExplainer</span><span class="p">(</span>
+            <span class="n">training_data</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">X_train</span><span class="p">,</span>
+            <span class="n">feature_names</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">feature_names</span><span class="p">,</span>
+            <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;classification&#39;</span>
+        <span class="p">)</span>
+        
+        <span class="n">explanation</span> <span class="o">=</span> <span class="n">explainer</span><span class="o">.</span><span class="n">explain_instance</span><span class="p">(</span>
+            <span class="n">instance</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">,</span>
+            <span class="n">num_features</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">feature_names</span><span class="p">)</span>
+        <span class="p">)</span>
+        
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;explanation&#39;</span><span class="p">:</span> <span class="n">explanation</span><span class="o">.</span><span class="n">as_list</span><span class="p">(),</span>
+            <span class="s1">&#39;prediction_probability&#39;</span><span class="p">:</span> <span class="n">explanation</span><span class="o">.</span><span class="n">predict_proba</span>
+        <span class="p">}</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_shap_explanation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate SHAP explanations&quot;&quot;&quot;</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">shap</span>
+        
+        <span class="n">explainer</span> <span class="o">=</span> <span class="n">shap</span><span class="o">.</span><span class="n">Explainer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">)</span>
+        <span class="n">shap_values</span> <span class="o">=</span> <span class="n">explainer</span><span class="p">(</span><span class="n">instance</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;shap_values&#39;</span><span class="p">:</span> <span class="n">shap_values</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+            <span class="s1">&#39;base_value&#39;</span><span class="p">:</span> <span class="n">shap_values</span><span class="o">.</span><span class="n">base_values</span><span class="p">,</span>
+            <span class="s1">&#39;feature_importance&#39;</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">feature_names</span><span class="p">,</span> <span class="n">shap_values</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+        <span class="p">}</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">generate_explanation_report</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instances</span><span class="p">,</span> <span class="n">output_file</span><span class="o">=</span><span class="s1">&#39;explanations.html&#39;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate comprehensive explanation report&quot;&quot;&quot;</span>
+        <span class="n">explanations</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">instance</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">instances</span><span class="p">):</span>
+            <span class="n">exp</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">explain_prediction</span><span class="p">(</span><span class="n">instance</span><span class="p">)</span>
+            <span class="n">explanations</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                <span class="s1">&#39;instance_id&#39;</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span>
+                <span class="s1">&#39;prediction&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">([</span><span class="n">instance</span><span class="p">])[</span><span class="mi">0</span><span class="p">],</span>
+                <span class="s1">&#39;confidence&#39;</span><span class="p">:</span> <span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">([</span><span class="n">instance</span><span class="p">])[</span><span class="mi">0</span><span class="p">]),</span>
+                <span class="s1">&#39;explanation&#39;</span><span class="p">:</span> <span class="n">exp</span>
+            <span class="p">})</span>
+        
+        <span class="c1"># Generate HTML report</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_create_explanation_html</span><span class="p">(</span><span class="n">explanations</span><span class="p">,</span> <span class="n">output_file</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">explanations</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="bias-and-fairness">
+<h2>Bias and Fairness<a class="headerlink" href="#bias-and-fairness" title="Link to this heading">#</a></h2>
+<section id="types-of-bias-in-ai-systems">
+<h3>Types of Bias in AI Systems<a class="headerlink" href="#types-of-bias-in-ai-systems" title="Link to this heading">#</a></h3>
+<section id="historical-bias">
+<h4>Historical Bias<a class="headerlink" href="#historical-bias" title="Link to this heading">#</a></h4>
+<p>Bias present in training data that reflects past inequities.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">BiasDetector</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">protected_attributes</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">protected_attributes</span> <span class="o">=</span> <span class="n">protected_attributes</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">detect_historical_bias</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target_column</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Detect historical bias in training data&quot;&quot;&quot;</span>
+        <span class="n">bias_analysis</span> <span class="o">=</span> <span class="p">{}</span>
+        
+        <span class="k">for</span> <span class="n">attribute</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">protected_attributes</span><span class="p">:</span>
+            <span class="c1"># Calculate outcome rates by group</span>
+            <span class="n">group_stats</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">attribute</span><span class="p">)[</span><span class="n">target_column</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span>
+                <span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span>
+            <span class="p">])</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+            
+            <span class="c1"># Calculate statistical parity difference</span>
+            <span class="n">outcome_rates</span> <span class="o">=</span> <span class="n">group_stats</span><span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">]</span>
+            <span class="n">max_rate</span> <span class="o">=</span> <span class="n">outcome_rates</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+            <span class="n">min_rate</span> <span class="o">=</span> <span class="n">outcome_rates</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+            <span class="n">parity_difference</span> <span class="o">=</span> <span class="n">max_rate</span> <span class="o">-</span> <span class="n">min_rate</span>
+            
+            <span class="n">bias_analysis</span><span class="p">[</span><span class="n">attribute</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s1">&#39;group_statistics&#39;</span><span class="p">:</span> <span class="n">group_stats</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
+                <span class="s1">&#39;parity_difference&#39;</span><span class="p">:</span> <span class="n">parity_difference</span><span class="p">,</span>
+                <span class="s1">&#39;bias_severity&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_classify_bias_severity</span><span class="p">(</span><span class="n">parity_difference</span><span class="p">)</span>
+            <span class="p">}</span>
+        
+        <span class="k">return</span> <span class="n">bias_analysis</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_classify_bias_severity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parity_difference</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Classify bias severity based on parity difference&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">parity_difference</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;Low&#39;</span>
+        <span class="k">elif</span> <span class="n">parity_difference</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;Moderate&#39;</span>
+        <span class="k">elif</span> <span class="n">parity_difference</span> <span class="o">&lt;</span> <span class="mf">0.2</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;High&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s1">&#39;Severe&#39;</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">analyze_intersectional_bias</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">target_column</span><span class="p">,</span> <span class="n">attributes</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Analyze bias across intersections of multiple attributes&quot;&quot;&quot;</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">itertools</span>
+        
+        <span class="c1"># Create combinations of attribute values</span>
+        <span class="n">attribute_values</span> <span class="o">=</span> <span class="p">{</span><span class="n">attr</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">attr</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span> <span class="k">for</span> <span class="n">attr</span> <span class="ow">in</span> <span class="n">attributes</span><span class="p">}</span>
+        <span class="n">combinations</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">itertools</span><span class="o">.</span><span class="n">product</span><span class="p">(</span><span class="o">*</span><span class="n">attribute_values</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+        
+        <span class="n">intersectional_analysis</span> <span class="o">=</span> <span class="p">{}</span>
+        
+        <span class="k">for</span> <span class="n">combo</span> <span class="ow">in</span> <span class="n">combinations</span><span class="p">:</span>
+            <span class="c1"># Create filter for this intersection</span>
+            <span class="n">filter_conditions</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">attr</span><span class="p">]</span> <span class="o">==</span> <span class="n">value</span> 
+                <span class="k">for</span> <span class="n">attr</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">attributes</span><span class="p">,</span> <span class="n">combo</span><span class="p">)</span>
+            <span class="p">]</span>
+            <span class="n">combined_filter</span> <span class="o">=</span> <span class="n">filter_conditions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">condition</span> <span class="ow">in</span> <span class="n">filter_conditions</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+                <span class="n">combined_filter</span> <span class="o">&amp;=</span> <span class="n">condition</span>
+            
+            <span class="c1"># Calculate statistics for this intersection</span>
+            <span class="n">subset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">combined_filter</span><span class="p">]</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">subset</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">intersectional_analysis</span><span class="p">[</span><span class="n">combo</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;count&#39;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">subset</span><span class="p">),</span>
+                    <span class="s1">&#39;outcome_rate&#39;</span><span class="p">:</span> <span class="n">subset</span><span class="p">[</span><span class="n">target_column</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
+                    <span class="s1">&#39;representation&#39;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">subset</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+                <span class="p">}</span>
+        
+        <span class="k">return</span> <span class="n">intersectional_analysis</span>
+</pre></div>
+</div>
+</section>
+<section id="algorithmic-bias">
+<h4>Algorithmic Bias<a class="headerlink" href="#algorithmic-bias" title="Link to this heading">#</a></h4>
+<p>Bias introduced by the algorithm itself or its implementation.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">AlgorithmicBiasAnalyzer</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">sensitive_features</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">X_test</span> <span class="o">=</span> <span class="n">X_test</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y_test</span> <span class="o">=</span> <span class="n">y_test</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sensitive_features</span> <span class="o">=</span> <span class="n">sensitive_features</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">analyze_prediction_bias</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Analyze bias in model predictions&quot;&quot;&quot;</span>
+        <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">X_test</span><span class="p">)</span>
+        <span class="n">prediction_probabilities</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">X_test</span><span class="p">)</span>
+        
+        <span class="n">bias_analysis</span> <span class="o">=</span> <span class="p">{}</span>
+        
+        <span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">sensitive_features</span><span class="p">:</span>
+            <span class="n">feature_values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">X_test</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+            
+            <span class="n">group_analysis</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">feature_values</span><span class="p">:</span>
+                <span class="n">mask</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">X_test</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span> <span class="o">==</span> <span class="n">value</span>
+                <span class="n">group_predictions</span> <span class="o">=</span> <span class="n">predictions</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+                <span class="n">group_probabilities</span> <span class="o">=</span> <span class="n">prediction_probabilities</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+                <span class="n">group_true_labels</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y_test</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+                
+                <span class="n">group_analysis</span><span class="p">[</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;positive_prediction_rate&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">group_predictions</span><span class="p">),</span>
+                    <span class="s1">&#39;average_confidence&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">group_probabilities</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)),</span>
+                    <span class="s1">&#39;accuracy&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">group_predictions</span> <span class="o">==</span> <span class="n">group_true_labels</span><span class="p">),</span>
+                    <span class="s1">&#39;sample_size&#39;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">group_predictions</span><span class="p">)</span>
+                <span class="p">}</span>
+            
+            <span class="n">bias_analysis</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span> <span class="o">=</span> <span class="n">group_analysis</span>
+        
+        <span class="k">return</span> <span class="n">bias_analysis</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">calculate_fairness_metrics</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Calculate comprehensive fairness metrics&quot;&quot;&quot;</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">fairlearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+            <span class="n">demographic_parity_difference</span><span class="p">,</span>
+            <span class="n">equalized_odds_difference</span><span class="p">,</span>
+            <span class="n">demographic_parity_ratio</span>
+        <span class="p">)</span>
+        
+        <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">X_test</span><span class="p">)</span>
+        
+        <span class="n">fairness_metrics</span> <span class="o">=</span> <span class="p">{}</span>
+        
+        <span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">sensitive_features</span><span class="p">:</span>
+            <span class="n">sensitive_feature_values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">X_test</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span>
+            
+            <span class="n">fairness_metrics</span><span class="p">[</span><span class="n">feature</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s1">&#39;demographic_parity_difference&#39;</span><span class="p">:</span> <span class="n">demographic_parity_difference</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">,</span> <span class="n">sensitive_features</span><span class="o">=</span><span class="n">sensitive_feature_values</span>
+                <span class="p">),</span>
+                <span class="s1">&#39;equalized_odds_difference&#39;</span><span class="p">:</span> <span class="n">equalized_odds_difference</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">,</span> <span class="n">sensitive_features</span><span class="o">=</span><span class="n">sensitive_feature_values</span>
+                <span class="p">),</span>
+                <span class="s1">&#39;demographic_parity_ratio&#39;</span><span class="p">:</span> <span class="n">demographic_parity_ratio</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">,</span> <span class="n">sensitive_features</span><span class="o">=</span><span class="n">sensitive_feature_values</span>
+                <span class="p">)</span>
+            <span class="p">}</span>
+        
+        <span class="k">return</span> <span class="n">fairness_metrics</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="bias-mitigation-strategies">
+<h3>Bias Mitigation Strategies<a class="headerlink" href="#bias-mitigation-strategies" title="Link to this heading">#</a></h3>
+<section id="pre-processing-techniques">
+<h4>Pre-processing Techniques<a class="headerlink" href="#pre-processing-techniques" title="Link to this heading">#</a></h4>
+<p>Address bias in the training data before model training.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">BiasMitigator</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">reweighting</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sensitive_feature</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Apply reweighting to balance representation&quot;&quot;&quot;</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.utils.class_weight</span><span class="w"> </span><span class="kn">import</span> <span class="n">compute_sample_weight</span>
+        
+        <span class="c1"># Create combined labels for reweighting</span>
+        <span class="n">combined_labels</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="n">X</span><span class="p">[</span><span class="n">sensitive_feature</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+        
+        <span class="c1"># Compute sample weights</span>
+        <span class="n">sample_weights</span> <span class="o">=</span> <span class="n">compute_sample_weight</span><span class="p">(</span><span class="s1">&#39;balanced&#39;</span><span class="p">,</span> <span class="n">combined_labels</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">sample_weights</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">synthetic_data_generation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sensitive_feature</span><span class="p">,</span> <span class="n">target_ratio</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate synthetic data to balance representation&quot;&quot;&quot;</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">imblearn.over_sampling</span><span class="w"> </span><span class="kn">import</span> <span class="n">SMOTE</span>
+        
+        <span class="c1"># Identify underrepresented groups</span>
+        <span class="n">group_counts</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">sensitive_feature</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+        <span class="n">min_group</span> <span class="o">=</span> <span class="n">group_counts</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()</span>
+        <span class="n">max_count</span> <span class="o">=</span> <span class="n">group_counts</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+        
+        <span class="c1"># Calculate sampling strategy</span>
+        <span class="n">target_count</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">max_count</span> <span class="o">*</span> <span class="n">target_ratio</span><span class="p">)</span>
+        
+        <span class="c1"># Apply SMOTE within each sensitive group</span>
+        <span class="n">balanced_X_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">balanced_y_list</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">X</span><span class="p">[</span><span class="n">sensitive_feature</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+            <span class="n">group_mask</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">sensitive_feature</span><span class="p">]</span> <span class="o">==</span> <span class="n">group</span>
+            <span class="n">group_X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">group_mask</span><span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="n">sensitive_feature</span><span class="p">])</span>
+            <span class="n">group_y</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">group_mask</span><span class="p">]</span>
+            
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">group_X</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">target_count</span><span class="p">:</span>
+                <span class="c1"># Apply SMOTE to increase representation</span>
+                <span class="n">smote</span> <span class="o">=</span> <span class="n">SMOTE</span><span class="p">(</span><span class="n">sampling_strategy</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="n">target_count</span><span class="p">},</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+                <span class="n">group_X_resampled</span><span class="p">,</span> <span class="n">group_y_resampled</span> <span class="o">=</span> <span class="n">smote</span><span class="o">.</span><span class="n">fit_resample</span><span class="p">(</span><span class="n">group_X</span><span class="p">,</span> <span class="n">group_y</span><span class="p">)</span>
+                
+                <span class="c1"># Add back sensitive feature</span>
+                <span class="n">group_X_resampled</span><span class="p">[</span><span class="n">sensitive_feature</span><span class="p">]</span> <span class="o">=</span> <span class="n">group</span>
+                
+                <span class="n">balanced_X_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">group_X_resampled</span><span class="p">)</span>
+                <span class="n">balanced_y_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">group_y_resampled</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># Add original data</span>
+                <span class="n">group_X</span><span class="p">[</span><span class="n">sensitive_feature</span><span class="p">]</span> <span class="o">=</span> <span class="n">group</span>
+                <span class="n">balanced_X_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">group_X</span><span class="p">)</span>
+                <span class="n">balanced_y_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">group_y</span><span class="p">)</span>
+        
+        <span class="c1"># Combine all groups</span>
+        <span class="n">balanced_X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">balanced_X_list</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">balanced_y</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">balanced_y_list</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">balanced_X</span><span class="p">,</span> <span class="n">balanced_y</span>
+</pre></div>
+</div>
+</section>
+<section id="in-processing-techniques">
+<h4>In-processing Techniques<a class="headerlink" href="#in-processing-techniques" title="Link to this heading">#</a></h4>
+<p>Modify the learning algorithm to ensure fairness during training.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">FairLearning</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fairness_constraint</span><span class="o">=</span><span class="s1">&#39;demographic_parity&#39;</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fairness_constraint</span> <span class="o">=</span> <span class="n">fairness_constraint</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">train_fair_classifier</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sensitive_features</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Train classifier with fairness constraints&quot;&quot;&quot;</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">fairlearn.reductions</span><span class="w"> </span><span class="kn">import</span> <span class="n">ExponentiatedGradient</span><span class="p">,</span> <span class="n">DemographicParity</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogisticRegression</span>
+        
+        <span class="c1"># Define base estimator</span>
+        <span class="n">base_estimator</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+        
+        <span class="c1"># Define fairness constraint</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">fairness_constraint</span> <span class="o">==</span> <span class="s1">&#39;demographic_parity&#39;</span><span class="p">:</span>
+            <span class="n">constraint</span> <span class="o">=</span> <span class="n">DemographicParity</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported constraint: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">fairness_constraint</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Train fair classifier</span>
+        <span class="n">fair_classifier</span> <span class="o">=</span> <span class="n">ExponentiatedGradient</span><span class="p">(</span>
+            <span class="n">estimator</span><span class="o">=</span><span class="n">base_estimator</span><span class="p">,</span>
+            <span class="n">constraints</span><span class="o">=</span><span class="n">constraint</span><span class="p">,</span>
+            <span class="n">max_iter</span><span class="o">=</span><span class="mi">50</span>
+        <span class="p">)</span>
+        
+        <span class="n">fair_classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sensitive_features</span><span class="o">=</span><span class="n">sensitive_features</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">fair_classifier</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">adversarial_debiasing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sensitive_features</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Implement adversarial debiasing&quot;&quot;&quot;</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
+        
+        <span class="k">class</span><span class="w"> </span><span class="nc">AdversarialNetwork</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+            <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="o">=</span><span class="mi">64</span><span class="p">):</span>
+                <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+                
+                <span class="c1"># Main classifier</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+                    <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">),</span>
+                    <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+                    <span class="n">nn</span><span class="o">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.2</span><span class="p">),</span>
+                    <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_size</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+                    <span class="n">nn</span><span class="o">.</span><span class="n">Sigmoid</span><span class="p">()</span>
+                <span class="p">)</span>
+                
+                <span class="c1"># Adversarial discriminator</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">discriminator</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+                    <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_size</span><span class="p">,</span> <span class="mi">32</span><span class="p">),</span>
+                    <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+                    <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+                    <span class="n">nn</span><span class="o">.</span><span class="n">Sigmoid</span><span class="p">()</span>
+                <span class="p">)</span>
+            
+            <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+                <span class="c1"># Get hidden representation</span>
+                <span class="n">hidden</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">](</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># Everything except final layer</span>
+                
+                <span class="c1"># Classification output</span>
+                <span class="n">classification</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:](</span><span class="n">hidden</span><span class="p">)</span>
+                
+                <span class="c1"># Discrimination output (for adversarial training)</span>
+                <span class="n">discrimination</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">discriminator</span><span class="p">(</span><span class="n">hidden</span><span class="p">)</span>
+                
+                <span class="k">return</span> <span class="n">classification</span><span class="p">,</span> <span class="n">discrimination</span>
+        
+        <span class="c1"># Training would involve alternating between classifier and discriminator</span>
+        <span class="c1"># This is a simplified structure - full implementation would be more complex</span>
+        
+        <span class="k">return</span> <span class="n">AdversarialNetwork</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="privacy-and-data-protection">
+<h2>Privacy and Data Protection<a class="headerlink" href="#privacy-and-data-protection" title="Link to this heading">#</a></h2>
+<section id="privacy-preserving-techniques">
+<h3>Privacy-Preserving Techniques<a class="headerlink" href="#privacy-preserving-techniques" title="Link to this heading">#</a></h3>
+<section id="differential-privacy">
+<h4>Differential Privacy<a class="headerlink" href="#differential-privacy" title="Link to this heading">#</a></h4>
+<p>Mathematical framework for quantifying and limiting privacy loss.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">DifferentialPrivacy</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">delta</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">epsilon</span> <span class="o">=</span> <span class="n">epsilon</span>  <span class="c1"># Privacy budget</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">delta</span> <span class="o">=</span> <span class="n">delta</span>     <span class="c1"># Failure probability</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_laplace_noise</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">sensitivity</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add Laplace noise for differential privacy&quot;&quot;&quot;</span>
+        <span class="n">noise_scale</span> <span class="o">=</span> <span class="n">sensitivity</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">epsilon</span>
+        <span class="n">noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">laplace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">noise_scale</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">data</span> <span class="o">+</span> <span class="n">noise</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_gaussian_noise</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">sensitivity</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add Gaussian noise for differential privacy&quot;&quot;&quot;</span>
+        <span class="n">noise_scale</span> <span class="o">=</span> <span class="n">sensitivity</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mf">1.25</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">delta</span><span class="p">))</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">epsilon</span>
+        <span class="n">noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">noise_scale</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">data</span> <span class="o">+</span> <span class="n">noise</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">private_sum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">clip_bound</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute differentially private sum&quot;&quot;&quot;</span>
+        <span class="c1"># Clip values to bound sensitivity</span>
+        <span class="n">clipped_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="o">-</span><span class="n">clip_bound</span><span class="p">,</span> <span class="n">clip_bound</span><span class="p">)</span>
+        
+        <span class="c1"># Add noise</span>
+        <span class="n">true_sum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">clipped_data</span><span class="p">)</span>
+        <span class="n">private_sum</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_laplace_noise</span><span class="p">(</span><span class="n">true_sum</span><span class="p">,</span> <span class="n">clip_bound</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">private_sum</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">private_mean</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">clip_bound</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Compute differentially private mean&quot;&quot;&quot;</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">private_sum</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">private_sum</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">clip_bound</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">private_sum</span> <span class="o">/</span> <span class="n">n</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">private_histogram</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">bins</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create differentially private histogram&quot;&quot;&quot;</span>
+        <span class="c1"># Compute true histogram</span>
+        <span class="n">hist</span><span class="p">,</span> <span class="n">bin_edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">)</span>
+        
+        <span class="c1"># Add noise to each bin (sensitivity = 1 for histograms)</span>
+        <span class="n">noisy_hist</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">count</span> <span class="ow">in</span> <span class="n">hist</span><span class="p">:</span>
+            <span class="n">noisy_count</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">add_laplace_noise</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">sensitivity</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">noisy_hist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">noisy_count</span><span class="p">))</span>  <span class="c1"># Ensure non-negative</span>
+        
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">noisy_hist</span><span class="p">),</span> <span class="n">bin_edges</span>
+</pre></div>
+</div>
+</section>
+<section id="federated-learning">
+<h4>Federated Learning<a class="headerlink" href="#federated-learning" title="Link to this heading">#</a></h4>
+<p>Train models across decentralized data without centralizing sensitive information.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">FederatedLearning</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">global_model</span><span class="p">,</span> <span class="n">num_clients</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">global_model</span> <span class="o">=</span> <span class="n">global_model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_clients</span> <span class="o">=</span> <span class="n">num_clients</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">client_models</span> <span class="o">=</span> <span class="p">[</span><span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">global_model</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_clients</span><span class="p">)]</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">federated_averaging</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client_weights</span><span class="p">,</span> <span class="n">client_sizes</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Implement FedAvg algorithm&quot;&quot;&quot;</span>
+        <span class="c1"># Calculate weighted average of client model parameters</span>
+        <span class="n">total_size</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">client_sizes</span><span class="p">)</span>
+        
+        <span class="c1"># Initialize global parameters</span>
+        <span class="n">global_params</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">global_model</span><span class="o">.</span><span class="n">named_parameters</span><span class="p">():</span>
+            <span class="n">global_params</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+        
+        <span class="c1"># Weighted aggregation</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">client_weight</span><span class="p">,</span> <span class="n">client_size</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">client_weights</span><span class="p">,</span> <span class="n">client_sizes</span><span class="p">)):</span>
+            <span class="n">weight</span> <span class="o">=</span> <span class="n">client_size</span> <span class="o">/</span> <span class="n">total_size</span>
+            
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">client_weight</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">global_params</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">+=</span> <span class="n">weight</span> <span class="o">*</span> <span class="n">param</span>
+        
+        <span class="c1"># Update global model</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">global_model</span><span class="o">.</span><span class="n">named_parameters</span><span class="p">():</span>
+            <span class="n">param</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">global_params</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
+        
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">global_model</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">secure_aggregation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">client_updates</span><span class="p">,</span> <span class="n">privacy_budget</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Implement secure aggregation with differential privacy&quot;&quot;&quot;</span>
+        <span class="c1"># Add noise to client updates</span>
+        <span class="n">dp</span> <span class="o">=</span> <span class="n">DifferentialPrivacy</span><span class="p">(</span><span class="n">epsilon</span><span class="o">=</span><span class="n">privacy_budget</span><span class="p">)</span>
+        
+        <span class="n">noisy_updates</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">update</span> <span class="ow">in</span> <span class="n">client_updates</span><span class="p">:</span>
+            <span class="n">noisy_update</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">update</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="c1"># Calculate sensitivity (simplified)</span>
+                <span class="n">sensitivity</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">param</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+                
+                <span class="c1"># Add noise</span>
+                <span class="n">noisy_param</span> <span class="o">=</span> <span class="n">dp</span><span class="o">.</span><span class="n">add_gaussian_noise</span><span class="p">(</span>
+                    <span class="n">param</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">sensitivity</span>
+                <span class="p">)</span>
+                <span class="n">noisy_update</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">(</span><span class="n">noisy_param</span><span class="p">)</span>
+            
+            <span class="n">noisy_updates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">noisy_update</span><span class="p">)</span>
+        
+        <span class="c1"># Aggregate noisy updates</span>
+        <span class="n">aggregated_update</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">client_updates</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">aggregated_update</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span>
+                <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">update</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="k">for</span> <span class="n">update</span> <span class="ow">in</span> <span class="n">noisy_updates</span><span class="p">]),</span> 
+                <span class="n">dim</span><span class="o">=</span><span class="mi">0</span>
+            <span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">aggregated_update</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="data-anonymization">
+<h3>Data Anonymization<a class="headerlink" href="#data-anonymization" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">DataAnonymizer</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">anonymization_mappings</span> <span class="o">=</span> <span class="p">{}</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">k_anonymity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">quasi_identifiers</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Implement k-anonymity&quot;&quot;&quot;</span>
+        <span class="c1"># Group data by quasi-identifiers</span>
+        <span class="n">grouped</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">quasi_identifiers</span><span class="p">)</span>
+        
+        <span class="n">anonymized_data</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="k">for</span> <span class="n">group_key</span><span class="p">,</span> <span class="n">group_data</span> <span class="ow">in</span> <span class="n">grouped</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">group_data</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">k</span><span class="p">:</span>
+                <span class="c1"># Group is already k-anonymous</span>
+                <span class="n">anonymized_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">group_data</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># Need to generalize or suppress</span>
+                <span class="n">anonymized_group</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_generalize_group</span><span class="p">(</span>
+                    <span class="n">group_data</span><span class="p">,</span> <span class="n">quasi_identifiers</span><span class="p">,</span> <span class="n">k</span>
+                <span class="p">)</span>
+                <span class="n">anonymized_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">anonymized_group</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">anonymized_data</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">l_diversity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">quasi_identifiers</span><span class="p">,</span> <span class="n">sensitive_attribute</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Implement l-diversity&quot;&quot;&quot;</span>
+        <span class="c1"># Ensure each equivalence class has at least l distinct sensitive values</span>
+        <span class="n">grouped</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">quasi_identifiers</span><span class="p">)</span>
+        
+        <span class="n">diverse_data</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="k">for</span> <span class="n">group_key</span><span class="p">,</span> <span class="n">group_data</span> <span class="ow">in</span> <span class="n">grouped</span><span class="p">:</span>
+            <span class="n">sensitive_values</span> <span class="o">=</span> <span class="n">group_data</span><span class="p">[</span><span class="n">sensitive_attribute</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
+            
+            <span class="k">if</span> <span class="n">sensitive_values</span> <span class="o">&gt;=</span> <span class="n">l</span><span class="p">:</span>
+                <span class="n">diverse_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">group_data</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># Apply generalization or suppression</span>
+                <span class="n">generalized_group</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ensure_diversity</span><span class="p">(</span>
+                    <span class="n">group_data</span><span class="p">,</span> <span class="n">quasi_identifiers</span><span class="p">,</span> <span class="n">sensitive_attribute</span><span class="p">,</span> <span class="n">l</span>
+                <span class="p">)</span>
+                <span class="n">diverse_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">generalized_group</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">diverse_data</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_generalize_group</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">group_data</span><span class="p">,</span> <span class="n">quasi_identifiers</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Generalize quasi-identifiers to achieve k-anonymity&quot;&quot;&quot;</span>
+        <span class="c1"># Simplified generalization - replace specific values with ranges</span>
+        <span class="n">generalized_data</span> <span class="o">=</span> <span class="n">group_data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        
+        <span class="k">for</span> <span class="n">qi</span> <span class="ow">in</span> <span class="n">quasi_identifiers</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">group_data</span><span class="p">[</span><span class="n">qi</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;int64&#39;</span><span class="p">,</span> <span class="s1">&#39;float64&#39;</span><span class="p">]:</span>
+                <span class="c1"># Numerical generalization</span>
+                <span class="n">min_val</span> <span class="o">=</span> <span class="n">group_data</span><span class="p">[</span><span class="n">qi</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+                <span class="n">max_val</span> <span class="o">=</span> <span class="n">group_data</span><span class="p">[</span><span class="n">qi</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+                <span class="n">generalized_data</span><span class="p">[</span><span class="n">qi</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">min_val</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">max_val</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># Categorical generalization</span>
+                <span class="n">generalized_data</span><span class="p">[</span><span class="n">qi</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;*&quot;</span>
+        
+        <span class="k">return</span> <span class="n">generalized_data</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="accountability-and-governance">
+<h2>Accountability and Governance<a class="headerlink" href="#accountability-and-governance" title="Link to this heading">#</a></h2>
+<section id="ai-governance-framework">
+<h3>AI Governance Framework<a class="headerlink" href="#ai-governance-framework" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">AIGovernanceFramework</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">governance_policies</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">audit_trail</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">define_governance_policy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">policy_name</span><span class="p">,</span> <span class="n">policy_details</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Define governance policies for AI systems&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">governance_policies</span><span class="p">[</span><span class="n">policy_name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;policy_details&#39;</span><span class="p">:</span> <span class="n">policy_details</span><span class="p">,</span>
+            <span class="s1">&#39;created_date&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(),</span>
+            <span class="s1">&#39;last_updated&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(),</span>
+            <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="s1">&#39;active&#39;</span>
+        <span class="p">}</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">audit_model_decision</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model_id</span><span class="p">,</span> <span class="n">input_data</span><span class="p">,</span> <span class="n">output</span><span class="p">,</span> 
+                           <span class="n">user_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timestamp</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Log model decisions for audit purposes&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">timestamp</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">timestamp</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+        
+        <span class="n">audit_entry</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;model_id&#39;</span><span class="p">:</span> <span class="n">model_id</span><span class="p">,</span>
+            <span class="s1">&#39;timestamp&#39;</span><span class="p">:</span> <span class="n">timestamp</span><span class="p">,</span>
+            <span class="s1">&#39;user_id&#39;</span><span class="p">:</span> <span class="n">user_id</span><span class="p">,</span>
+            <span class="s1">&#39;input_hash&#39;</span><span class="p">:</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">input_data</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">(),</span>
+            <span class="s1">&#39;output&#39;</span><span class="p">:</span> <span class="n">output</span><span class="p">,</span>
+            <span class="s1">&#39;model_version&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_model_version</span><span class="p">(</span><span class="n">model_id</span><span class="p">)</span>
+        <span class="p">}</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">audit_trail</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">audit_entry</span><span class="p">)</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">generate_compliance_report</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start_date</span><span class="p">,</span> <span class="n">end_date</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate compliance report for specified period&quot;&quot;&quot;</span>
+        <span class="n">filtered_entries</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">entry</span> <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">audit_trail</span>
+            <span class="k">if</span> <span class="n">start_date</span> <span class="o">&lt;=</span> <span class="n">entry</span><span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">end_date</span>
+        <span class="p">]</span>
+        
+        <span class="n">report</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;period&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">start_date</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">end_date</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;total_decisions&#39;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">filtered_entries</span><span class="p">),</span>
+            <span class="s1">&#39;unique_models&#39;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;model_id&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">filtered_entries</span><span class="p">)),</span>
+            <span class="s1">&#39;unique_users&#39;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">entry</span><span class="p">[</span><span class="s1">&#39;user_id&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">filtered_entries</span> <span class="k">if</span> <span class="n">entry</span><span class="p">[</span><span class="s1">&#39;user_id&#39;</span><span class="p">])),</span>
+            <span class="s1">&#39;decisions_by_model&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_aggregate_by_model</span><span class="p">(</span><span class="n">filtered_entries</span><span class="p">),</span>
+            <span class="s1">&#39;compliance_status&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_compliance</span><span class="p">(</span><span class="n">filtered_entries</span><span class="p">)</span>
+        <span class="p">}</span>
+        
+        <span class="k">return</span> <span class="n">report</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_model_version</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model_id</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get current version of the model&quot;&quot;&quot;</span>
+        <span class="c1"># Placeholder - would integrate with model registry</span>
+        <span class="k">return</span> <span class="s2">&quot;v1.0.0&quot;</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_aggregate_by_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entries</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Aggregate audit entries by model&quot;&quot;&quot;</span>
+        <span class="n">aggregation</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">entries</span><span class="p">:</span>
+            <span class="n">model_id</span> <span class="o">=</span> <span class="n">entry</span><span class="p">[</span><span class="s1">&#39;model_id&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">model_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">aggregation</span><span class="p">:</span>
+                <span class="n">aggregation</span><span class="p">[</span><span class="n">model_id</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">aggregation</span><span class="p">[</span><span class="n">model_id</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">aggregation</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_check_compliance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">entries</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check compliance with governance policies&quot;&quot;&quot;</span>
+        <span class="c1"># Simplified compliance check</span>
+        <span class="n">compliance_issues</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="c1"># Check for required audit fields</span>
+        <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">entries</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">entry</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">):</span>
+                <span class="n">compliance_issues</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Missing user ID in audit entry&quot;</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;compliant&#39;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">compliance_issues</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s1">&#39;issues&#39;</span><span class="p">:</span> <span class="n">compliance_issues</span>
+        <span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="risk-assessment-framework">
+<h3>Risk Assessment Framework<a class="headerlink" href="#risk-assessment-framework" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">AIRiskAssessment</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">risk_categories</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;technical&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;model_performance&#39;</span><span class="p">,</span> <span class="s1">&#39;data_quality&#39;</span><span class="p">,</span> <span class="s1">&#39;system_reliability&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;ethical&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;bias&#39;</span><span class="p">,</span> <span class="s1">&#39;fairness&#39;</span><span class="p">,</span> <span class="s1">&#39;transparency&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;legal&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;compliance&#39;</span><span class="p">,</span> <span class="s1">&#39;liability&#39;</span><span class="p">,</span> <span class="s1">&#39;privacy&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;business&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;reputation&#39;</span><span class="p">,</span> <span class="s1">&#39;financial&#39;</span><span class="p">,</span> <span class="s1">&#39;operational&#39;</span><span class="p">]</span>
+        <span class="p">}</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">assess_risk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ai_system_description</span><span class="p">,</span> <span class="n">deployment_context</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Comprehensive risk assessment for AI system&quot;&quot;&quot;</span>
+        <span class="n">risk_assessment</span> <span class="o">=</span> <span class="p">{}</span>
+        
+        <span class="k">for</span> <span class="n">category</span><span class="p">,</span> <span class="n">risk_types</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">risk_categories</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">category_risks</span> <span class="o">=</span> <span class="p">{}</span>
+            
+            <span class="k">for</span> <span class="n">risk_type</span> <span class="ow">in</span> <span class="n">risk_types</span><span class="p">:</span>
+                <span class="n">risk_score</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calculate_risk_score</span><span class="p">(</span>
+                    <span class="n">risk_type</span><span class="p">,</span> <span class="n">ai_system_description</span><span class="p">,</span> <span class="n">deployment_context</span>
+                <span class="p">)</span>
+                <span class="n">category_risks</span><span class="p">[</span><span class="n">risk_type</span><span class="p">]</span> <span class="o">=</span> <span class="n">risk_score</span>
+            
+            <span class="n">risk_assessment</span><span class="p">[</span><span class="n">category</span><span class="p">]</span> <span class="o">=</span> <span class="n">category_risks</span>
+        
+        <span class="c1"># Calculate overall risk</span>
+        <span class="n">risk_assessment</span><span class="p">[</span><span class="s1">&#39;overall_risk&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_calculate_overall_risk</span><span class="p">(</span><span class="n">risk_assessment</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">risk_assessment</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_calculate_risk_score</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">risk_type</span><span class="p">,</span> <span class="n">system_desc</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Calculate risk score for specific risk type&quot;&quot;&quot;</span>
+        <span class="c1"># Simplified risk scoring - would use more sophisticated methods in practice</span>
+        <span class="n">base_score</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># Medium risk by default</span>
+        
+        <span class="c1"># Risk-specific adjustments</span>
+        <span class="k">if</span> <span class="n">risk_type</span> <span class="o">==</span> <span class="s1">&#39;bias&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s1">&#39;sensitive_features&#39;</span> <span class="ow">in</span> <span class="n">system_desc</span><span class="p">:</span>
+                <span class="n">base_score</span> <span class="o">+=</span> <span class="mi">2</span>
+            <span class="k">if</span> <span class="n">context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;high_stakes&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+                <span class="n">base_score</span> <span class="o">+=</span> <span class="mi">1</span>
+        
+        <span class="k">elif</span> <span class="n">risk_type</span> <span class="o">==</span> <span class="s1">&#39;model_performance&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">system_desc</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;model_accuracy&#39;</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.8</span><span class="p">:</span>
+                <span class="n">base_score</span> <span class="o">+=</span> <span class="mi">3</span>
+        
+        <span class="k">elif</span> <span class="n">risk_type</span> <span class="o">==</span> <span class="s1">&#39;privacy&#39;</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s1">&#39;personal_data&#39;</span> <span class="ow">in</span> <span class="n">system_desc</span><span class="p">:</span>
+                <span class="n">base_score</span> <span class="o">+=</span> <span class="mi">2</span>
+            <span class="k">if</span> <span class="n">context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;data_sensitivity&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;high&#39;</span><span class="p">:</span>
+                <span class="n">base_score</span> <span class="o">+=</span> <span class="mi">2</span>
+        
+        <span class="k">return</span> <span class="nb">min</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">base_score</span><span class="p">))</span>  <span class="c1"># Clamp to 1-10 scale</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_calculate_overall_risk</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">risk_assessment</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Calculate overall risk score&quot;&quot;&quot;</span>
+        <span class="n">all_scores</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">risk_categories</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">category_scores</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">risk_assessment</span><span class="p">[</span><span class="n">category</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+            <span class="n">all_scores</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">category_scores</span><span class="p">)</span>
+        
+        <span class="c1"># Weighted average (could use more sophisticated aggregation)</span>
+        <span class="n">overall_score</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">all_scores</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">overall_score</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">risk_level</span> <span class="o">=</span> <span class="s1">&#39;Low&#39;</span>
+        <span class="k">elif</span> <span class="n">overall_score</span> <span class="o">&lt;=</span> <span class="mi">6</span><span class="p">:</span>
+            <span class="n">risk_level</span> <span class="o">=</span> <span class="s1">&#39;Medium&#39;</span>
+        <span class="k">elif</span> <span class="n">overall_score</span> <span class="o">&lt;=</span> <span class="mi">8</span><span class="p">:</span>
+            <span class="n">risk_level</span> <span class="o">=</span> <span class="s1">&#39;High&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">risk_level</span> <span class="o">=</span> <span class="s1">&#39;Critical&#39;</span>
+        
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;score&#39;</span><span class="p">:</span> <span class="n">overall_score</span><span class="p">,</span>
+            <span class="s1">&#39;level&#39;</span><span class="p">:</span> <span class="n">risk_level</span><span class="p">,</span>
+            <span class="s1">&#39;recommendation&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_risk_recommendation</span><span class="p">(</span><span class="n">risk_level</span><span class="p">)</span>
+        <span class="p">}</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_risk_recommendation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">risk_level</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get recommendation based on risk level&quot;&quot;&quot;</span>
+        <span class="n">recommendations</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;Low&#39;</span><span class="p">:</span> <span class="s1">&#39;Proceed with standard monitoring&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Medium&#39;</span><span class="p">:</span> <span class="s1">&#39;Implement additional safeguards and monitoring&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;High&#39;</span><span class="p">:</span> <span class="s1">&#39;Conduct thorough review and implement strong mitigations&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;Critical&#39;</span><span class="p">:</span> <span class="s1">&#39;Do not deploy without significant risk reduction&#39;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">recommendations</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">risk_level</span><span class="p">,</span> <span class="s1">&#39;Unknown risk level&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="ethical-ai-development-checklist">
+<h2>Ethical AI Development Checklist<a class="headerlink" href="#ethical-ai-development-checklist" title="Link to this heading">#</a></h2>
+<section id="pre-development-phase">
+<h3>Pre-Development Phase<a class="headerlink" href="#pre-development-phase" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">EthicalDevelopmentChecklist</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">checklist</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;pre_development&#39;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s1">&#39;Define clear purpose and scope of AI system&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Identify potential stakeholders and affected parties&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Assess potential risks and benefits&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Establish ethical guidelines and constraints&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Plan for transparency and explainability&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Consider privacy and data protection requirements&#39;</span>
+            <span class="p">],</span>
+            <span class="s1">&#39;data_preparation&#39;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s1">&#39;Ensure data quality and representativeness&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Identify and address potential biases in data&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Implement privacy-preserving techniques&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Obtain proper consent for data usage&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Document data sources and collection methods&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Plan for data retention and deletion&#39;</span>
+            <span class="p">],</span>
+            <span class="s1">&#39;model_development&#39;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s1">&#39;Choose appropriate algorithms and techniques&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Implement bias detection and mitigation&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Ensure model interpretability and explainability&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Test for robustness and adversarial attacks&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Validate performance across different groups&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Document model limitations and assumptions&#39;</span>
+            <span class="p">],</span>
+            <span class="s1">&#39;deployment&#39;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s1">&#39;Implement human oversight and control&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Establish monitoring and feedback mechanisms&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Create clear user interfaces and communications&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Plan for model updates and maintenance&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Ensure compliance with relevant regulations&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Prepare incident response procedures&#39;</span>
+            <span class="p">],</span>
+            <span class="s1">&#39;post_deployment&#39;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s1">&#39;Monitor system performance and fairness&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Collect and analyze user feedback&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Conduct regular audits and assessments&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Update models and systems as needed&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Report on system impact and outcomes&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;Plan for system retirement or replacement&#39;</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">evaluate_compliance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">phase</span><span class="p">,</span> <span class="n">completed_items</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Evaluate compliance with ethical checklist&quot;&quot;&quot;</span>
+        <span class="n">phase_items</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">checklist</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">phase</span><span class="p">,</span> <span class="p">[])</span>
+        
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">phase_items</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;Unknown phase: </span><span class="si">{</span><span class="n">phase</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">}</span>
+        
+        <span class="n">compliance_rate</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">completed_items</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">phase_items</span><span class="p">)</span>
+        <span class="n">missing_items</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">phase_items</span> <span class="k">if</span> <span class="n">item</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">completed_items</span><span class="p">]</span>
+        
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;phase&#39;</span><span class="p">:</span> <span class="n">phase</span><span class="p">,</span>
+            <span class="s1">&#39;compliance_rate&#39;</span><span class="p">:</span> <span class="n">compliance_rate</span><span class="p">,</span>
+            <span class="s1">&#39;total_items&#39;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">phase_items</span><span class="p">),</span>
+            <span class="s1">&#39;completed_items&#39;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">completed_items</span><span class="p">),</span>
+            <span class="s1">&#39;missing_items&#39;</span><span class="p">:</span> <span class="n">missing_items</span><span class="p">,</span>
+            <span class="s1">&#39;ready_for_next_phase&#39;</span><span class="p">:</span> <span class="n">compliance_rate</span> <span class="o">&gt;=</span> <span class="mf">0.8</span>
+        <span class="p">}</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">generate_ethics_report</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">project_data</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Generate comprehensive ethics compliance report&quot;&quot;&quot;</span>
+        <span class="n">report</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;project_id&#39;</span><span class="p">:</span> <span class="n">project_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;project_id&#39;</span><span class="p">),</span>
+            <span class="s1">&#39;timestamp&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(),</span>
+            <span class="s1">&#39;phases&#39;</span><span class="p">:</span> <span class="p">{}</span>
+        <span class="p">}</span>
+        
+        <span class="k">for</span> <span class="n">phase</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">checklist</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">completed</span> <span class="o">=</span> <span class="n">project_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">phase</span><span class="si">}</span><span class="s1">_completed&#39;</span><span class="p">,</span> <span class="p">[])</span>
+            <span class="n">compliance</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">evaluate_compliance</span><span class="p">(</span><span class="n">phase</span><span class="p">,</span> <span class="n">completed</span><span class="p">)</span>
+            <span class="n">report</span><span class="p">[</span><span class="s1">&#39;phases&#39;</span><span class="p">][</span><span class="n">phase</span><span class="p">]</span> <span class="o">=</span> <span class="n">compliance</span>
+        
+        <span class="c1"># Overall assessment</span>
+        <span class="n">overall_compliance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span>
+            <span class="n">report</span><span class="p">[</span><span class="s1">&#39;phases&#39;</span><span class="p">][</span><span class="n">phase</span><span class="p">][</span><span class="s1">&#39;compliance_rate&#39;</span><span class="p">]</span> 
+            <span class="k">for</span> <span class="n">phase</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">checklist</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+        <span class="p">])</span>
+        
+        <span class="n">report</span><span class="p">[</span><span class="s1">&#39;overall_compliance&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">overall_compliance</span>
+        <span class="n">report</span><span class="p">[</span><span class="s1">&#39;ethics_clearance&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">overall_compliance</span> <span class="o">&gt;=</span> <span class="mf">0.8</span>
+        
+        <span class="k">return</span> <span class="n">report</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="conclusion-and-best-practices">
+<h2>Conclusion and Best Practices<a class="headerlink" href="#conclusion-and-best-practices" title="Link to this heading">#</a></h2>
+<section id="key-recommendations">
+<h3>Key Recommendations<a class="headerlink" href="#key-recommendations" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Ethics by Design</strong>: Integrate ethical considerations from the beginning of the AI development lifecycle</p></li>
+<li><p><strong>Stakeholder Engagement</strong>: Involve diverse stakeholders in the design and evaluation process</p></li>
+<li><p><strong>Continuous Monitoring</strong>: Implement ongoing monitoring for bias, fairness, and unintended consequences</p></li>
+<li><p><strong>Transparency</strong>: Provide clear explanations of AI system capabilities, limitations, and decision-making processes</p></li>
+<li><p><strong>Human Oversight</strong>: Maintain meaningful human control over AI systems, especially in high-stakes applications</p></li>
+<li><p><strong>Regular Audits</strong>: Conduct periodic ethical and technical audits of AI systems</p></li>
+<li><p><strong>Education and Training</strong>: Ensure development teams are trained in ethical AI practices</p></li>
+<li><p><strong>Documentation</strong>: Maintain comprehensive documentation of ethical decisions and trade-offs</p></li>
+</ol>
+</section>
+<section id="organizational-considerations">
+<h3>Organizational Considerations<a class="headerlink" href="#organizational-considerations" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Establish AI ethics committees or review boards</p></li>
+<li><p>Develop clear AI governance policies and procedures</p></li>
+<li><p>Create mechanisms for reporting and addressing ethical concerns</p></li>
+<li><p>Foster a culture of responsible AI development</p></li>
+<li><p>Stay informed about evolving regulations and best practices</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Next Section</strong>: Explore additional resources and references for further learning about AI tools and ethical considerations.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="evaluation-metrics.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Evaluation Metrics for AI Models</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../references.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">References and Further Reading</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-ai-ethics">Introduction to AI Ethics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-ethical-principles">Core Ethical Principles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beneficence-and-non-maleficence">Beneficence and Non-Maleficence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autonomy-and-human-agency">Autonomy and Human Agency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#justice-and-fairness">Justice and Fairness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transparency-and-explainability">Transparency and Explainability</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bias-and-fairness">Bias and Fairness</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-of-bias-in-ai-systems">Types of Bias in AI Systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#historical-bias">Historical Bias</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#algorithmic-bias">Algorithmic Bias</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bias-mitigation-strategies">Bias Mitigation Strategies</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-processing-techniques">Pre-processing Techniques</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#in-processing-techniques">In-processing Techniques</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#privacy-and-data-protection">Privacy and Data Protection</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#privacy-preserving-techniques">Privacy-Preserving Techniques</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-privacy">Differential Privacy</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#federated-learning">Federated Learning</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-anonymization">Data Anonymization</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accountability-and-governance">Accountability and Governance</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-governance-framework">AI Governance Framework</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#risk-assessment-framework">Risk Assessment Framework</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ethical-ai-development-checklist">Ethical AI Development Checklist</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-development-phase">Pre-Development Phase</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion-and-best-practices">Conclusion and Best Practices</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-recommendations">Key Recommendations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#organizational-considerations">Organizational Considerations</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Sky Sheng
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,823 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Prompt Engineering: The Art of AI Communication &#8212; AI tools playground</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/prompt-engineering';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="AI Development Tools and Frameworks" href="ai-development-tools.html" />
+    <link rel="prev" title="Large Language Models: Fundamentals" href="llm-basics.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">AI tools playground</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    AI Tools Playground
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Fundamentals</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="introduction-to-ai.html">Introduction to Artificial Intelligence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="llm-basics.html">Large Language Models: Fundamentals</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Prompt Engineering: The Art of AI Communication</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">AI Tools &amp; Applications</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ai-development-tools.html">AI Development Tools and Frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="practical-applications.html">Practical Applications of AI Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="case-studies.html">Case Studies: Real-World AI Implementations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced Topics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="fine-tuning.html">Fine-Tuning AI Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="evaluation-metrics.html">Evaluation Metrics for AI Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ethical-considerations.html">Ethical Considerations in AI Development</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References and Further Reading</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/skysheng7/ai_tools_playground" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/skysheng7/ai_tools_playground/issues/new?title=Issue%20on%20page%20%2Fchapters/prompt-engineering.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/prompt-engineering.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Prompt Engineering: The Art of AI Communication</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-prompt-engineering">Introduction to Prompt Engineering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamental-principles">Fundamental Principles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clarity-and-specificity">Clarity and Specificity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#context-and-background">Context and Background</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-techniques">Core Techniques</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zero-shot-prompting">1. Zero-Shot Prompting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#few-shot-prompting">2. Few-Shot Prompting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chain-of-thought-cot-prompting">3. Chain-of-Thought (CoT) Prompting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#role-based-prompting">4. Role-Based Prompting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-techniques">Advanced Techniques</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prompt-chaining">Prompt Chaining</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#self-consistency">Self-Consistency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constitutional-ai">Constitutional AI</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-applications">Practical Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#content-creation">Content Creation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-analysis">Data Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-solving">Problem Solving</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-pitfalls-and-solutions">Common Pitfalls and Solutions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pitfall-1-overly-complex-prompts">Pitfall 1: Overly Complex Prompts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pitfall-2-lack-of-output-format-specification">Pitfall 2: Lack of Output Format Specification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pitfall-3-ignoring-model-limitations">Pitfall 3: Ignoring Model Limitations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-and-iteration">Evaluation and Iteration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-prompt-effectiveness">Measuring Prompt Effectiveness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterative-improvement-process">Iterative Improvement Process</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prompt-libraries-and-tools">Prompt Libraries and Tools</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-prompt-library">Building a Prompt Library</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-tools">Useful Tools</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="prompt-engineering-the-art-of-ai-communication">
+<h1>Prompt Engineering: The Art of AI Communication<a class="headerlink" href="#prompt-engineering-the-art-of-ai-communication" title="Link to this heading">#</a></h1>
+<section id="introduction-to-prompt-engineering">
+<h2>Introduction to Prompt Engineering<a class="headerlink" href="#introduction-to-prompt-engineering" title="Link to this heading">#</a></h2>
+<p>Prompt engineering is the practice of designing and optimizing input prompts to effectively communicate with large language models. It’s both an art and a science, requiring understanding of model behavior and creative problem-solving.</p>
+</section>
+<section id="fundamental-principles">
+<h2>Fundamental Principles<a class="headerlink" href="#fundamental-principles" title="Link to this heading">#</a></h2>
+<section id="clarity-and-specificity">
+<h3>Clarity and Specificity<a class="headerlink" href="#clarity-and-specificity" title="Link to this heading">#</a></h3>
+<div class="tip admonition">
+<p class="admonition-title">Best Practice</p>
+<p>Be clear and specific about what you want. Vague prompts lead to unpredictable outputs.</p>
+</div>
+<p><strong>Poor prompt</strong>: “Write about AI”
+<strong>Better prompt</strong>: “Write a 300-word explanation of how large language models work, suitable for a general audience”</p>
+</section>
+<section id="context-and-background">
+<h3>Context and Background<a class="headerlink" href="#context-and-background" title="Link to this heading">#</a></h3>
+<p>Provide sufficient context for the model to understand your request:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Context</span><span class="p">:</span> <span class="n">You</span> <span class="n">are</span> <span class="n">a</span> <span class="n">data</span> <span class="n">scientist</span> <span class="n">working</span> <span class="n">on</span> <span class="n">a</span> <span class="n">customer</span> <span class="n">segmentation</span> <span class="n">project</span><span class="o">.</span>
+<span class="n">Task</span><span class="p">:</span> <span class="n">Explain</span> <span class="n">the</span> <span class="n">difference</span> <span class="n">between</span> <span class="n">K</span><span class="o">-</span><span class="n">means</span> <span class="ow">and</span> <span class="n">hierarchical</span> <span class="n">clustering</span> <span class="n">algorithms</span><span class="o">.</span>
+<span class="n">Audience</span><span class="p">:</span> <span class="n">Non</span><span class="o">-</span><span class="n">technical</span> <span class="n">stakeholders</span>
+<span class="n">Format</span><span class="p">:</span> <span class="n">Bullet</span> <span class="n">points</span> <span class="k">with</span> <span class="n">practical</span> <span class="n">examples</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="core-techniques">
+<h2>Core Techniques<a class="headerlink" href="#core-techniques" title="Link to this heading">#</a></h2>
+<section id="zero-shot-prompting">
+<h3>1. Zero-Shot Prompting<a class="headerlink" href="#zero-shot-prompting" title="Link to this heading">#</a></h3>
+<p>Asking the model to perform a task without examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Classify</span> <span class="n">the</span> <span class="n">sentiment</span> <span class="n">of</span> <span class="n">this</span> <span class="n">review</span> <span class="k">as</span> <span class="n">positive</span><span class="p">,</span> <span class="n">negative</span><span class="p">,</span> <span class="ow">or</span> <span class="n">neutral</span><span class="p">:</span>
+<span class="s2">&quot;The product arrived quickly but the quality was disappointing.&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="few-shot-prompting">
+<h3>2. Few-Shot Prompting<a class="headerlink" href="#few-shot-prompting" title="Link to this heading">#</a></h3>
+<p>Providing examples to guide the model’s behavior:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Classify</span> <span class="n">movie</span> <span class="n">reviews</span> <span class="k">as</span> <span class="n">positive</span> <span class="ow">or</span> <span class="n">negative</span><span class="p">:</span>
+
+<span class="n">Review</span><span class="p">:</span> <span class="s2">&quot;Amazing cinematography and brilliant acting!&quot;</span>
+<span class="n">Sentiment</span><span class="p">:</span> <span class="n">Positive</span>
+
+<span class="n">Review</span><span class="p">:</span> <span class="s2">&quot;Boring plot and terrible dialogue.&quot;</span>
+<span class="n">Sentiment</span><span class="p">:</span> <span class="n">Negative</span>
+
+<span class="n">Review</span><span class="p">:</span> <span class="s2">&quot;The movie was okay, nothing special.&quot;</span>
+<span class="n">Sentiment</span><span class="p">:</span> <span class="p">[</span><span class="n">Model</span> <span class="n">completes</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="chain-of-thought-cot-prompting">
+<h3>3. Chain-of-Thought (CoT) Prompting<a class="headerlink" href="#chain-of-thought-cot-prompting" title="Link to this heading">#</a></h3>
+<p>Encouraging step-by-step reasoning:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Solve this step by step:
+If a train travels 120 miles in 2 hours, and then 180 miles in the next 3 hours, what is the average speed for the entire journey?
+
+Let me think through this step by step:
+1. First, I need to find the total distance
+2. Then, I need to find the total time
+3. Finally, I&#39;ll calculate average speed = total distance / total time
+</pre></div>
+</div>
+</section>
+<section id="role-based-prompting">
+<h3>4. Role-Based Prompting<a class="headerlink" href="#role-based-prompting" title="Link to this heading">#</a></h3>
+<p>Assigning specific roles to the model:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">You</span> <span class="n">are</span> <span class="n">an</span> <span class="n">experienced</span> <span class="n">Python</span> <span class="n">developer</span><span class="o">.</span> <span class="n">Review</span> <span class="n">this</span> <span class="n">code</span> <span class="ow">and</span> <span class="n">suggest</span> <span class="n">improvements</span><span class="p">:</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">calculate_average</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="advanced-techniques">
+<h2>Advanced Techniques<a class="headerlink" href="#advanced-techniques" title="Link to this heading">#</a></h2>
+<section id="prompt-chaining">
+<h3>Prompt Chaining<a class="headerlink" href="#prompt-chaining" title="Link to this heading">#</a></h3>
+<p>Breaking complex tasks into smaller, sequential prompts:</p>
+<ol class="arabic simple">
+<li><p><strong>Analysis prompt</strong>: “Analyze the key themes in this customer feedback”</p></li>
+<li><p><strong>Synthesis prompt</strong>: “Based on the themes identified, suggest three product improvements”</p></li>
+<li><p><strong>Prioritization prompt</strong>: “Rank these improvements by impact and feasibility”</p></li>
+</ol>
+</section>
+<section id="self-consistency">
+<h3>Self-Consistency<a class="headerlink" href="#self-consistency" title="Link to this heading">#</a></h3>
+<p>Running the same prompt multiple times and using majority voting:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pseudo-code</span>
+<span class="n">responses</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+    <span class="n">responses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+
+<span class="n">final_answer</span> <span class="o">=</span> <span class="n">majority_vote</span><span class="p">(</span><span class="n">responses</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="constitutional-ai">
+<h3>Constitutional AI<a class="headerlink" href="#constitutional-ai" title="Link to this heading">#</a></h3>
+<p>Using the model to critique and improve its own outputs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Initial response: [Model&#39;s first attempt]
+
+Now critique your response above. What could be improved?
+Critique: [Model identifies issues]
+
+Provide an improved version based on your critique:
+Improved response: [Model&#39;s refined answer]
+</pre></div>
+</div>
+</section>
+</section>
+<section id="practical-applications">
+<h2>Practical Applications<a class="headerlink" href="#practical-applications" title="Link to this heading">#</a></h2>
+<section id="content-creation">
+<h3>Content Creation<a class="headerlink" href="#content-creation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Blog posts and articles</p></li>
+<li><p>Marketing copy</p></li>
+<li><p>Technical documentation</p></li>
+<li><p>Creative writing</p></li>
+</ul>
+</section>
+<section id="data-analysis">
+<h3>Data Analysis<a class="headerlink" href="#data-analysis" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Summarizing reports</p></li>
+<li><p>Extracting insights</p></li>
+<li><p>Creating visualizations (code generation)</p></li>
+<li><p>Hypothesis generation</p></li>
+</ul>
+</section>
+<section id="problem-solving">
+<h3>Problem Solving<a class="headerlink" href="#problem-solving" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Debugging code</p></li>
+<li><p>Strategic planning</p></li>
+<li><p>Research assistance</p></li>
+<li><p>Decision analysis</p></li>
+</ul>
+</section>
+</section>
+<section id="common-pitfalls-and-solutions">
+<h2>Common Pitfalls and Solutions<a class="headerlink" href="#common-pitfalls-and-solutions" title="Link to this heading">#</a></h2>
+<section id="pitfall-1-overly-complex-prompts">
+<h3>Pitfall 1: Overly Complex Prompts<a class="headerlink" href="#pitfall-1-overly-complex-prompts" title="Link to this heading">#</a></h3>
+<p><strong>Problem</strong>: Trying to do too much in one prompt
+<strong>Solution</strong>: Break down into simpler, sequential tasks</p>
+</section>
+<section id="pitfall-2-lack-of-output-format-specification">
+<h3>Pitfall 2: Lack of Output Format Specification<a class="headerlink" href="#pitfall-2-lack-of-output-format-specification" title="Link to this heading">#</a></h3>
+<p><strong>Problem</strong>: Getting inconsistent response formats
+<strong>Solution</strong>: Explicitly specify desired output format</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Please</span> <span class="n">respond</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">following</span> <span class="n">JSON</span> <span class="nb">format</span><span class="p">:</span>
+<span class="p">{</span>
+  <span class="s2">&quot;summary&quot;</span><span class="p">:</span> <span class="s2">&quot;Brief summary here&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;key_points&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Point 1&quot;</span><span class="p">,</span> <span class="s2">&quot;Point 2&quot;</span><span class="p">,</span> <span class="s2">&quot;Point 3&quot;</span><span class="p">],</span>
+  <span class="s2">&quot;recommendation&quot;</span><span class="p">:</span> <span class="s2">&quot;Your recommendation&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="pitfall-3-ignoring-model-limitations">
+<h3>Pitfall 3: Ignoring Model Limitations<a class="headerlink" href="#pitfall-3-ignoring-model-limitations" title="Link to this heading">#</a></h3>
+<p><strong>Problem</strong>: Asking for real-time information or perfect accuracy
+<strong>Solution</strong>: Acknowledge limitations and use appropriate verification</p>
+</section>
+</section>
+<section id="evaluation-and-iteration">
+<h2>Evaluation and Iteration<a class="headerlink" href="#evaluation-and-iteration" title="Link to this heading">#</a></h2>
+<section id="measuring-prompt-effectiveness">
+<h3>Measuring Prompt Effectiveness<a class="headerlink" href="#measuring-prompt-effectiveness" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Accuracy</strong>: Does it produce correct information?</p></li>
+<li><p><strong>Relevance</strong>: Does it address the specific question?</p></li>
+<li><p><strong>Consistency</strong>: Does it produce similar results across runs?</p></li>
+<li><p><strong>Efficiency</strong>: Does it achieve goals with minimal tokens?</p></li>
+</ol>
+</section>
+<section id="iterative-improvement-process">
+<h3>Iterative Improvement Process<a class="headerlink" href="#iterative-improvement-process" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Start simple</strong>: Begin with basic prompts</p></li>
+<li><p><strong>Test and measure</strong>: Evaluate initial results</p></li>
+<li><p><strong>Identify issues</strong>: What’s not working?</p></li>
+<li><p><strong>Refine and enhance</strong>: Add context, examples, or constraints</p></li>
+<li><p><strong>Re-test</strong>: Measure improvements</p></li>
+<li><p><strong>Repeat</strong>: Continue until satisfactory</p></li>
+</ol>
+</section>
+</section>
+<section id="prompt-libraries-and-tools">
+<h2>Prompt Libraries and Tools<a class="headerlink" href="#prompt-libraries-and-tools" title="Link to this heading">#</a></h2>
+<section id="building-a-prompt-library">
+<h3>Building a Prompt Library<a class="headerlink" href="#building-a-prompt-library" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Document successful prompts</p></li>
+<li><p>Categorize by use case</p></li>
+<li><p>Include performance metrics</p></li>
+<li><p>Share with team members</p></li>
+</ul>
+</section>
+<section id="useful-tools">
+<h3>Useful Tools<a class="headerlink" href="#useful-tools" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Prompt testing platforms</strong>: Compare different approaches</p></li>
+<li><p><strong>Version control</strong>: Track prompt evolution</p></li>
+<li><p><strong>A/B testing</strong>: Systematically compare variants</p></li>
+<li><p><strong>Analytics</strong>: Monitor performance over time</p></li>
+</ul>
+<hr class="docutils" />
+<p><strong>Next Chapter</strong>: Explore the ecosystem of AI development tools and frameworks.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="llm-basics.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Large Language Models: Fundamentals</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ai-development-tools.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">AI Development Tools and Frameworks</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-prompt-engineering">Introduction to Prompt Engineering</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamental-principles">Fundamental Principles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clarity-and-specificity">Clarity and Specificity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#context-and-background">Context and Background</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#core-techniques">Core Techniques</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zero-shot-prompting">1. Zero-Shot Prompting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#few-shot-prompting">2. Few-Shot Prompting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chain-of-thought-cot-prompting">3. Chain-of-Thought (CoT) Prompting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#role-based-prompting">4. Role-Based Prompting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-techniques">Advanced Techniques</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prompt-chaining">Prompt Chaining</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#self-consistency">Self-Consistency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constitutional-ai">Constitutional AI</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-applications">Practical Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#content-creation">Content Creation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-analysis">Data Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-solving">Problem Solving</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-pitfalls-and-solutions">Common Pitfalls and Solutions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pitfall-1-overly-complex-prompts">Pitfall 1: Overly Complex Prompts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pitfall-2-lack-of-output-format-specification">Pitfall 2: Lack of Output Format Specification</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pitfall-3-ignoring-model-limitations">Pitfall 3: Ignoring Model Limitations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluation-and-iteration">Evaluation and Iteration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-prompt-effectiveness">Measuring Prompt Effectiveness</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterative-improvement-process">Iterative Improvement Process</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prompt-libraries-and-tools">Prompt Libraries and Tools</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-a-prompt-library">Building a Prompt Library</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-tools">Useful Tools</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Sky Sheng
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

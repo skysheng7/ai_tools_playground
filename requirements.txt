@@ -1,0 +1,11 @@
+jupyter-book
+pandas
+matplotlib
+numpy
+scikit-learn
+torch
+transformers
+seaborn
+plotly
+ipywidgets
+jupyterlab

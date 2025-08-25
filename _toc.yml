@@ -1,0 +1,24 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+- caption: Fundamentals
+  chapters:
+  - file: chapters/introduction-to-ai
+  - file: chapters/llm-basics
+  - file: chapters/prompt-engineering
+- caption: AI Tools & Applications
+  chapters:
+  - file: chapters/ai-development-tools
+  - file: chapters/practical-applications
+  - file: chapters/case-studies
+- caption: Advanced Topics
+  chapters:
+  - file: chapters/fine-tuning
+  - file: chapters/evaluation-metrics
+  - file: chapters/ethical-considerations
+- caption: Resources
+  chapters:
+  - file: references
