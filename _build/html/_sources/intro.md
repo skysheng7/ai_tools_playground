@@ -1,274 +1,202 @@
-# AI Tools & Prompt Engineering for Data Science
-
-Welcome to your Master of Data Science program! This guide introduces essential AI tools and prompt engineering techniques that will enhance your data science workflow.
-
-## Essential AI Tools for Data Scientists
-
-### 💬 Large Language Models (LLMs)
-**Primary Tools:**
-- **ChatGPT (OpenAI)**: Versatile for code generation, debugging, and explanations
-- **Claude (Anthropic)**: Excellent for analytical thinking and code review
-- **Gemini (Google)**: Strong integration with Google ecosystem
-
-**Use Cases:**
-- Code generation and debugging
-- Data analysis explanations
-- Documentation writing
-- Research assistance
-
-### 🔍 AI-Powered Research & Analysis
-- **Perplexity**: AI-powered search engine with source citations
-- **NotebookLM (Google)**: Document analysis and study guide generation
-- **Elicit**: Scientific literature review and synthesis
-
-### 👨‍💻 AI-Enhanced Development Environments
-- **Cursor IDE**: AI-powered code editor with context awareness
-- **GitHub Copilot**: AI pair programmer integrated into VS Code
-- **Replit**: Browser-based coding with AI assistance
-
-### 📊 Data Science Specific Tools
-- **Julius AI**: Natural language data analysis
-- **DataCamp Workspace**: AI-assisted data science projects
-- **Kaggle Notebooks**: Integrated AI code suggestions
-
-### 🎨 Content Creation & Visualization
-- **Canva AI**: Data visualization and presentation design
-- **Gamma**: AI-powered presentation creation
-- **Tome**: Interactive presentation builder
-
-### 🧪 Model Comparison & Evaluation
-- **LMArena**: Compare different language models side-by-side
-- **OpenAI Playground**: Experiment with model parameters
-- **Hugging Face Spaces**: Test and compare open-source models
-
-## Prompt Engineering Fundamentals
-
-Prompt engineering is the practice of designing effective inputs to get optimal outputs from AI models. For data scientists, this skill is crucial for automating workflows and enhancing productivity.
-
-### Core Principles
-
-#### 1. Be Clear and Specific
-```{admonition} Best Practice
-:class: tip
-
-Vague prompts lead to unpredictable outputs. Specify exactly what you need.
-```
-
-**Poor prompt**: "Help with my data analysis"
-**Better prompt**: "Review this Python pandas code for analyzing customer churn. Identify potential bugs and suggest performance improvements."
-
-#### 2. Provide Context and Role
-Give the AI context about your specific situation:
-
-```
-Context: You are a senior data scientist reviewing a machine learning pipeline.
-Task: Explain the difference between precision and recall metrics.
-Audience: New data science master's students
-Format: Brief explanation with a practical example
-```
-
-### Essential Techniques
-
-#### 1. Zero-Shot vs Few-Shot Prompting
-
-**Zero-Shot**: Ask without examples
-```
-Classify this customer review sentiment as positive, negative, or neutral:
-"The product works as expected but delivery was slow."
-```
-
-**Few-Shot**: Provide examples to guide behavior
-```
-Classify customer feedback sentiment:
-
-Example 1: "Amazing product, fast shipping!" → Positive
-Example 2: "Product broke after one week." → Negative
-Example 3: "It's okay, nothing special." → Neutral
-
-Now classify: "Great quality but expensive." → ?
-```
-
-#### 2. Chain-of-Thought (CoT) Prompting
-Encourage step-by-step reasoning for complex problems:
-
-```
-Analyze this A/B test result step by step:
-Control group: 1000 users, 50 conversions
-Test group: 1000 users, 65 conversions
-
-Please:
-1. Calculate conversion rates for both groups
-2. Determine if the difference is statistically significant
-3. Provide a recommendation based on the results
-```
-
-#### 3. Role-Based Prompting
-Assign specific expertise to the AI:
-
-```
-You are an experienced MLOps engineer. Review this model deployment code and suggest improvements for:
-- Scalability
-- Monitoring
-- Error handling
-- Security best practices
-```
-
-### Advanced Strategies
-
-#### 1. Structured Output Format
-Request specific formats for consistent results:
-
-```
-Analyze this dataset and respond in JSON format:
-{
-  "data_quality": "assessment here",
-  "missing_values": "percentage and pattern",
-  "recommendations": ["action 1", "action 2", "action 3"],
-  "next_steps": "prioritized list"
-}
-```
-
-#### 2. Iterative Refinement
-Use follow-up prompts to improve responses:
-
-```
-Initial: "Explain logistic regression"
-Follow-up: "Now provide the mathematical formula"
-Refinement: "Add a Python implementation example"
-Final: "Include when to use vs. when to avoid this algorithm"
-```
-
-#### 3. Self-Consistency and Validation
-Ask the AI to verify its own work:
-
-```
-Write a function to calculate correlation coefficient.
-
-Now review your code above:
-1. Check for any bugs or edge cases
-2. Suggest improvements for efficiency
-3. Add proper error handling
-```
-
-### Practical Applications for Data Scientists
-
-#### Code Generation and Review
-```
-Task: Create a Python function to preprocess text data
-Requirements:
-- Remove special characters
-- Convert to lowercase
-- Handle missing values
-- Return cleaned text and metadata about changes made
-- Include type hints and docstring
-```
-
-#### Data Analysis Explanations
-```
-Explain this correlation matrix interpretation to stakeholders:
-[Include your correlation matrix]
-
-Requirements:
-- Non-technical language
-- Focus on business implications
-- Highlight key relationships
-- Suggest actionable insights
-```
-
-#### Model Documentation
-```
-Generate documentation for this machine learning model:
-
-Model type: Random Forest Classifier
-Purpose: Customer churn prediction
-Features: [list your features]
-Performance: 85% accuracy, 0.82 F1-score
-
-Include:
-- Model description
-- Feature importance interpretation
-- Limitations and assumptions
-- Deployment considerations
-```
-
-### Best Practices for Data Science Workflows
-
-#### 1. Version Control Your Prompts
-- Document successful prompts in your project repository
-- Track what works for different types of tasks
-- Share effective prompts with your team
-
-#### 2. Validate AI-Generated Code
-```{admonition} Critical Practice
-:class: warning
-
-Always test AI-generated code with sample data before using in production.
-```
-
-**Testing Strategy:**
-1. Create small test datasets
-2. Verify outputs manually for a subset
-3. Check edge cases and error handling
-4. Compare with alternative implementations
-
-#### 3. Combine Multiple AI Tools
-- Use ChatGPT for initial code generation
-- Use Claude for code review and optimization
-- Use Perplexity for research and documentation
-- Compare outputs using LMArena when unsure
-
-#### 4. Ethical Considerations
-- Always cite AI assistance in academic work
-- Verify factual claims from AI responses
-- Be transparent about AI usage in professional settings
-- Understand your organization's AI usage policies
-
-### Quick Reference: Prompt Templates
-
-#### Data Analysis Request
-```
-Context: Data scientist analyzing [dataset type]
-Task: [specific analysis needed]
-Data: [brief description of data structure]
-Output format: [specify format - code, report, visualization, etc.]
-Constraints: [any limitations or requirements]
-```
-
-#### Code Review Template
-```
-Please review this [language] code for [purpose]:
-
-[code here]
-
-Focus on:
-- Correctness and logic
-- Performance optimization
-- Best practices adherence
-- Security considerations
-- Readability and maintainability
-```
-
-#### Learning and Explanation Template
-```
-Explain [concept] for a data science context:
-- Target audience: [specify level]
-- Include practical example with [specific domain]
-- Compare with [alternative approaches]
-- When to use vs. when to avoid
-```
+# Introduction of AI tools
 
 ---
 
-## Getting Started
+## Free + UBC Approved GenAI Tools
 
-1. **Choose your primary AI tool**: Start with ChatGPT or Claude for general data science tasks
-2. **Practice with small tasks**: Begin with code review and simple analysis questions
-3. **Build a prompt library**: Save effective prompts for common data science workflows
-4. **Experiment with different approaches**: Compare zero-shot vs few-shot for your use cases
-5. **Join the community**: Use LMArena to understand model strengths and weaknesses
+### OpenAI ChatGPT
+- **Website**: [https://chatgpt.com](https://chatgpt.com)
+- **Free version available** (DO NOT login)
+- GPT-4o
 
-**Remember**: AI tools are powerful assistants, but critical thinking and domain expertise remain essential. Use AI to enhance your capabilities, not replace your analytical skills.
+### Microsoft Copilot
+- **Website**: [https://copilot.microsoft.com](https://copilot.microsoft.com)
+- Microsoft copilot organization
+- **Microsoft Copilot Edge** - Available in web browser sidebar (Log in with @student.ubc.ca)
 
 ---
 
-*Welcome to your data science journey! These tools and techniques will help you work more efficiently and explore new possibilities in your projects.*
+## UBC Restricted GenAI Tools
+
+### DeepSeek Applications (Hard NO)
+
+⚠️ **UBC Policy on DeepSeek Applications:**
+
+As stated in UBC's official policy on Privacy Matters:
+
+> "The DeepSeek applications, including mobile, desktop and web or browser access (the 'DeepSeek Applications') present a high degree of privacy and security risk. The DeepSeek model (i.e., the underlying, open-source architecture) downloaded from reputable sources is not currently known to be high risk.
+> 
+> UBC restricts the installation or use of the DeepSeek Applications on any UBC-owned or personal devices that are used for university business or that access a UBC system through user login. Examples include the UBC wireless network, UBC Library systems, Canvas, Workday, VPN, or any other UBC system requiring a username and password. For any other personal devices, UBC strongly recommends against using or installing the DeepSeek Applications."
+
+**Source**: [UBC Privacy Matters - Restricting the use of DeepSeek at UBC](https://privacymatters.ubc.ca/i-want/safe-deepseek-ubc)
+
+*Note: All other GenAI tools & models demonstrated are NOT recommended by UBC (but you are NOT restricted from using them)*
+
+---
+
+## NOT UBC Approved GenAI Tools
+
+### Anthropic Claude
+- **Website**: [https://claude.ai](https://claude.ai)
+- ✅ Free tier is often enough (Sonnet 4)
+- 📧 Requires login
+- 🏆 Best reputation among programmers
+- 🎨 Claude Artifact feature
+- ⛑️ Emphasis on AI safety
+- 👐 Transparent with system prompt
+
+### Other Proprietary Models 🔒
+- **Google Gemini 2.5 Pro** - [https://gemini.google.com](https://gemini.google.com)
+- **xAI Grok 4** - [https://grok.x.ai](https://grok.x.ai)
+- **Mistral Large 2** - [https://mistral.ai](https://mistral.ai)
+- And more...
+
+### Open Source/Open Weight Models 🔑
+- **Meta Llama 4** - [https://llama.meta.com](https://llama.meta.com)
+- **DeepSeek V3.1 MODEL** - [https://deepseek.com](https://deepseek.com) *(Note: Model only, not applications)*
+- **Kimi K2** - [https://kimi.moonshot.cn](https://kimi.moonshot.cn)
+- And more...
+
+---
+
+## What if I want to try them all?
+
+### Poe
+- **Website**: [https://poe.com](https://poe.com)
+- Access to both open source + proprietary models
+- **Subscription based** (Note: $20 limit used up in a few hours...)
+
+### Ollama
+- **Website**: [https://ollama.com](https://ollama.com)
+- **Open source/open weight models**
+- **Free to use**
+
+---
+
+## Finding the Best Model for Your Task
+
+### Chatbot Arena
+
+[LMArena](https://lmarena.ai/) is a battle field for different large language generative models. Everytime you prompt a question, 2 anonymous AI model will be asked to answer your question, and you will vote which model gave better response. After you give your vote, the system will reveal the models' names. After millions of pairwise comparisons are made, an Elo-rating algorithm is used to rank the AI models based on people's preferences.
+
+[Text-to-image arena](https://lmarena.ai/?chat-modality=image) uses the same logic, but it is a battle field for different text-to-image generative models. 
+
+- **Free to try all models**
+- You can vote and contribute to rankings!
+- Great for comparing model performance
+
+---
+
+## Using Proprietary Models Economically
+
+**API (Application Programming Interface)**
+- Pay-per-use model
+- More cost-effective for specific tasks
+- Programmatic access to models
+
+---
+
+## AI Agents for Coding
+
+### Cursor: IDE-Based Solutions
+- **Cost**: $20-200 USD/month
+- **Setup**: VS Code + LLM of your choice + tools like MCP (Model Context Protocol)
+- **Features**: 
+  - Understands your entire codebase & project
+  - Popular among developers and start-up companies
+  - Fast for prototyping
+
+### Claude Code: Command Line Solutions
+
+- **Website**: [https://docs.anthropic.com/en/docs/claude-code](https://docs.anthropic.com/en/docs/claude-code)
+- **Cost**: $17-200 USD/month
+- **Status**: Currently the best AI agent for coding
+- **Note**: Use it for fun, but **DO NOT use this for your MDS coursework**
+
+### Other AI Coding Agents (Prices in USD/month)
+
+#### VS Code Extensions
+- **Augment** - $50 - [https://www.augmentcode.com](https://www.augmentcode.com)
+- **GitHub Copilot** - $10 - [https://github.com/features/copilot](https://github.com/features/copilot)
+- **Cline** - Pay by token - [https://github.com/cline/cline](https://github.com/cline/cline)
+
+#### IDEs
+- **Amazon Kiro** - Free (waitlist) - [https://aws.amazon.com/q/developer/](https://aws.amazon.com/q/developer/)
+- **Windsurf** - $15 - [https://codeium.com/windsurf](https://codeium.com/windsurf)
+- **Trae** - $3-10 - [https://trae.co](https://trae.co)
+- **Replit** - $20 - [https://replit.com](https://replit.com)
+
+#### Command Line Tools
+- **Google Gemini CLI** - Mostly free - [https://cloud.google.com/gemini/docs/codeassist/gemini-cli](https://cloud.google.com/gemini/docs/codeassist/gemini-cli)
+- **OpenAI Codex CLI** - Pay by token - [https://openai.com/index/openai-codex/](https://openai.com/index/openai-codex/)
+- **Cursor CLI** - $20-200 - [https://cursor.com/cli](https://cursor.com/cli)
+
+---
+
+## AI for Reading
+
+### NotebookLM
+- **Website**: [https://notebooklm.google.com](https://notebooklm.google.com)
+- **Free to use**
+- Helps with document comprehension and analysis
+- Upload documents and chat with them
+- Generate audio overviews and summaries
+
+Below is an example usecase of notebookLM: [https://notebooklm.google.com/notebook/16d16956-5cad-47b0-94ba-b33a353eb26c](https://notebooklm.google.com/notebook/16d16956-5cad-47b0-94ba-b33a353eb26c)
+
+---
+
+## AI-Based Search Engines
+
+### Perplexity
+- **Website**: [https://www.perplexity.ai](https://www.perplexity.ai)
+- **Free tier**: 3 questions per day
+- **Pro version**: $20 USD/month for unlimited questions
+- Provides sources and citations for answers
+- Great for research and fact-checking
+
+Below is an example usecase of perplexity: [https://www.perplexity.ai/search/you-are-an-expert-software-eng-RPxbHEJKTzO064CJ86yZOA](https://www.perplexity.ai/search/you-are-an-expert-software-eng-RPxbHEJKTzO064CJ86yZOA)
+
+
+---
+
+## Prompt Engineering Tips
+
+### Core Techniques
+- **Ask AI to think step by step** - Break down complex problems
+- **Give AI time to think** - "Take your time and think carefully before answering"
+- **Use structured formats** - Request JSON, numbered lists, or bullet points for answers
+- **Give AI a persona** - "You are an expert data scientist with 20 years of experience"
+
+### Best Practices
+- **Provide clear examples** - Show exactly what format or style you want
+- **Ask for explanations** - Don't just get answers, ask about the "why" behind them
+- **Use fun analogies** - "Explain MCP using LEGO building blocks"
+- **Ask for alternatives** - Get multiple options: "Show me 3 different ways to solve this"
+
+### Communication Tips
+- **Set clear constraints** - "You can only answer in 200 words"
+- **Be polite** - Good manners really do help! Say "please" and "thank you"
+- **Be super specific** - More details = better answers
+- **Ask questions in JSON format** - AI loves structured requests
+
+### Context Management
+- **Manage context window** - Start new chats for big tasks
+- **Avoid overwhelming AI** - AI can get overwhelmed with 20+ messages
+
+---
+
+## Key Messages
+
+### Remember Your Role
+**YOU are the BOSS of AI! AI is not your boss!**
+
+### AI as a Tool
+- AI can be your assistant, your co-pilot
+- **You need to be AI's guide, AI's teacher**
+
+### Expertise Matters
+- AI agents & tools only shine when **you know what you are doing**
+
+### Responsible Use
+- Please collaborate with AI in a **responsible** way
