@@ -1,7 +1,5 @@
 # Introduction of AI tools
 
----
-
 ## Free + UBC Approved GenAI Tools
 
 ### OpenAI ChatGPT
@@ -117,7 +115,7 @@ As stated in UBC's official policy on Privacy Matters:
 
 #### VS Code Extensions
 - **Augment** - $50 - [https://www.augmentcode.com](https://www.augmentcode.com)
-- **GitHub Copilot** - $10 - [https://github.com/features/copilot](https://github.com/features/copilot)
+- **GitHub Copilot** - Free for UBC MDS students as part of the student package
 - **Cline** - Pay by token - [https://github.com/cline/cline](https://github.com/cline/cline)
 
 #### IDEs
