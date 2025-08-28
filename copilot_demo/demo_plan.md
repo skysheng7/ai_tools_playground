@@ -38,7 +38,7 @@ Show how to call the prompt using `/`
 
 ### 2. Debugging Task
 
-1. In the terminal, run `claude` and see the bug show up in terminal. 
+1. In the terminal, run `claude` and see the bug show up in terminal.
 2. Copy the error message and paste it into the chat box. Ask LLM that **"I'm pretty sure I have installed claude code yesterday, I remember also installing node.js, nvm etc. But why can't I find it anymore?"**
 3. Show how the answer LLM give is wrong. --> Shows how it is important for you to know what you are doing.
 4. Ask LLM to **"explain the concepts of nvm, npm, node.js like I'm 5 years old. Please use analogies of animals."** --> Shows how LLM tailor explanation to yoru own interest.
