@@ -6,7 +6,7 @@
 
 ## 📖 About
 
-This project is a structured educational book that covers introduction to AI tool, and advanced implementations. The content is automatically published to GitHub Pages using jupyter-book.
+This project is a structured educational book created for the UBC Master of Data Science orientation program. It covers introduction to AI tools and advanced implementations. The content is automatically published to GitHub Pages using jupyter-book.
 
 ## 📁 Project Structure
 
