@@ -1,7 +1,5 @@
 # Introduction of AI tools
 
----
-
 ## Free + UBC Approved GenAI Tools
 
 ### OpenAI ChatGPT
