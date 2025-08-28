@@ -2,11 +2,11 @@
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://skysheng7.github.io/ai_tools_playground/)
 [![Jupyter Book](https://img.shields.io/badge/Jupyter%20Book-Powered-orange)](https://jupyterbook.org/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg)](https://creativecommons.org/licenses/by/4.0/)
 
 ## 📖 About
 
-This project is a structured educational book created for the UBC Master of Data Science orientation program. It covers introduction to AI tools and advanced implementations. The content is automatically published to GitHub Pages using jupyter-book.
+This repository includes a list of AI tools students could try. It is created for the UBC Master of Data Science orientation program. It covers introduction to AI tools and advanced implementations. The content is automatically published to GitHub Pages using jupyter-book.
 
 ## 📁 Project Structure
 
