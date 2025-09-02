@@ -22,7 +22,7 @@ Text-to-Image (T2I) models have revolutionized the way we create and edit visual
 - **Access**: Available through ChatGPT Plus subscription ($20/month)
 - **Strengths**: Excellent prompt following and realistic image generation
 
-Here is some example output images from GPT-4o:
+Here are some example output images from GPT-4o:
 
 ```{image} ../images/gpt5.png
 :alt: gpt5
@@ -62,7 +62,7 @@ A popular AI program that generates images from textual descriptions, known for 
 - **Website**: [https://midjourney.com](https://midjourney.com)
 - **Pricing**: Subscription-based ($10-$60/month)
 
-Here is some example output images from Midjourney:
+Here are some example output images from Midjourney:
 
 ```{image} ../images/midjourney.png
 :alt: midjourney
@@ -92,7 +92,7 @@ An open-source AI model capable of generating high-quality images from text prom
 - **Website**: [https://stability.ai](https://stability.ai)
 
 
-Here is some example output images from Stable Diffusion:
+Here are some example output images from Stable Diffusion:
 
 ```{image} ../images/sd.png
 :alt: stable diffusion
@@ -169,6 +169,8 @@ Here is some example output images from Stable Diffusion:
 
 
 ### 4.1 Important Reminders
+
+⚠️ **Lack of Consent from Artist**: Most of the training data used for developing these T2I models are images automatically scapped from the internet, without the consent from original artists who created them!
 
 ⚠️ **Copyright and Fair Use**: Be mindful of generating images in copyrighted styles or of copyrighted characters
 
