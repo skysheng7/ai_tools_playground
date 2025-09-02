@@ -22,9 +22,16 @@ Text-to-Image (T2I) models have revolutionized the way we create and edit visual
 - **Access**: Available through ChatGPT Plus subscription ($20/month)
 - **Strengths**: Excellent prompt following and realistic image generation
 
+Here is some example output images from GPT-4o:
+
+```{image} ../images/gpt5.png
+:alt: gpt5
+:width: 100%
+```
+
 ### 1.2 Google's Nano Banana (Gemini Flash 2.5)
 
-**💡 What is [Nano Banana](https://nanobanana.ai/)?**
+**💡 What is [Nano Banana](https://aistudio.google.com/?model=gemini-2.5-flash-image-preview)?**
 Google's latest AI image editing model, also known as **Gemini Flash 2.5**, has recently gone viral for its advanced image editing capabilities.
 
 <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGlxdHQ4emE1M2tjbTNnMG9kcWx3Nmh0YWZjMXA5NG4zdmRmazg0ciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/bh4jzePjmd9iE/giphy.gif" alt="banana" style="width: 80%; height: auto;">
@@ -55,6 +62,13 @@ A popular AI program that generates images from textual descriptions, known for 
 - **Website**: [https://midjourney.com](https://midjourney.com)
 - **Pricing**: Subscription-based ($10-$60/month)
 
+Here is some example output images from Midjourney:
+
+```{image} ../images/midjourney.png
+:alt: midjourney
+:width: 100%
+```
+
 **🎯 Perfect For**: 
 - Digital art creation
 - Concept art and design
@@ -76,6 +90,14 @@ An open-source AI model capable of generating high-quality images from text prom
 - **Free**: Open-source model
 - **Platforms**: Multiple interfaces available (Automatic1111, ComfyUI, etc.)
 - **Website**: [https://stability.ai](https://stability.ai)
+
+
+Here is some example output images from Stable Diffusion:
+
+```{image} ../images/sd.png
+:alt: stable diffusion
+:width: 100%
+```
 
 **🎯 Perfect For**: 
 - Developers and tech enthusiasts
