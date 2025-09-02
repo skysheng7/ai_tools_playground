@@ -28,6 +28,20 @@
 
 *I'm a strong advocate for more transparency in sharing system promopts used to govern the behaviours of generative AI models. System prompts could encode biases and eliminate certain perspectives in the output of generative AI. Anthropic is one of very few companies that publicly shares their system prompts.*
 
+#### Claude artifact demo
+
+Here is an [otter game](https://claude.ai/public/artifacts/5e040757-5e52-4b89-9b8a-dbedb90e07e3) that I created just for fun, using the free tier of Claude and Opus 4.1 model.
+
+```{image} ../images/otter_game.png
+:alt: otter
+:width: 60%
+```
+
+You can see the process in this [video](https://youtu.be/CQr79gKsy64).
+
+Prompt I used:
+
+> "You are an expert in game development. Can you help me create a video game using claude artifact? Here is the idea: Otter Breakout/Arkanoid. Otter bounces on its back, juggling a ball (like they do with rocks!). Break ice blocks to free trapped fish. Paddle is a floating otter, ball bounces realistically."
 
 ### 1.2 🔒 Other Proprietary Models 
 
@@ -168,7 +182,7 @@ This is a perfect example of how AI can serve as an additional safety net - even
 A system prompt is like giving the AI a "personality" or "role" before it starts helping you. It's like telling someone "You are now a cooking teacher" before asking cooking questions!
 
 
-**Watch the Demo**: [System Prompt Guided Web Development](https://youtu.be/OCFxZeypj2w) 📹
+**Watch the Demo**: [System Prompt Guided Web Development](https://youtu.be/Nt_WPfcwYZA) 
 
 In this demo video, I show how to use **system prompts to guide Cursor's AI agent** to create a website hosted on GitHub Pages. The demo uses **Jupyter Book as a template** to create the tutorial page you're reviewing right now! 
 
