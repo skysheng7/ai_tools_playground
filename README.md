@@ -6,7 +6,7 @@
 
 ## 📖 About
 
-This repository includes a list of AI tools students could try. It is created for the UBC Master of Data Science orientation program. It covers introduction to AI tools and advanced implementations. The content is automatically published to GitHub Pages using jupyter-book.
+This repository includes a list of AI tools you could try. It covers introduction to AI tools and advanced implementations. The content is automatically published to GitHub Pages using jupyter-book.
 
 ## 📁 Project Structure
 
@@ -27,9 +27,9 @@ ai_tools_playground/
 └── README.md              # This file
 ```
 
-## 👤 Author
+## Author
 
-**Sky Sheng**
+[**Sky (Kehan) Sheng**](http://www.skysheng.io/) is a PhD candidate at UBC conducting interdisciplinary research in data science, nimal welfare science, and AI bias. Sky is passionate about making data science and AI accessible to all.
 
 - GitHub: [@skysheng7](https://github.com/skysheng7)
 - Project: [ai_tools_playground](https://github.com/skysheng7/ai_tools_playground)

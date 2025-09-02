@@ -1,0 +1,707 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>AI Tools Playground - Copilot Instructions &#8212; AI Tools &amp; Prompt Engineering for Data Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '.github/copilot-instructions';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../chapters/index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo1.png" class="logo__image only-light" alt="AI Tools & Prompt Engineering for Data Science - Home"/>
+    <script>document.write(`<img src="../_static/logo1.png" class="logo__image only-dark" alt="AI Tools & Prompt Engineering for Data Science - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../chapters/index.html">
+                    AI Tools & Prompt Engineering for Data Science
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Chapter 1: UBC AI Policies &amp; Approved Tools</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/skysheng7/ai_tools_playground" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/skysheng7/ai_tools_playground/issues/new?title=Issue%20on%20page%20%2F.github/copilot-instructions.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/.github/copilot-instructions.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>AI Tools Playground - Copilot Instructions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-overview">Project Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture-structure">Architecture &amp; Structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-components">Core Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-configuration-files">Key Configuration Files</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#essential-workflows">Essential Workflows</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#content-development">Content Development</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-new-chapters">Adding New Chapters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-dependencies">Managing Dependencies</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-specific-patterns">Project-Specific Patterns</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-organization">Chapter Organization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toc-structure-inconsistency">TOC Structure Inconsistency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#content-standards">Content Standards</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development-guidelines">Development Guidelines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-development">Local Development</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#content-creation">Content Creation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github-integration">GitHub Integration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#critical-integration-points">Critical Integration Points</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#existing-cursor-rules">Existing Cursor Rules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#external-dependencies">External Dependencies</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-tasks">Common Tasks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-content">Adding Content</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-builds">Troubleshooting Builds</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ai-tools-playground-copilot-instructions">
+<h1>AI Tools Playground - Copilot Instructions<a class="headerlink" href="#ai-tools-playground-copilot-instructions" title="Link to this heading">#</a></h1>
+<section id="project-overview">
+<h2>Project Overview<a class="headerlink" href="#project-overview" title="Link to this heading">#</a></h2>
+<p>This is a Jupyter Book project focused on AI tools and prompt engineering for data science. The book is automatically published to GitHub Pages via workflow automation and covers comprehensive AI development topics from fundamentals to advanced implementations.</p>
+</section>
+<section id="architecture-structure">
+<h2>Architecture &amp; Structure<a class="headerlink" href="#architecture-structure" title="Link to this heading">#</a></h2>
+<section id="core-components">
+<h3>Core Components<a class="headerlink" href="#core-components" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Book Engine</strong>: Uses Jupyter Book (<code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> package) for content generation and HTML publishing</p></li>
+<li><p><strong>Content Structure</strong>: Organized as a structured educational book with chapters covering AI fundamentals, tools, applications, and advanced topics</p></li>
+<li><p><strong>Deployment</strong>: Automated GitHub Pages deployment via <code class="docutils literal notranslate"><span class="pre">.github/workflows/deploy.yml</span></code></p></li>
+<li><p><strong>Content Format</strong>: Mix of Markdown files and potential Jupyter notebooks (<code class="docutils literal notranslate"><span class="pre">.md</span></code> files in chapters)</p></li>
+</ul>
+</section>
+<section id="key-configuration-files">
+<h3>Key Configuration Files<a class="headerlink" href="#key-configuration-files" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">_config.yml</span></code>: Central book configuration (title, author, repository info, extensions)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>: Table of contents defining book structure (currently minimal - needs expansion)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>: Python dependencies for book building and content execution</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.github/workflows/deploy.yml</span></code>: Automated deployment pipeline</p></li>
+</ul>
+</section>
+</section>
+<section id="essential-workflows">
+<h2>Essential Workflows<a class="headerlink" href="#essential-workflows" title="Link to this heading">#</a></h2>
+<section id="content-development">
+<h3>Content Development<a class="headerlink" href="#content-development" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build book locally for testing</span>
+jupyter-book<span class="w"> </span>build<span class="w"> </span>.
+
+<span class="c1"># View built content</span>
+open<span class="w"> </span>_build/html/index.html
+</pre></div>
+</div>
+</section>
+<section id="adding-new-chapters">
+<h3>Adding New Chapters<a class="headerlink" href="#adding-new-chapters" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Create new <code class="docutils literal notranslate"><span class="pre">.md</span></code> file (can be in root or <code class="docutils literal notranslate"><span class="pre">chapters/</span></code> subdirectory)</p></li>
+<li><p>Add entry to <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> following existing format (NO file extensions in TOC)</p></li>
+<li><p>Build locally to verify before pushing</p></li>
+</ol>
+</section>
+<section id="managing-dependencies">
+<h3>Managing Dependencies<a class="headerlink" href="#managing-dependencies" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Critical</strong>: Always update <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> when using new Python packages in content</p></li>
+<li><p>Deployment will fail if packages are missing from requirements.txt</p></li>
+<li><p>Current packages include: jupyter-book, pandas, matplotlib, numpy, scikit-learn, torch, transformers, seaborn, plotly, ipywidgets, jupyterlab</p></li>
+</ul>
+</section>
+</section>
+<section id="project-specific-patterns">
+<h2>Project-Specific Patterns<a class="headerlink" href="#project-specific-patterns" title="Link to this heading">#</a></h2>
+<section id="chapter-organization">
+<h3>Chapter Organization<a class="headerlink" href="#chapter-organization" title="Link to this heading">#</a></h3>
+<p>Based on built content, chapters follow this structure:</p>
+<ul class="simple">
+<li><p><strong>Fundamentals</strong>: introduction-to-ai, llm-basics, prompt-engineering</p></li>
+<li><p><strong>AI Tools &amp; Applications</strong>: ai-development-tools, practical-applications, case-studies</p></li>
+<li><p><strong>Advanced Topics</strong>: fine-tuning, evaluation-metrics, ethical-considerations</p></li>
+</ul>
+</section>
+<section id="toc-structure-inconsistency">
+<h3>TOC Structure Inconsistency<a class="headerlink" href="#toc-structure-inconsistency" title="Link to this heading">#</a></h3>
+<p>⚠️ <strong>Current Issue</strong>: <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> only contains root page but built site shows full chapter structure. This suggests chapters may be auto-discovered or there’s a missing TOC configuration that needs updating.</p>
+</section>
+<section id="content-standards">
+<h3>Content Standards<a class="headerlink" href="#content-standards" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Chapters include practical code examples with proper syntax highlighting</p></li>
+<li><p>Real-world case studies with specific metrics (e.g., “35% increase in click-through rates”)</p></li>
+<li><p>Comprehensive coverage from basic concepts to implementation details</p></li>
+<li><p>Focus on UBC-approved vs restricted AI tools (see <a class="reference external" href="http://intro.md">intro.md</a> for policy details)</p></li>
+</ul>
+</section>
+</section>
+<section id="development-guidelines">
+<h2>Development Guidelines<a class="headerlink" href="#development-guidelines" title="Link to this heading">#</a></h2>
+<section id="local-development">
+<h3>Local Development<a class="headerlink" href="#local-development" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Ensure <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> is installed: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">jupyter-book</span></code></p></li>
+<li><p>Build with: <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">.</span></code></p></li>
+<li><p>Test changes locally before committing</p></li>
+<li><p>Check for build errors in terminal output</p></li>
+</ol>
+</section>
+<section id="content-creation">
+<h3>Content Creation<a class="headerlink" href="#content-creation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Use MyST Markdown syntax for enhanced features (enabled extensions in <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code>)</p></li>
+<li><p>Include practical code examples and real-world applications</p></li>
+<li><p>Reference specific tools and frameworks mentioned in existing chapters</p></li>
+<li><p>Maintain educational progression from fundamentals to advanced topics</p></li>
+</ul>
+</section>
+<section id="github-integration">
+<h3>GitHub Integration<a class="headerlink" href="#github-integration" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Repository: <code class="docutils literal notranslate"><span class="pre">skysheng7/ai_tools_playground</span></code></p></li>
+<li><p>Auto-deployment on pushes to <code class="docutils literal notranslate"><span class="pre">main</span></code> branch</p></li>
+<li><p>GitHub Pages serves content from <code class="docutils literal notranslate"><span class="pre">_build/html</span></code></p></li>
+<li><p>Issues and repository buttons enabled in book interface</p></li>
+</ul>
+</section>
+</section>
+<section id="critical-integration-points">
+<h2>Critical Integration Points<a class="headerlink" href="#critical-integration-points" title="Link to this heading">#</a></h2>
+<section id="existing-cursor-rules">
+<h3>Existing Cursor Rules<a class="headerlink" href="#existing-cursor-rules" title="Link to this heading">#</a></h3>
+<p>Located in <code class="docutils literal notranslate"><span class="pre">.cursor/rules/website-launch.mdc</span></code> - contains comprehensive Jupyter Book setup instructions and workflow guidance that should be referenced for consistency.</p>
+</section>
+<section id="external-dependencies">
+<h3>External Dependencies<a class="headerlink" href="#external-dependencies" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>GitHub Actions for deployment (Ubuntu 20.04, Python 3.11)</p></li>
+<li><p>GitHub Pages for hosting</p></li>
+<li><p>Python ML ecosystem packages (PyTorch, Transformers, etc.)</p></li>
+</ul>
+</section>
+</section>
+<section id="common-tasks">
+<h2>Common Tasks<a class="headerlink" href="#common-tasks" title="Link to this heading">#</a></h2>
+<section id="adding-content">
+<h3>Adding Content<a class="headerlink" href="#adding-content" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Create <code class="docutils literal notranslate"><span class="pre">.md</span></code> files with proper MyST syntax</p></li>
+<li><p>Include in <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> (without file extensions)</p></li>
+<li><p>Update <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> if using new packages</p></li>
+<li><p>Test locally with <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">.</span></code></p></li>
+</ul>
+</section>
+<section id="troubleshooting-builds">
+<h3>Troubleshooting Builds<a class="headerlink" href="#troubleshooting-builds" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Check <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> for missing dependencies</p></li>
+<li><p>Verify TOC syntax (no file extensions, proper indentation)</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">.</span> <span class="pre">-v</span></code> for verbose error output</p></li>
+<li><p>Ensure all referenced files exist and paths are correct</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./.github"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-overview">Project Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture-structure">Architecture &amp; Structure</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-components">Core Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-configuration-files">Key Configuration Files</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#essential-workflows">Essential Workflows</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#content-development">Content Development</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-new-chapters">Adding New Chapters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-dependencies">Managing Dependencies</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-specific-patterns">Project-Specific Patterns</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-organization">Chapter Organization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#toc-structure-inconsistency">TOC Structure Inconsistency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#content-standards">Content Standards</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development-guidelines">Development Guidelines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-development">Local Development</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#content-creation">Content Creation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github-integration">GitHub Integration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#critical-integration-points">Critical Integration Points</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#existing-cursor-rules">Existing Cursor Rules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#external-dependencies">External Dependencies</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-tasks">Common Tasks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-content">Adding Content</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#troubleshooting-builds">Troubleshooting Builds</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Sky Sheng
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

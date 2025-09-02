@@ -2,4 +2,13 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: intro
+root: chapters/index
+parts:
+- caption: "AI Tools & Policies"
+  chapters:
+  - file: chapters/chapter_1_ubc
+  - file: chapters/chapter_2_copilot_demo 
+  - file: chapters/chapter_3_other_ai
+- caption: "Technical Setup Guides"
+  chapters:
+  - file: setup/claude-setup
