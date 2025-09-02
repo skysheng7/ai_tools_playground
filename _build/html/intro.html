@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Chapter 1: UBC AI Policies &amp; Approved Tools &#8212; AI Tools &amp; Prompt Engineering for Data Science</title>
+    <title>Welcome! &#8212; AI Tools &amp; Prompt Engineering for Data Science</title>
   
   
   
@@ -57,10 +57,12 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="AI Tools &amp; Prompt Engineering for Data Science" href="chapters/index.html" />
+    <link rel="next" title="⛑️ Chapter 1: UBC AI Policies &amp; Approved Tools" href="chapters/chapter_1_ubc.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,6 +125,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -141,7 +145,7 @@
     
   
 
-<a class="navbar-brand logo" href="chapters/index.html">
+<a class="navbar-brand logo" href="#">
   
   
   
@@ -152,8 +156,8 @@
       
     
     
-    <img src="_static/logo1.png" class="logo__image only-light" alt="AI Tools & Prompt Engineering for Data Science - Home"/>
-    <script>document.write(`<img src="_static/logo1.png" class="logo__image only-dark" alt="AI Tools & Prompt Engineering for Data Science - Home"/>`);</script>
+    <img src="_static/logo3.png" class="logo__image only-light" alt="AI Tools & Prompt Engineering for Data Science - Home"/>
+    <script>document.write(`<img src="_static/logo3.png" class="logo__image only-dark" alt="AI Tools & Prompt Engineering for Data Science - Home"/>`);</script>
   
   
 </a></div>
@@ -172,14 +176,28 @@
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="chapters/index.html">
-                    AI Tools & Prompt Engineering for Data Science
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Welcome!
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 1: UBC AI Policies &amp; Approved Tools</a></li>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">AI Tools &amp; Policies</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapters/chapter_1_ubc.html">⛑️ Chapter 1: UBC AI Policies &amp; Approved Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/chapter_2_copilot_demo.html">🪄 Chapter 2: GitHub Copilot Demonstration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/chapter_3_llm.html">🧙‍♀️ Chapter 3: Other Large Language Models (LLM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/chapter_4_t2i.html">🎨 Chapter 6: Text-to-Image (T2I) Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/chapter_5_prompt.html">💭 Chapter 4: Prompt Engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapters/chapter_6_ai_books.html">📚 Chapter 5: AI Book Recommendations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical Setup Guides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="setup/claude-setup.html">🤖 Claude AI Setup Guide</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="references/index.html">References</a></li>
 </ul>
 
     </div>
@@ -365,7 +383,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Chapter 1: UBC AI Policies & Approved Tools</h1>
+    <h1>Welcome!</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -375,72 +393,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">🎯 Learning Objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubc-approved-genai-tools-free-options">1. UBC-Approved GenAI Tools (Free Options)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#openai-chatgpt">1.1 OpenAI ChatGPT</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#microsoft-copilot">1.2 Microsoft Copilot</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubc-restricted-genai-tools-important-policy-information">2. 🚨 UBC Restricted GenAI Tools (Important Policy Information)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deepseek-applications-strictly-prohibited">🛑 DeepSeek Applications (Strictly Prohibited)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#not-ubc-approved-genai-tools">NOT UBC Approved GenAI Tools</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anthropic-claude">Anthropic Claude</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-proprietary-models">Other Proprietary Models 🔒</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-source-open-weight-models">Open Source/Open Weight Models 🔑</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-i-want-to-try-them-all">What if I want to try them all?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poe">Poe</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ollama">Ollama</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-best-model-for-your-task">Finding the Best Model for Your Task</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chatbot-arena">Chatbot Arena</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-proprietary-models-economically">Using Proprietary Models Economically</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-agents-for-coding">AI Agents for Coding</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cursor-ide-based-solutions">Cursor: IDE-Based Solutions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#claude-code-command-line-solutions">Claude Code: Command Line Solutions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-ai-coding-agents-prices-in-usd-month">Other AI Coding Agents (Prices in USD/month)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vs-code-extensions">VS Code Extensions</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ides">IDEs</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-tools">Command Line Tools</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-for-reading">AI for Reading</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notebooklm">NotebookLM</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-based-search-engines">AI-Based Search Engines</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perplexity">Perplexity</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prompt-engineering-tips">Prompt Engineering Tips</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-techniques">Core Techniques</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#communication-tips">Communication Tips</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#context-management">Context Management</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-messages">Key Messages</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remember-your-role">Remember Your Role</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-as-a-tool">AI as a Tool</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expertise-matters">Expertise Matters</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#responsible-use">Responsible Use</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-1-summary-key-policy-takeaways">🎓 Chapter 1 Summary: Key Policy Takeaways</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ubc-approved-tools">✅ UBC-Approved Tools</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ubc-restricted-tools">🚫 UBC-Restricted Tools</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compliance-guidelines">📋 Compliance Guidelines</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#important-resources">🔗 Important Resources</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about">📖 About</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#author">👩‍🏫 Author</a></li>
 </ul>
             </nav>
         </div>
@@ -452,321 +406,33 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="chapter-1-ubc-ai-policies-approved-tools">
-<h1>Chapter 1: UBC AI Policies &amp; Approved Tools<a class="headerlink" href="#chapter-1-ubc-ai-policies-approved-tools" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="welcome">
+<h1>Welcome!<a class="headerlink" href="#welcome" title="Link to this heading">#</a></h1>
 <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3MngzNnRhN3lzNmhrd3Mxb2hhM200bThiaGN0YXh2bXVlNWdtZm0xYiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/26FPwppc3RioM4z6w/giphy.gif" alt="Hello GIF" style="width: 100%; height: auto;">
-<p>Welcome to Chapter 1, where we’ll explore UBC’s institutional policies regarding AI tools and identify which tools are approved for academic use. Understanding these policies is crucial for responsible AI use in your academic and research work.</p>
-<section id="learning-objectives">
-<h2>🎯 Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
-<p>By the end of this chapter, you will understand:</p>
-<ul class="simple">
-<li><p>UBC’s official policies on AI tool usage</p></li>
-<li><p>Which AI tools are approved for academic use</p></li>
-<li><p>Which tools are restricted and why</p></li>
-<li><p>How to use AI tools responsibly within institutional guidelines</p></li>
-</ul>
+<p><a class="reference external" href="https://skysheng7.github.io/ai_tools_playground/"><img alt="GitHub Pages" src="https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen" /></a>
+<a class="reference external" href="https://jupyterbook.org/"><img alt="Jupyter Book" src="https://img.shields.io/badge/Jupyter%20Book-Powered-orange" /></a>
+<a class="reference external" href="https://creativecommons.org/licenses/by/4.0/"><img alt="License" src="https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg" /></a></p>
+<section id="about">
+<h2>📖 About<a class="headerlink" href="#about" title="Link to this heading">#</a></h2>
+<p>This repository includes a list of AI tools you could try. It covers introduction to AI tools and advanced implementations.</p>
 </section>
-<hr class="docutils" />
-<section id="ubc-approved-genai-tools-free-options">
-<h2>1. UBC-Approved GenAI Tools (Free Options)<a class="headerlink" href="#ubc-approved-genai-tools-free-options" title="Link to this heading">#</a></h2>
-<section id="openai-chatgpt">
-<h3>1.1 OpenAI ChatGPT<a class="headerlink" href="#openai-chatgpt" title="Link to this heading">#</a></h3>
+<section id="author">
+<h2>👩‍🏫 Author<a class="headerlink" href="#author" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="http://www.skysheng.io/"><strong>Sky (Kehan) Sheng</strong></a> is a PhD candidate at UBC conducting interdisciplinary research in data science, animal welfare science, and AI bias. Sky is passionate about making data science and AI accessible to all.</p>
 <ul class="simple">
-<li><p><strong>Website</strong>: <a class="reference external" href="https://chatgpt.com">https://chatgpt.com</a></p></li>
-<li><p><strong>Free version available</strong> (DO NOT login)</p></li>
-<li><p>Backend model: GPT-5</p></li>
+<li><p>GitHub: <a class="reference external" href="https://github.com/skysheng7">&#64;skysheng7</a></p></li>
+<li><p>Project: <a class="reference external" href="https://github.com/skysheng7/ai_tools_playground">ai_tools_playground</a></p></li>
 </ul>
-<a class="reference internal image-reference" href="../../images/logo2.png"><img alt="logo2" src="../../images/logo2.png" style="width: 50%;" />
+<a class="reference internal image-reference" href="_images/sky_bg.png"><img alt="sky background" src="_images/sky_bg.png" style="width: 100%;" />
 </a>
+<p><em>Ready to explore AI tools responsibly? Let’s get started!</em> 🚀</p>
 </section>
-<section id="microsoft-copilot">
-<h3>1.2 Microsoft Copilot<a class="headerlink" href="#microsoft-copilot" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Copilot organization <strong>website</strong>: <a class="reference external" href="https://copilot.microsoft.com">https://copilot.microsoft.com</a></p></li>
-<li><p>Microsoft Copilot <strong>sidebar</strong> - Available in <a class="reference external" href="https://www.microsoft.com/en-us/edge/download?form=MA13FJ">Edge web browser</a> sidebar (Log in with &#64;student.ubc.ca)</p></li>
-</ul>
-</section>
-</section>
-<hr class="docutils" />
-<section id="ubc-restricted-genai-tools-important-policy-information">
-<h2>2. 🚨 UBC Restricted GenAI Tools (Important Policy Information)<a class="headerlink" href="#ubc-restricted-genai-tools-important-policy-information" title="Link to this heading">#</a></h2>
-<p>Understanding UBC’s restrictions is crucial for compliance with institutional policies. The following section outlines tools that are explicitly restricted by UBC.</p>
-<section id="deepseek-applications-strictly-prohibited">
-<h3>🛑 DeepSeek Applications (Strictly Prohibited)<a class="headerlink" href="#deepseek-applications-strictly-prohibited" title="Link to this heading">#</a></h3>
-<p>⚠️ <strong>UBC Policy on DeepSeek Applications:</strong></p>
-<p>As stated in UBC’s official policy on Privacy Matters:</p>
-<blockquote>
-<div><p>“The DeepSeek applications, including mobile, desktop and web or browser access (the ‘DeepSeek Applications’) present a high degree of privacy and security risk. The DeepSeek model (i.e., the underlying, open-source architecture) downloaded from reputable sources is not currently known to be high risk.</p>
-<p>UBC restricts the installation or use of the DeepSeek Applications on any UBC-owned or personal devices that are used for university business or that access a UBC system through user login. Examples include the UBC wireless network, UBC Library systems, Canvas, Workday, VPN, or any other UBC system requiring a username and password. For any other personal devices, UBC strongly recommends against using or installing the DeepSeek Applications.”</p>
-</div></blockquote>
-<p><strong>Source</strong>: <a class="reference external" href="https://privacymatters.ubc.ca/i-want/safe-deepseek-ubc">UBC Privacy Matters - Restricting the use of DeepSeek at UBC</a></p>
-<p><em>Note: All other GenAI tools &amp; models demonstrated are NOT recommended by UBC (but you are NOT restricted from using them)</em></p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="not-ubc-approved-genai-tools">
-<h2>NOT UBC Approved GenAI Tools<a class="headerlink" href="#not-ubc-approved-genai-tools" title="Link to this heading">#</a></h2>
-<section id="anthropic-claude">
-<h3>Anthropic Claude<a class="headerlink" href="#anthropic-claude" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Website</strong>: <a class="reference external" href="https://claude.ai">https://claude.ai</a></p></li>
-<li><p>✅ Free tier is often enough (Sonnet 4)</p></li>
-<li><p>📧 Requires login</p></li>
-<li><p>🏆 Best reputation among programmers</p></li>
-<li><p>🎨 Claude Artifact feature</p></li>
-<li><p>⛑️ Emphasis on AI safety</p></li>
-<li><p>👐 Transparent with system prompt</p></li>
-</ul>
-</section>
-<section id="other-proprietary-models">
-<h3>Other Proprietary Models 🔒<a class="headerlink" href="#other-proprietary-models" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Google Gemini 2.5 Pro</strong> - <a class="reference external" href="https://gemini.google.com">https://gemini.google.com</a></p></li>
-<li><p><strong>xAI Grok 4</strong> - <a class="reference external" href="https://grok.x.ai">https://grok.x.ai</a></p></li>
-<li><p><strong>Mistral Large 2</strong> - <a class="reference external" href="https://mistral.ai">https://mistral.ai</a></p></li>
-<li><p>And more…</p></li>
-</ul>
-</section>
-<section id="open-source-open-weight-models">
-<h3>Open Source/Open Weight Models 🔑<a class="headerlink" href="#open-source-open-weight-models" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Meta Llama 4</strong> - <a class="reference external" href="https://llama.meta.com">https://llama.meta.com</a></p></li>
-<li><p><strong>DeepSeek V3.1 MODEL</strong> - <a class="reference external" href="https://deepseek.com">https://deepseek.com</a> <em>(Note: Model only, not applications)</em></p></li>
-<li><p><strong>Kimi K2</strong> - <a class="reference external" href="https://kimi.moonshot.cn">https://kimi.moonshot.cn</a></p></li>
-<li><p>And more…</p></li>
-</ul>
-</section>
-</section>
-<hr class="docutils" />
-<section id="what-if-i-want-to-try-them-all">
-<h2>What if I want to try them all?<a class="headerlink" href="#what-if-i-want-to-try-them-all" title="Link to this heading">#</a></h2>
-<section id="poe">
-<h3>Poe<a class="headerlink" href="#poe" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Website</strong>: <a class="reference external" href="https://poe.com">https://poe.com</a></p></li>
-<li><p>Access to both open source + proprietary models</p></li>
-<li><p><strong>Subscription based</strong> (Note: $20 limit used up in a few hours…)</p></li>
-</ul>
-</section>
-<section id="ollama">
-<h3>Ollama<a class="headerlink" href="#ollama" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Website</strong>: <a class="reference external" href="https://ollama.com">https://ollama.com</a></p></li>
-<li><p><strong>Open source/open weight models</strong></p></li>
-<li><p><strong>Free to use</strong></p></li>
-</ul>
-</section>
-</section>
-<hr class="docutils" />
-<section id="finding-the-best-model-for-your-task">
-<h2>Finding the Best Model for Your Task<a class="headerlink" href="#finding-the-best-model-for-your-task" title="Link to this heading">#</a></h2>
-<section id="chatbot-arena">
-<h3>Chatbot Arena<a class="headerlink" href="#chatbot-arena" title="Link to this heading">#</a></h3>
-<p><a class="reference external" href="https://lmarena.ai/">LMArena</a> is a battle field for different large language generative models. Everytime you prompt a question, 2 anonymous AI model will be asked to answer your question, and you will vote which model gave better response. After you give your vote, the system will reveal the models’ names. After millions of pairwise comparisons are made, an Elo-rating algorithm is used to rank the AI models based on people’s preferences.</p>
-<p><a class="reference external" href="https://lmarena.ai/?chat-modality=image">Text-to-image arena</a> uses the same logic, but it is a battle field for different text-to-image generative models.</p>
-<ul class="simple">
-<li><p><strong>Free to try all models</strong></p></li>
-<li><p>You can vote and contribute to rankings!</p></li>
-<li><p>Great for comparing model performance</p></li>
-</ul>
-</section>
-</section>
-<hr class="docutils" />
-<section id="using-proprietary-models-economically">
-<h2>Using Proprietary Models Economically<a class="headerlink" href="#using-proprietary-models-economically" title="Link to this heading">#</a></h2>
-<p><strong>API (Application Programming Interface)</strong></p>
-<ul class="simple">
-<li><p>Pay-per-use model</p></li>
-<li><p>More cost-effective for specific tasks</p></li>
-<li><p>Programmatic access to models</p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="ai-agents-for-coding">
-<h2>AI Agents for Coding<a class="headerlink" href="#ai-agents-for-coding" title="Link to this heading">#</a></h2>
-<section id="cursor-ide-based-solutions">
-<h3>Cursor: IDE-Based Solutions<a class="headerlink" href="#cursor-ide-based-solutions" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Cost</strong>: $20-200 USD/month</p></li>
-<li><p><strong>Setup</strong>: VS Code + LLM of your choice + tools like MCP (Model Context Protocol)</p></li>
-<li><p><strong>Features</strong>:</p>
-<ul>
-<li><p>Understands your entire codebase &amp; project</p></li>
-<li><p>Popular among developers and start-up companies</p></li>
-<li><p>Fast for prototyping</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="claude-code-command-line-solutions">
-<h3>Claude Code: Command Line Solutions<a class="headerlink" href="#claude-code-command-line-solutions" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Website</strong>: <a class="reference external" href="https://docs.anthropic.com/en/docs/claude-code">https://docs.anthropic.com/en/docs/claude-code</a></p></li>
-<li><p><strong>Cost</strong>: $17-200 USD/month</p></li>
-<li><p><strong>Status</strong>: Currently the best AI agent for coding</p></li>
-<li><p><strong>Note</strong>: Use it for fun, but <strong>DO NOT use this for your MDS coursework</strong></p></li>
-</ul>
-</section>
-<section id="other-ai-coding-agents-prices-in-usd-month">
-<h3>Other AI Coding Agents (Prices in USD/month)<a class="headerlink" href="#other-ai-coding-agents-prices-in-usd-month" title="Link to this heading">#</a></h3>
-<section id="vs-code-extensions">
-<h4>VS Code Extensions<a class="headerlink" href="#vs-code-extensions" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p><strong>Augment</strong> - $50 - <a class="reference external" href="https://www.augmentcode.com">https://www.augmentcode.com</a></p></li>
-<li><p><strong>GitHub Copilot</strong> - Free for UBC MDS students as part of the student package</p></li>
-<li><p><strong>Cline</strong> - Pay by token - <a class="github reference external" href="https://github.com/cline/cline">cline/cline</a></p></li>
-</ul>
-</section>
-<section id="ides">
-<h4>IDEs<a class="headerlink" href="#ides" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p><strong>Amazon Kiro</strong> - Free (waitlist) - <a class="reference external" href="https://kiro.dev/">https://kiro.dev/</a></p></li>
-<li><p><strong>Windsurf</strong> - $15 - <a class="reference external" href="https://windsurf.com/editor">https://windsurf.com/editor</a></p></li>
-<li><p><strong>Trae</strong> - $3-10 - <a class="reference external" href="https://www.trae.ai/">https://www.trae.ai/</a></p></li>
-<li><p><strong>Replit</strong> - $20 - <a class="reference external" href="https://replit.com">https://replit.com</a></p></li>
-</ul>
-</section>
-<section id="command-line-tools">
-<h4>Command Line Tools<a class="headerlink" href="#command-line-tools" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p><strong>Google Gemini CLI</strong> - Mostly free - <a class="reference external" href="https://cloud.google.com/gemini/docs/codeassist/gemini-cli">https://cloud.google.com/gemini/docs/codeassist/gemini-cli</a></p></li>
-<li><p><strong>OpenAI Codex CLI</strong> - Pay by token - <a class="reference external" href="https://openai.com/index/openai-codex/">https://openai.com/index/openai-codex/</a></p></li>
-<li><p><strong>Cursor CLI</strong> - $20-200 - <a class="reference external" href="https://cursor.com/cli">https://cursor.com/cli</a></p></li>
-</ul>
-</section>
-</section>
-</section>
-<hr class="docutils" />
-<section id="ai-for-reading">
-<h2>AI for Reading<a class="headerlink" href="#ai-for-reading" title="Link to this heading">#</a></h2>
-<section id="notebooklm">
-<h3>NotebookLM<a class="headerlink" href="#notebooklm" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Website</strong>: <a class="reference external" href="https://notebooklm.google.com">https://notebooklm.google.com</a></p></li>
-<li><p><strong>Free to use</strong></p></li>
-<li><p>Helps with document comprehension and analysis</p></li>
-<li><p>Upload documents and chat with them</p></li>
-<li><p>Generate audio overviews and summaries</p></li>
-</ul>
-<p>Below is an example usecase of notebookLM: <a class="reference external" href="https://notebooklm.google.com/notebook/16d16956-5cad-47b0-94ba-b33a353eb26c">https://notebooklm.google.com/notebook/16d16956-5cad-47b0-94ba-b33a353eb26c</a></p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="ai-based-search-engines">
-<h2>AI-Based Search Engines<a class="headerlink" href="#ai-based-search-engines" title="Link to this heading">#</a></h2>
-<section id="perplexity">
-<h3>Perplexity<a class="headerlink" href="#perplexity" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Website</strong>: <a class="reference external" href="https://www.perplexity.ai">https://www.perplexity.ai</a></p></li>
-<li><p><strong>Free tier</strong>: 3 questions per day</p></li>
-<li><p><strong>Pro version</strong>: $20 USD/month for unlimited questions</p></li>
-<li><p>Provides sources and citations for answers</p></li>
-<li><p>Great for research and fact-checking</p></li>
-</ul>
-<p>Below is an example usecase of perplexity: <a class="reference external" href="https://www.perplexity.ai/search/you-are-an-expert-software-eng-RPxbHEJKTzO064CJ86yZOA">https://www.perplexity.ai/search/you-are-an-expert-software-eng-RPxbHEJKTzO064CJ86yZOA</a></p>
-</section>
-</section>
-<hr class="docutils" />
-<section id="prompt-engineering-tips">
-<h2>Prompt Engineering Tips<a class="headerlink" href="#prompt-engineering-tips" title="Link to this heading">#</a></h2>
-<section id="core-techniques">
-<h3>Core Techniques<a class="headerlink" href="#core-techniques" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Ask AI to think step by step</strong> - Break down complex problems</p></li>
-<li><p><strong>Give AI time to think</strong> - “Take your time and think carefully before answering”</p></li>
-<li><p><strong>Use structured formats</strong> - Request JSON, numbered lists, or bullet points for answers</p></li>
-<li><p><strong>Give AI a persona</strong> - “You are an expert data scientist with 20 years of experience”</p></li>
-</ul>
-</section>
-<section id="best-practices">
-<h3>Best Practices<a class="headerlink" href="#best-practices" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Provide clear examples</strong> - Show exactly what format or style you want</p></li>
-<li><p><strong>Ask for explanations</strong> - Don’t just get answers, ask about the “why” behind them</p></li>
-<li><p><strong>Use fun analogies</strong> - “Explain MCP using LEGO building blocks”</p></li>
-<li><p><strong>Ask for alternatives</strong> - Get multiple options: “Show me 3 different ways to solve this”</p></li>
-</ul>
-</section>
-<section id="communication-tips">
-<h3>Communication Tips<a class="headerlink" href="#communication-tips" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Set clear constraints</strong> - “You can only answer in 200 words”</p></li>
-<li><p><strong>Be polite</strong> - Good manners really do help! Say “please” and “thank you”</p></li>
-<li><p><strong>Be super specific</strong> - More details = better answers</p></li>
-<li><p><strong>Ask questions in JSON format</strong> - AI loves structured requests</p></li>
-</ul>
-</section>
-<section id="context-management">
-<h3>Context Management<a class="headerlink" href="#context-management" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>Manage context window</strong> - Start new chats for big tasks</p></li>
-<li><p><strong>Avoid overwhelming AI</strong> - AI can get overwhelmed with 20+ messages</p></li>
-</ul>
-</section>
-</section>
-<hr class="docutils" />
-<section id="key-messages">
-<h2>Key Messages<a class="headerlink" href="#key-messages" title="Link to this heading">#</a></h2>
-<section id="remember-your-role">
-<h3>Remember Your Role<a class="headerlink" href="#remember-your-role" title="Link to this heading">#</a></h3>
-<p><strong>YOU are the BOSS of AI! AI is not your boss!</strong></p>
-</section>
-<section id="ai-as-a-tool">
-<h3>AI as a Tool<a class="headerlink" href="#ai-as-a-tool" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>AI can be your assistant, your co-pilot</p></li>
-<li><p><strong>You need to be AI’s guide, AI’s teacher</strong></p></li>
-</ul>
-</section>
-<section id="expertise-matters">
-<h3>Expertise Matters<a class="headerlink" href="#expertise-matters" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>AI agents &amp; tools only shine when <strong>you know what you are doing</strong></p></li>
-</ul>
-</section>
-<section id="responsible-use">
-<h3>Responsible Use<a class="headerlink" href="#responsible-use" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Please collaborate with AI in a <strong>responsible</strong> way</p></li>
-</ul>
-</section>
-</section>
-<hr class="docutils" />
-<section id="chapter-1-summary-key-policy-takeaways">
-<h2>🎓 Chapter 1 Summary: Key Policy Takeaways<a class="headerlink" href="#chapter-1-summary-key-policy-takeaways" title="Link to this heading">#</a></h2>
-<section id="ubc-approved-tools">
-<h3>✅ UBC-Approved Tools<a class="headerlink" href="#ubc-approved-tools" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>OpenAI ChatGPT</strong> (free, no login required)</p></li>
-<li><p><strong>Microsoft Copilot</strong> (available through UBC student accounts)</p></li>
-</ul>
-</section>
-<section id="ubc-restricted-tools">
-<h3>🚫 UBC-Restricted Tools<a class="headerlink" href="#ubc-restricted-tools" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong>DeepSeek Applications</strong> are strictly prohibited on any UBC-connected devices or networks</p></li>
-</ul>
-</section>
-<section id="compliance-guidelines">
-<h3>📋 Compliance Guidelines<a class="headerlink" href="#compliance-guidelines" title="Link to this heading">#</a></h3>
-<ol class="arabic simple">
-<li><p><strong>Always check UBC’s AI policies</strong> before using new AI tools</p></li>
-<li><p><strong>Prioritize UBC-approved tools</strong> for academic work</p></li>
-<li><p><strong>Understand privacy implications</strong> of AI tools you choose to use</p></li>
-<li><p><strong>Stay updated</strong> on policy changes through <a class="reference external" href="https://privacymatters.ubc.ca/">UBC Privacy Matters</a></p></li>
-</ol>
-</section>
-<section id="important-resources">
-<h3>🔗 Important Resources<a class="headerlink" href="#important-resources" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://privacymatters.ubc.ca/">UBC Privacy Matters</a> - Official policy updates</p></li>
-<li><p><a class="reference external" href="https://privacymatters.ubc.ca/i-want/safe-deepseek-ubc">DeepSeek Restriction Policy</a> - Specific guidance</p></li>
-</ul>
-<p>Remember: <strong>You are responsible for ensuring your AI tool usage complies with UBC policies and academic integrity standards.</strong></p>
-<hr class="docutils" />
-<p><em>Next: In the following chapters, we’ll explore advanced AI implementations and best practices for data science workflows.</em></p>
-</section>
-</section>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -799,14 +465,14 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="chapters/index.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
+    <a class="right-next"
+       href="chapters/chapter_1_ubc.html"
+       title="next page">
       <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">AI Tools &amp; Prompt Engineering for Data Science</p>
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">⛑️ Chapter 1: UBC AI Policies &amp; Approved Tools</p>
       </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -824,72 +490,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">🎯 Learning Objectives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubc-approved-genai-tools-free-options">1. UBC-Approved GenAI Tools (Free Options)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#openai-chatgpt">1.1 OpenAI ChatGPT</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#microsoft-copilot">1.2 Microsoft Copilot</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ubc-restricted-genai-tools-important-policy-information">2. 🚨 UBC Restricted GenAI Tools (Important Policy Information)</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deepseek-applications-strictly-prohibited">🛑 DeepSeek Applications (Strictly Prohibited)</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#not-ubc-approved-genai-tools">NOT UBC Approved GenAI Tools</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anthropic-claude">Anthropic Claude</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-proprietary-models">Other Proprietary Models 🔒</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-source-open-weight-models">Open Source/Open Weight Models 🔑</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-i-want-to-try-them-all">What if I want to try them all?</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poe">Poe</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ollama">Ollama</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-best-model-for-your-task">Finding the Best Model for Your Task</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chatbot-arena">Chatbot Arena</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-proprietary-models-economically">Using Proprietary Models Economically</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-agents-for-coding">AI Agents for Coding</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cursor-ide-based-solutions">Cursor: IDE-Based Solutions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#claude-code-command-line-solutions">Claude Code: Command Line Solutions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-ai-coding-agents-prices-in-usd-month">Other AI Coding Agents (Prices in USD/month)</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vs-code-extensions">VS Code Extensions</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ides">IDEs</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-tools">Command Line Tools</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-for-reading">AI for Reading</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notebooklm">NotebookLM</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-based-search-engines">AI-Based Search Engines</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perplexity">Perplexity</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prompt-engineering-tips">Prompt Engineering Tips</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#core-techniques">Core Techniques</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices">Best Practices</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#communication-tips">Communication Tips</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#context-management">Context Management</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-messages">Key Messages</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remember-your-role">Remember Your Role</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-as-a-tool">AI as a Tool</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#expertise-matters">Expertise Matters</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#responsible-use">Responsible Use</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-1-summary-key-policy-takeaways">🎓 Chapter 1 Summary: Key Policy Takeaways</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ubc-approved-tools">✅ UBC-Approved Tools</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ubc-restricted-tools">🚫 UBC-Restricted Tools</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compliance-guidelines">📋 Compliance Guidelines</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#important-resources">🔗 Important Resources</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about">📖 About</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#author">👩‍🏫 Author</a></li>
 </ul>
   </nav></div>
 
@@ -914,7 +516,7 @@ By Sky Sheng
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2025.
       <br/>
     
   </p>

@@ -1,0 +1,662 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>📚 Chapter 5: AI Book Recommendations &#8212; AI Tools &amp; Prompt Engineering for Data Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/chapter_6_ai_books';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="🤖 Claude AI Setup Guide" href="../setup/claude-setup.html" />
+    <link rel="prev" title="💭 Chapter 4: Prompt Engineering" href="chapter_5_prompt.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo3.png" class="logo__image only-light" alt="AI Tools & Prompt Engineering for Data Science - Home"/>
+    <script>document.write(`<img src="../_static/logo3.png" class="logo__image only-dark" alt="AI Tools & Prompt Engineering for Data Science - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome!
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">AI Tools &amp; Policies</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapter_1_ubc.html">⛑️ Chapter 1: UBC AI Policies &amp; Approved Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter_2_copilot_demo.html">🪄 Chapter 2: GitHub Copilot Demonstration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter_3_llm.html">🧙‍♀️ Chapter 3: Other AI tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter_4_t2i.html">🎨 Chapter 6: Text-to-Image (T2I) Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter_5_prompt.html">💭 Chapter 4: Prompt Engineering</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">📚 Chapter 5: AI Book Recommendations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical Setup Guides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../setup/claude-setup.html">🤖 Claude AI Setup Guide</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../references/index.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/skysheng7/ai_tools_playground" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/skysheng7/ai_tools_playground/issues/new?title=Issue%20on%20page%20%2Fchapters/chapter_6_ai_books.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/chapter_6_ai_books.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>📚 Chapter 5: AI Book Recommendations</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unmasking-ai-my-mission-to-protect-what-is-human-in-a-world-of-machines">1. “Unmasking AI: My Mission to Protect What Is Human in a World of Machines”</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-book-matters">1.1 Why This Book Matters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-questions-the-book-explores">1.2 Key Questions the Book Explores</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-concept-of-coded-gaze">1.3 The Concept of “Coded Gaze”</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-world-example-ai-hiring-bias">1.4 Real-World Example: AI Hiring Bias</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">1.5 Key Takeaways</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-wild-robot-escapes">2. “The Wild Robot Escapes”</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-book-is-special">2.1 Why This Book Is Special</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-themes">2.2 Key Themes</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-5-ai-book-recommendations">
+<h1>📚 Chapter 5: AI Book Recommendations<a class="headerlink" href="#chapter-5-ai-book-recommendations" title="Link to this heading">#</a></h1>
+<img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZHlrZ292MXN2YmlqYmJnODliaHl4NjU4YmdydzFud2J1cDZ2dDI0YiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/g2lH60ZcvUGL6/giphy.gif" alt="hello_penguine" style="width: 60%; height: auto;">
+---
+<section id="unmasking-ai-my-mission-to-protect-what-is-human-in-a-world-of-machines">
+<h2>1. “Unmasking AI: My Mission to Protect What Is Human in a World of Machines”<a class="headerlink" href="#unmasking-ai-my-mission-to-protect-what-is-human-in-a-world-of-machines" title="Link to this heading">#</a></h2>
+<p><strong>Author:</strong> Dr. Joy Buolamwini</p>
+<a class="reference internal image-reference" href="../_images/unmasking_ai.png"><img alt="unmasking_ai" src="../_images/unmasking_ai.png" style="width: 100%;" />
+</a>
+<blockquote>
+<div><p>“AI reflects both the aspirations and the limitations of its makers.” <span id="id1">[<a class="reference internal" href="../references/index.html#id7" title="Joy Buolamwini. Unmasking AI: My Mission to Protect What Is Human in a World of Machines. Random House, 2023. ISBN 9780593241837. URL: https://www.unmasking.ai/.">Buolamwini, 2023</a>]</span></p>
+</div></blockquote>
+<section id="why-this-book-matters">
+<h3>1.1 Why This Book Matters<a class="headerlink" href="#why-this-book-matters" title="Link to this heading">#</a></h3>
+<p>This groundbreaking book by MIT researcher Dr. Joy Buolamwini exposes the hidden biases in AI systems and shows how technology can perpetuate discrimination. It’s essential reading for anyone who wants to understand the real-world impact of AI on society.</p>
+</section>
+<section id="key-questions-the-book-explores">
+<h3>1.2 Key Questions the Book Explores<a class="headerlink" href="#key-questions-the-book-explores" title="Link to this heading">#</a></h3>
+<p><strong>🤔 Critical Questions:</strong></p>
+<ul class="simple">
+<li><p>Is AI objective or does it reflect human bias?</p></li>
+<li><p>Who decides which data are filtered out, which data are kept in for training AI?</p></li>
+<li><p>Whose values are being encoded in AI systems?</p></li>
+<li><p>Whose perspectives are erased or ignored during AI development?</p></li>
+<li><p>How can we make AI more fair and inclusive?</p></li>
+</ul>
+<blockquote>
+<div><p>“The voice of everyday people with lived experiences of what it means to be excluded – indeed, excoded – from systems not designed with you in mind.” <span id="id2">[<a class="reference internal" href="../references/index.html#id7" title="Joy Buolamwini. Unmasking AI: My Mission to Protect What Is Human in a World of Machines. Random House, 2023. ISBN 9780593241837. URL: https://www.unmasking.ai/.">Buolamwini, 2023</a>]</span></p>
+</div></blockquote>
+</section>
+<section id="the-concept-of-coded-gaze">
+<h3>1.3 The Concept of “Coded Gaze”<a class="headerlink" href="#the-concept-of-coded-gaze" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>“The <em>coded gaze</em> describes the ways in which the priorities, preferences, and prejudices of those who have the power to shape technology can propagate harm, such as discrimination and erasure. We can encode prejudice into technology even if it is not intentional.” <span id="id3">[<a class="reference internal" href="../references/index.html#id7" title="Joy Buolamwini. Unmasking AI: My Mission to Protect What Is Human in a World of Machines. Random House, 2023. ISBN 9780593241837. URL: https://www.unmasking.ai/.">Buolamwini, 2023</a>]</span></p>
+</div></blockquote>
+</section>
+<section id="real-world-example-ai-hiring-bias">
+<h3>1.4 Real-World Example: AI Hiring Bias<a class="headerlink" href="#real-world-example-ai-hiring-bias" title="Link to this heading">#</a></h3>
+<p><strong>💼 The Amazon Case Study:</strong></p>
+<p><strong>What happened?</strong> Amazon created an AI system to help them hire the best employees by automatically reviewing job applications. But there was a big problem - the AI was biased against women!</p>
+<p><strong>🤔 Why did this happen?</strong> The AI learned from Amazon’s past hiring data, which showed that most of their tech employees were men. So the AI thought “men = good employees” and started giving lower scores to any resume that mentioned women’s activities (like “women’s chess club captain”) or women’s colleges.</p>
+<p><strong>😠 Real consequences:</strong> This meant qualified women were getting rejected not because they weren’t good enough, but because the AI had learned unfair patterns from the past. Amazon had to stop using this system.</p>
+<p><strong>💭 The bigger problem:</strong> Many companies still use AI for hiring, and people often trust these systems more than human decisions, thinking they’re “fair and objective” when they’re not.</p>
+<blockquote>
+<div><p>“We swap fallible human gatekeepers for machines that are also flawed but assumed to be objective. And when machines fail, the people who often have the least resources and most limited access to power structures are those who have to experience the worst outcomes.” <span id="id4">[<a class="reference internal" href="../references/index.html#id7" title="Joy Buolamwini. Unmasking AI: My Mission to Protect What Is Human in a World of Machines. Random House, 2023. ISBN 9780593241837. URL: https://www.unmasking.ai/.">Buolamwini, 2023</a>]</span></p>
+</div></blockquote>
+</section>
+<section id="key-takeaways">
+<h3>1.5 Key Takeaways<a class="headerlink" href="#key-takeaways" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>“We need to recognize that not building a tool or not collecting intrusive data is an option, and that should be the first consideration.” <span id="id5">[<a class="reference internal" href="../references/index.html#id7" title="Joy Buolamwini. Unmasking AI: My Mission to Protect What Is Human in a World of Machines. Random House, 2023. ISBN 9780593241837. URL: https://www.unmasking.ai/.">Buolamwini, 2023</a>]</span></p>
+</div></blockquote>
+<blockquote>
+<div><p>“Do we need this AI system or this data in the first place, or does it allow us to direct money at inadequate technical Band-Aids without addressing much larger systemic societal issues?” <span id="id6">[<a class="reference internal" href="../references/index.html#id7" title="Joy Buolamwini. Unmasking AI: My Mission to Protect What Is Human in a World of Machines. Random House, 2023. ISBN 9780593241837. URL: https://www.unmasking.ai/.">Buolamwini, 2023</a>]</span></p>
+</div></blockquote>
+<blockquote>
+<div><p>“AI will not solve poverty, because the conditions that lead to societies that pursue profit over people are not technical.” <span id="id7">[<a class="reference internal" href="../references/index.html#id7" title="Joy Buolamwini. Unmasking AI: My Mission to Protect What Is Human in a World of Machines. Random House, 2023. ISBN 9780593241837. URL: https://www.unmasking.ai/.">Buolamwini, 2023</a>]</span></p>
+</div></blockquote>
+</section>
+</section>
+<hr class="docutils" />
+<section id="the-wild-robot-escapes">
+<h2>2. “The Wild Robot Escapes”<a class="headerlink" href="#the-wild-robot-escapes" title="Link to this heading">#</a></h2>
+<p><strong>Author:</strong> Peter Brown</p>
+<a class="reference internal image-reference" href="../_images/wild.png"><img alt="wild_robot" src="../_images/wild.png" style="width: 60%;" />
+</a>
+<ul class="simple">
+<li><p>This is the sequal (volume 2) of the original book “The Wild Robot” which is now a movie too.</p></li>
+</ul>
+<img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3bjNvem5kYmN0bnM4OWdncDFmMWdtZHRmbGkwd2lqZHJmcW41NmZlciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/1EZYVwO4tDVYfbQauo/giphy.gif" alt="duck" style="width: 70%; height: auto;">
+<section id="why-this-book-is-special">
+<h3>2.1 Why This Book Is Special<a class="headerlink" href="#why-this-book-is-special" title="Link to this heading">#</a></h3>
+<p>This beautifully illustrated novel explores themes of artificial intelligence, consciousness, and what it means to be “alive” through the story of a robot who learns to survive in the wild. It’s perfect for readers of all ages who want to think about AI in a more emotional and philosophical way.</p>
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzc4ODgxMmVuOTA3YWIxZTQzbmY0dmNqYTFldHkzeHgxcjNlbHM1OCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/h7MVMdzWDfNdxscGVe/giphy.gif" alt="fly" style="width: 90%; height: auto;">
+<p>How is AI’s algorithms and programming different or similar to animals’ cognitive “algorithms” and “programming”?</p>
+<img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3Z3Rkd2MxZGI3ZGlvNmxveGJvOHo1ZGFiYnJtanJjdDk5N25rbGtwMiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/08KoslGrHCwctXi8nf/giphy.gif" alt="robot_runing" style="width: 90%; height: auto;">
+</section>
+<section id="key-themes">
+<h3>2.2 Key Themes<a class="headerlink" href="#key-themes" title="Link to this heading">#</a></h3>
+<p><strong>🤖 What Makes Us Human?</strong></p>
+<ul class="simple">
+<li><p>Can machines develop emotions and consciousness?</p></li>
+<li><p>How do we define life and intelligence?</p></li>
+<li><p>What happens when AI learns to care?</p></li>
+</ul>
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzc4ODgxMmVuOTA3YWIxZTQzbmY0dmNqYTFldHkzeHgxcjNlbHM1OCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/CQtWzraU5CSIjDxxkL/giphy.gif" alt="hug" style="width: 90%; height: auto;">
+<p><strong>🌿 Nature &amp; Technology</strong></p>
+<ul class="simple">
+<li><p>The author imagined the future of AI, the robot speaks the lanaguge of the animals, and is being used for dairy farming</p></li>
+</ul>
+<blockquote>
+<div><p>“…the entire farm was equipped with technology that made life easier for everyone. Doors and gates opened automatically. The cows wore electronic collars that kept track of their health automatically. When a cow’s udders were full, she simply had to stroll into the parlor, where she’ll be milked by gentle machines automatically” <span id="id8">[<a class="reference internal" href="../references/index.html#id12" title="Peter Brown. The Wild Robot Escapes. Little, Brown and Company, New York, NY, 2018. ISBN 9780316510288.">Brown, 2018</a>]</span></p>
+</div></blockquote>
+<ul class="simple">
+<li><p>The AI depiction is very futuristic, while the description of dairy farming is very historical (i.e., cows on pasture, with their calves)</p></li>
+</ul>
+<blockquote>
+<div><p>“…sprawling, rolling pasture, lush with tall grass and a few leafy trees, where a herd of cows was grazing. The cows swished their tails and chewed their cud…” <span id="id9">[<a class="reference internal" href="../references/index.html#id12" title="Peter Brown. The Wild Robot Escapes. Little, Brown and Company, New York, NY, 2018. ISBN 9780316510288.">Brown, 2018</a>]</span></p>
+</div></blockquote>
+<blockquote>
+<div><p>“Roz was more content than she had ever expected to be. Most of her time was spent outdoors, with animals, under the wide-open sky.” <span id="id10">[<a class="reference internal" href="../references/index.html#id12" title="Peter Brown. The Wild Robot Escapes. Little, Brown and Company, New York, NY, 2018. ISBN 9780316510288.">Brown, 2018</a>]</span></p>
+</div></blockquote>
+<ul class="simple">
+<li><p>How should AI be programmed towards its treatment with animals?</p></li>
+</ul>
+<blockquote>
+<div><p>“👨🏻‍🌾 <code class="docutils literal notranslate"><span class="pre">Roz,</span> <span class="pre">you're</span> <span class="pre">a</span> <span class="pre">farmer</span> <span class="pre">now,</span> <span class="pre">and</span> <span class="pre">sometimes</span> <span class="pre">farmers</span> <span class="pre">have</span> <span class="pre">to</span> <span class="pre">kill</span> <span class="pre">animals!</span></code> It was the first time Mr.Shareef had ever yelled at Roz… <code class="docutils literal notranslate"><span class="pre">My</span> <span class="pre">farm</span> <span class="pre">and</span> <span class="pre">my</span> <span class="pre">family</span> <span class="pre">are</span> <span class="pre">in</span> <span class="pre">danger!</span> <span class="pre">Roz,</span> <span class="pre">I</span> <span class="pre">order</span> <span class="pre">you</span> <span class="pre">to</span> <span class="pre">kill</span> <span class="pre">those</span> <span class="pre">wolves!</span></code>”
+“🤖 <code class="docutils literal notranslate"><span class="pre">I</span> <span class="pre">cannot</span> <span class="pre">follow</span> <span class="pre">that</span> <span class="pre">order</span> <span class="pre">because</span> <span class="pre">I</span> <span class="pre">am</span> <span class="pre">not</span> <span class="pre">programmed</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">violent.</span></code>”  <span id="id11">[<a class="reference internal" href="../references/index.html#id12" title="Peter Brown. The Wild Robot Escapes. Little, Brown and Company, New York, NY, 2018. ISBN 9780316510288.">Brown, 2018</a>]</span></p>
+</div></blockquote>
+<hr class="docutils" />
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chapter_5_prompt.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">💭 Chapter 4: Prompt Engineering</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../setup/claude-setup.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">🤖 Claude AI Setup Guide</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unmasking-ai-my-mission-to-protect-what-is-human-in-a-world-of-machines">1. “Unmasking AI: My Mission to Protect What Is Human in a World of Machines”</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-book-matters">1.1 Why This Book Matters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-questions-the-book-explores">1.2 Key Questions the Book Explores</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-concept-of-coded-gaze">1.3 The Concept of “Coded Gaze”</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#real-world-example-ai-hiring-bias">1.4 Real-World Example: AI Hiring Bias</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">1.5 Key Takeaways</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-wild-robot-escapes">2. “The Wild Robot Escapes”</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-book-is-special">2.1 Why This Book Is Special</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-themes">2.2 Key Themes</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Sky Sheng
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

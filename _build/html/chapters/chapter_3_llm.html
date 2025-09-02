@@ -1,0 +1,862 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>🧙‍♀️ Chapter 3: Other Large Language Models (LLM) &#8212; AI Tools &amp; Prompt Engineering for Data Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/chapter_3_llm';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="🎨 Chapter 6: Text-to-Image (T2I) Models" href="chapter_4_t2i.html" />
+    <link rel="prev" title="🪄 Chapter 2: GitHub Copilot Demonstration" href="chapter_2_copilot_demo.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo3.png" class="logo__image only-light" alt="AI Tools & Prompt Engineering for Data Science - Home"/>
+    <script>document.write(`<img src="../_static/logo3.png" class="logo__image only-dark" alt="AI Tools & Prompt Engineering for Data Science - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome!
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">AI Tools &amp; Policies</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapter_1_ubc.html">⛑️ Chapter 1: UBC AI Policies &amp; Approved Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter_2_copilot_demo.html">🪄 Chapter 2: GitHub Copilot Demonstration</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">🧙‍♀️ Chapter 3: Other Large Language Models (LLM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter_4_t2i.html">🎨 Chapter 6: Text-to-Image (T2I) Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter_5_prompt.html">💭 Chapter 4: Prompt Engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter_6_ai_books.html">📚 Chapter 5: AI Book Recommendations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical Setup Guides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../setup/claude-setup.html">🤖 Claude AI Setup Guide</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../references/index.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/skysheng7/ai_tools_playground" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/skysheng7/ai_tools_playground/issues/new?title=Issue%20on%20page%20%2Fchapters/chapter_3_llm.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/chapter_3_llm.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>🧙‍♀️ Chapter 3: Other Large Language Models (LLM)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-large-language-models-llm-interface">1. Common large language models (LLM) &amp; interface</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anthropic-claude">1.1 Anthropic Claude</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-proprietary-models">1.2 🔒 Other Proprietary Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-source-open-weight-models">1.3 🔑 Open Source/Open Weight Models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-i-want-to-try-them-all">2. What if I want to try them all?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poe-paid">2.1 Poe (paid)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ollama-free">2.2 Ollama (free)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-best-model-for-your-task">3. Finding the Best Model for Your Task</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chatbot-arena">3.1 Chatbot Arena</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-proprietary-models-economically">4. Using Proprietary Models Economically</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-agents-for-coding">5. AI Agents for Coding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cursor-ide-based-solutions">5.1 Cursor: IDE-Based Solutions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#real-world-example-cursor-s-bugbot-in-action">5.1.1 🤖 Real-World Example: Cursor’s Bugbot in Action</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#demo-system-prompts-github-pages-tutorial">5.1.2 🎥 Demo: System Prompts + GitHub Pages Tutorial</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-vibe-coding-reality-check">5.1.3 ⚠️ The “Vibe Coding” Reality Check</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#claude-code-command-line-solutions">5.2 Claude Code: Command Line Solutions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-ai-coding-agents-prices-in-usd-month">5.3 Other AI Coding Agents (Prices in USD/month)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vs-code-extensions">5.3.1 VS Code Extensions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ides-integrated-development-environment">5.3.2 IDEs (integrated development environment)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-tools">5.3.3 Command Line Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-for-reading">6. AI for Reading</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notebooklm">6.1 NotebookLM</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-based-search-engines">7. AI-Based Search Engines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perplexity">7.1 Perplexity</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-3-other-large-language-models-llm">
+<h1>🧙‍♀️ Chapter 3: Other Large Language Models (LLM)<a class="headerlink" href="#chapter-3-other-large-language-models-llm" title="Link to this heading">#</a></h1>
+<p><em>Note: All GenAI tools &amp; models demonstrated below are NOT recommended by UBC due to privacy and safety reasons (but you are NOT restricted from using them)</em></p>
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnV0YzFleHFjNjMyemxzc2M5emkwZTl6cmMyeTl5NW1sYWFsZnZzMSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/50WoQ8JdjyqzhxpBjP/giphy.gif" alt="surprise" style="width: 60%; height: auto;">
+<section id="common-large-language-models-llm-interface">
+<h2>1. Common large language models (LLM) &amp; interface<a class="headerlink" href="#common-large-language-models-llm-interface" title="Link to this heading">#</a></h2>
+<section id="anthropic-claude">
+<h3>1.1 Anthropic Claude<a class="headerlink" href="#anthropic-claude" title="Link to this heading">#</a></h3>
+<a class="reference internal image-reference" href="../_images/claude.png"><img alt="claude" src="../_images/claude.png" style="width: 100%;" />
+</a>
+<p>💡 <strong>Disclaimer</strong>: I have no connection to Anthropic (the company that makes Claude). I recommend using Claude because many programmers and data scientists from the technology industry agree it’s the best AI tools for programming, writing and explaining things clearly (as of the time when this tutorial is created)! Personally this is my go-to model that drives everyday tasks.</p>
+<p><strong>Website</strong>: <a class="reference external" href="https://claude.ai">https://claude.ai</a></p>
+<ul class="simple">
+<li><p>✅ Free tier is often enough (Sonnet 4)</p></li>
+<li><p>📧 Requires login</p></li>
+<li><p>🏆 Best reputation among programmers</p></li>
+<li><p>🎨 Claude Artifact feature</p></li>
+<li><p>⛑️ Emphasis on AI safety</p></li>
+<li><p>👐 Transparent with <a class="reference external" href="https://docs.anthropic.com/en/release-notes/system-prompts">system prompt</a></p></li>
+</ul>
+<p><em>I’m a strong advocate for more transparency in sharing system promopts used to govern the behaviours of generative AI models. System prompts could encode biases and eliminate certain perspectives in the output of generative AI. Anthropic is one of very few companies that publicly shares their system prompts.</em></p>
+</section>
+<section id="other-proprietary-models">
+<h3>1.2 🔒 Other Proprietary Models<a class="headerlink" href="#other-proprietary-models" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Google Gemini 2.5 Pro</strong> - <a class="reference external" href="https://gemini.google.com">https://gemini.google.com</a></p></li>
+<li><p><strong>xAI Grok 4</strong> - <a class="reference external" href="https://grok.x.ai">https://grok.x.ai</a></p></li>
+<li><p><strong>Mistral Large 2</strong> - <a class="reference external" href="https://mistral.ai">https://mistral.ai</a></p></li>
+<li><p>And more…</p></li>
+</ul>
+</section>
+<section id="open-source-open-weight-models">
+<h3>1.3 🔑 Open Source/Open Weight Models<a class="headerlink" href="#open-source-open-weight-models" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Meta Llama 4</strong> - <a class="reference external" href="https://llama.meta.com">https://llama.meta.com</a></p></li>
+<li><p><strong>DeepSeek V3.1 MODEL</strong> - <a class="reference external" href="https://deepseek.com">https://deepseek.com</a> <em>(Note: Model only, not applications)</em></p></li>
+<li><p><strong>Kimi K2</strong> - <a class="reference external" href="https://kimi.moonshot.cn">https://kimi.moonshot.cn</a></p></li>
+<li><p>And more…</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/models.png"><img alt="models" src="../_images/models.png" style="width: 100%;" />
+</a>
+</section>
+</section>
+<hr class="docutils" />
+<section id="what-if-i-want-to-try-them-all">
+<h2>2. What if I want to try them all?<a class="headerlink" href="#what-if-i-want-to-try-them-all" title="Link to this heading">#</a></h2>
+<img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3cnVnOGQ4bXFwcjdmMGhjeGIzcjI3ZGwyano2bTN6NzZnYW4zdGV0ciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/GiNyo8KD5j9mM/giphy.gif" alt="minion_yeah" style="width: 100%; height: auto;">
+<section id="poe-paid">
+<h3>2.1 Poe (paid)<a class="headerlink" href="#poe-paid" title="Link to this heading">#</a></h3>
+<a class="reference internal image-reference" href="../_images/poe.png"><img alt="poe" src="../_images/poe.png" style="width: 100%;" />
+</a>
+<ul class="simple">
+<li><p>Accessible via both online chatbot interface &amp; PC/laptop software</p></li>
+<li><p><strong>Online chatbot interface</strong>: <a class="reference external" href="https://poe.com">https://poe.com</a></p></li>
+<li><p>Access both open source + proprietary models</p></li>
+<li><p><strong>Subscription based</strong> (Note: $20 limit used up in a few hours…)</p></li>
+</ul>
+</section>
+<section id="ollama-free">
+<h3>2.2 Ollama (free)<a class="headerlink" href="#ollama-free" title="Link to this heading">#</a></h3>
+<a class="reference internal image-reference" href="../_images/ollama.png"><img alt="ollama" src="../_images/ollama.png" style="width: 50%;" />
+</a>
+<ul class="simple">
+<li><p>Accessible via PC/laptop software</p></li>
+<li><p><strong>Donwload URL</strong>: <a class="reference external" href="https://ollama.com">https://ollama.com</a></p></li>
+<li><p>Open source/open weight models</p></li>
+<li><p>Free to use</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="finding-the-best-model-for-your-task">
+<h2>3. Finding the Best Model for Your Task<a class="headerlink" href="#finding-the-best-model-for-your-task" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><p>How do I know which model(s) is best for what task?</p>
+</div></blockquote>
+<img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3djkxamhiZ3FmZDMzOWszY3dmdTJlbTM4eHM1MjAxa2ltdHZzZWI3biZlcD12MV9naWZzX3JlbGF0ZWQmY3Q9Zw/143ujxyRoVMJVK/giphy.gif" alt="dragon" style="width: 80%; height: auto;">
+<section id="chatbot-arena">
+<h3>3.1 Chatbot Arena<a class="headerlink" href="#chatbot-arena" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://lmarena.ai/">LMArena</a> is a battle field for different large language generative models. Everytime you prompt a question, 2 anonymous AI model will be asked to answer your question, and you will vote which model gave better response. After you give your vote, the system will reveal the models’ names. After millions of pairwise comparisons are made, an Elo-rating algorithm is used to rank the AI models based on people’s preferences.</p>
+<a class="reference internal image-reference" href="../_images/lmarena.png"><img alt="arena" src="../_images/lmarena.png" style="width: 100%;" />
+</a>
+<p><a class="reference external" href="https://lmarena.ai/?chat-modality=image">Text-to-image arena</a> uses the same logic, but it is a battle field for different text-to-image generative models.</p>
+<ul class="simple">
+<li><p><strong>Free to try all models</strong></p></li>
+<li><p>You can vote and contribute to rankings!</p></li>
+<li><p>Great for comparing model performance</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/llm_rank.png"><img alt="rank" src="../_images/llm_rank.png" style="width: 100%;" />
+</a>
+</section>
+</section>
+<hr class="docutils" />
+<section id="using-proprietary-models-economically">
+<h2>4. Using Proprietary Models Economically<a class="headerlink" href="#using-proprietary-models-economically" title="Link to this heading">#</a></h2>
+<p><strong>API (Application Programming Interface)</strong></p>
+<ul class="simple">
+<li><p>Pay-per-use model</p></li>
+<li><p>More cost-effective for specific tasks</p></li>
+<li><p>Programmatic access to models</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/api.png"><img alt="api" src="../_images/api.png" style="width: 100%;" />
+</a>
+</section>
+<hr class="docutils" />
+<section id="ai-agents-for-coding">
+<h2>5. AI Agents for Coding<a class="headerlink" href="#ai-agents-for-coding" title="Link to this heading">#</a></h2>
+<section id="cursor-ide-based-solutions">
+<h3>5.1 Cursor: IDE-Based Solutions<a class="headerlink" href="#cursor-ide-based-solutions" title="Link to this heading">#</a></h3>
+<p><em>💡 What is Cursor IDE?</em>*
+<a class="reference external" href="https://cursor.com/agents">Cursor</a> is an advanced code editor where AI agents helps you write code in real-time! It’s like having a super-smart coding partner sitting next to you.</p>
+<a class="reference internal image-reference" href="../_images/cursor.png"><img alt="cursor" src="../_images/cursor.png" style="width: 100%;" />
+</a>
+<ul class="simple">
+<li><p><strong>Cost</strong>: $20-200 USD/month</p></li>
+<li><p><strong>Setup</strong>: VS Code + LLM of your choice + tools like MCP (Model Context Protocol)</p></li>
+<li><p><strong>Features</strong>:</p>
+<ul>
+<li><p>Understands your entire codebase &amp; project</p></li>
+<li><p>Popular among developers and start-up companies</p></li>
+<li><p>Fast for prototyping</p></li>
+</ul>
+</li>
+</ul>
+<section id="real-world-example-cursor-s-bugbot-in-action">
+<h4>5.1.1 🤖 Real-World Example: Cursor’s Bugbot in Action<a class="headerlink" href="#real-world-example-cursor-s-bugbot-in-action" title="Link to this heading">#</a></h4>
+<a class="reference internal image-reference" href="../_images/bugbot.png"><img alt="cursor bugbot" src="../_images/bugbot.png" style="width: 60%;" />
+</a>
+<p><strong>Personal Experience</strong>: I use Cursor’s <strong>bugbot feature</strong> that automatically checks my newly edited code in Pull Requests (PRs).</p>
+<p>🐛 <strong>Amazing Discovery</strong>: The bugbot actually <strong>spotted a bug that I did not catch after running 100 tests!</strong></p>
+<p>This is a perfect example of how AI can serve as an additional safety net - even when your code passes all tests, AI can still catch logical errors, edge cases, or potential issues that traditional testing might miss.</p>
+<p><strong>Key Takeaway</strong>: AI tools like bugbot don’t replace good testing practices, but they add an extra layer of code review that can catch what humans and tests miss! 🛡️</p>
+</section>
+<section id="demo-system-prompts-github-pages-tutorial">
+<h4>5.1.2 🎥 Demo: System Prompts + GitHub Pages Tutorial<a class="headerlink" href="#demo-system-prompts-github-pages-tutorial" title="Link to this heading">#</a></h4>
+<p><strong>💡 What is a System Prompt?</strong>
+A system prompt is like giving the AI a “personality” or “role” before it starts helping you. It’s like telling someone “You are now a cooking teacher” before asking cooking questions!</p>
+<p><strong>Watch the Demo</strong>: <a class="reference external" href="https://youtu.be/OCFxZeypj2w">System Prompt Guided Web Development</a> 📹</p>
+<p>In this demo video, I show how to use <strong>system prompts to guide Cursor’s AI agent</strong> to create a website hosted on GitHub Pages. The demo uses <strong>Jupyter Book as a template</strong> to create the tutorial page you’re reviewing right now!</p>
+<p>This demonstrates the power of combining:</p>
+<ul class="simple">
+<li><p>🎯 <strong>Clear system prompts</strong> (you being the guide)</p></li>
+<li><p>🤖 <strong>AI coding assistance</strong> (Cursor as your copilot)</p></li>
+<li><p>🔗 <strong>GitHub integration</strong> (via GitHub MCP)</p></li>
+</ul>
+</section>
+<section id="the-vibe-coding-reality-check">
+<h4>5.1.3 ⚠️ The “Vibe Coding” Reality Check<a class="headerlink" href="#the-vibe-coding-reality-check" title="Link to this heading">#</a></h4>
+<p>On the internet, you can see many people start building cool games/websites <strong>without any coding background</strong> - they’re just “vibe coding,” talking to Cursor or Claude Code in human language. 💬</p>
+<p><strong>The Initial Illusion</strong>: 🏃‍♂️💨
+From my experience, it could seem like they are <strong>running very fast in the first place</strong>.</p>
+<p><strong>The Reality Wall</strong>: 🧱
+But if they don’t have the fundamentals, <strong>they can hit the wall very quickly too</strong>:</p>
+<ul class="simple">
+<li><p>AI could get stuck in circles when fixing bugs 🔄</p></li>
+<li><p>Progress will slow down significantly 🐌</p></li>
+<li><p>The product will break apart in the long run if you purely depend on vibe coding 💥</p></li>
+</ul>
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTlrM2U4NmJvODRqZDJ6ZWF4ZWk3Y2J3eHFkajZzMW5wYnUwdGMxMCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/X7jjWeC03QDT2/giphy.gif" alt="snail walking" style="width: 100%; height: auto;">
+<p><strong>🎯 You Do NOT Want to Be That Person</strong></p>
+<p>No matter which AI agent you will be using in the future, if you take the time to:</p>
+<ul class="simple">
+<li><p><strong>Slow down</strong> 🐢</p></li>
+<li><p><strong>Learn the fundamentals</strong> 📚</p></li>
+<li><p><strong>Become an expert yourself</strong> 🧠</p></li>
+</ul>
+<p>AI tools will <strong>shine hundreds of times brighter</strong> ✨ when collaborating with you, compared to someone with shaking fundamentals.</p>
+</section>
+</section>
+<section id="claude-code-command-line-solutions">
+<h3>5.2 Claude Code: Command Line Solutions<a class="headerlink" href="#claude-code-command-line-solutions" title="Link to this heading">#</a></h3>
+<a class="reference internal image-reference" href="../_images/cc.png"><img alt="claude code" src="../_images/cc.png" style="width: 100%;" />
+</a>
+<ul class="simple">
+<li><p><strong>Website</strong>: <a class="reference external" href="https://docs.anthropic.com/en/docs/claude-code">https://docs.anthropic.com/en/docs/claude-code</a></p></li>
+<li><p><strong>Cost</strong>: $17-200 USD/month</p></li>
+<li><p><strong>Status</strong>: Currently the best AI agent for coding</p></li>
+<li><p><strong>Note</strong>: Use it for fun</p></li>
+</ul>
+</section>
+<section id="other-ai-coding-agents-prices-in-usd-month">
+<h3>5.3 Other AI Coding Agents (Prices in USD/month)<a class="headerlink" href="#other-ai-coding-agents-prices-in-usd-month" title="Link to this heading">#</a></h3>
+<section id="vs-code-extensions">
+<h4>5.3.1 VS Code Extensions<a class="headerlink" href="#vs-code-extensions" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Augment</strong> - $50 - <a class="reference external" href="https://www.augmentcode.com">https://www.augmentcode.com</a></p></li>
+<li><p><strong>GitHub Copilot</strong> - Free to start</p></li>
+<li><p><strong>Cline</strong> - Pay by token - <a class="github reference external" href="https://github.com/cline/cline">cline/cline</a></p></li>
+</ul>
+</section>
+<section id="ides-integrated-development-environment">
+<h4>5.3.2 IDEs (integrated development environment)<a class="headerlink" href="#ides-integrated-development-environment" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Amazon Kiro</strong> - Free (waitlist) - <a class="reference external" href="https://kiro.dev/">https://kiro.dev/</a></p></li>
+<li><p><strong>Windsurf</strong> - $15 - <a class="reference external" href="https://windsurf.com/editor">https://windsurf.com/editor</a></p></li>
+<li><p><strong>Trae</strong> - $3-10 - <a class="reference external" href="https://www.trae.ai/">https://www.trae.ai/</a></p></li>
+<li><p><strong>Replit</strong> - $20 - <a class="reference external" href="https://replit.com">https://replit.com</a></p></li>
+</ul>
+</section>
+<section id="command-line-tools">
+<h4>5.3.3 Command Line Tools<a class="headerlink" href="#command-line-tools" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Google Gemini CLI</strong> - Mostly free - <a class="reference external" href="https://cloud.google.com/gemini/docs/codeassist/gemini-cli">https://cloud.google.com/gemini/docs/codeassist/gemini-cli</a></p></li>
+<li><p><strong>OpenAI Codex CLI</strong> - Pay by token - <a class="reference external" href="https://openai.com/index/openai-codex/">https://openai.com/index/openai-codex/</a></p></li>
+<li><p><strong>Cursor CLI</strong> - $20-200 - <a class="reference external" href="https://cursor.com/cli">https://cursor.com/cli</a></p></li>
+</ul>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="ai-for-reading">
+<h2>6. AI for Reading<a class="headerlink" href="#ai-for-reading" title="Link to this heading">#</a></h2>
+<section id="notebooklm">
+<h3>6.1 NotebookLM<a class="headerlink" href="#notebooklm" title="Link to this heading">#</a></h3>
+<p><strong>💡 What is NotebookLM?</strong>
+<a class="reference external" href="https://notebooklm.google.com/">NotebookLM</a> is Google’s AI-powered research assistant that can read your documents, notes, and sources to create summaries, answer questions, and even generate study guides!</p>
+<p><strong>🎈 Amazing Features:</strong></p>
+<ul class="simple">
+<li><p><strong>Document Chat:</strong> Ask questions about specific documents (PDFs, text files, websites, and more) you’ve uploaded</p></li>
+<li><p><strong>Source Synthesis:</strong> Knows all your sources and can connect ideas across them. Combines information from multiple sources</p></li>
+<li><p><strong>Study Guide Creation:</strong> Automatically creates organized notes and summaries</p></li>
+<li><p><strong>Audio Overviews:</strong> Generates engaging podcast conversations about your content!</p></li>
+<li><p><strong>Free to use</strong></p></li>
+<li><p>Helps with document comprehension and analysis</p></li>
+<li><p>Upload documents and chat with them</p></li>
+<li><p>Generate audio overviews and summaries</p></li>
+</ul>
+<p>Below is an example usecase of notebookLM: <a class="reference external" href="https://notebooklm.google.com/notebook/16d16956-5cad-47b0-94ba-b33a353eb26c">https://notebooklm.google.com/notebook/16d16956-5cad-47b0-94ba-b33a353eb26c</a></p>
+<a class="reference internal image-reference" href="../_images/notebooklm.png"><img alt="notebook LM" src="../_images/notebooklm.png" style="width: 100%;" />
+</a>
+</section>
+</section>
+<hr class="docutils" />
+<section id="ai-based-search-engines">
+<h2>7. AI-Based Search Engines<a class="headerlink" href="#ai-based-search-engines" title="Link to this heading">#</a></h2>
+<section id="perplexity">
+<h3>7.1 Perplexity<a class="headerlink" href="#perplexity" title="Link to this heading">#</a></h3>
+<p><strong>💡 What is Perplexity?</strong>
+<a class="reference external" href="https://www.perplexity.ai/">Perplexity</a> is like a super-smart search engine that reads the internet and gives you answers with sources, perfect for research!</p>
+<p><strong>🔍 How is Perplexity Different from Google?</strong></p>
+<ul class="simple">
+<li><p><strong>Google:</strong> Shows you links to websites</p></li>
+<li><p><strong>Perplexity:</strong> Reads those websites and summarizes the answer for you</p></li>
+<li><p><strong>Perplexity</strong> provides sources and citations for answers</p></li>
+<li><p><strong>Perplexity</strong> is great for research and fact-checking</p></li>
+</ul>
+<p>Perplexity subscriptions:</p>
+<ul class="simple">
+<li><p><strong>Free tier</strong>: 3 questions per day</p></li>
+<li><p><strong>Pro version</strong>: $20 USD/month for unlimited questions</p></li>
+</ul>
+<p>Below is an example usecase of perplexity: <a class="reference external" href="https://www.perplexity.ai/search/you-are-an-expert-software-eng-RPxbHEJKTzO064CJ86yZOA">https://www.perplexity.ai/search/you-are-an-expert-software-eng-RPxbHEJKTzO064CJ86yZOA</a></p>
+<a class="reference internal image-reference" href="../_images/perplexity_screenshot.png"><img alt="perplexity demo" src="../_images/perplexity_screenshot.png" style="width: 100%;" />
+</a>
+<hr class="docutils" />
+<p><img alt="Code Order Magic" src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3c2ZmZXRwbHhsdmhuazU5Ym9xZGNwcWhibHFka2Z5eG9lOHJpcWhxYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/hEIuLmpW9DmGA/giphy.gif" /></p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chapter_2_copilot_demo.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">🪄 Chapter 2: GitHub Copilot Demonstration</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="chapter_4_t2i.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">🎨 Chapter 6: Text-to-Image (T2I) Models</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-large-language-models-llm-interface">1. Common large language models (LLM) &amp; interface</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anthropic-claude">1.1 Anthropic Claude</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-proprietary-models">1.2 🔒 Other Proprietary Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-source-open-weight-models">1.3 🔑 Open Source/Open Weight Models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-if-i-want-to-try-them-all">2. What if I want to try them all?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#poe-paid">2.1 Poe (paid)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ollama-free">2.2 Ollama (free)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-the-best-model-for-your-task">3. Finding the Best Model for Your Task</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chatbot-arena">3.1 Chatbot Arena</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-proprietary-models-economically">4. Using Proprietary Models Economically</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-agents-for-coding">5. AI Agents for Coding</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cursor-ide-based-solutions">5.1 Cursor: IDE-Based Solutions</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#real-world-example-cursor-s-bugbot-in-action">5.1.1 🤖 Real-World Example: Cursor’s Bugbot in Action</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#demo-system-prompts-github-pages-tutorial">5.1.2 🎥 Demo: System Prompts + GitHub Pages Tutorial</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-vibe-coding-reality-check">5.1.3 ⚠️ The “Vibe Coding” Reality Check</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#claude-code-command-line-solutions">5.2 Claude Code: Command Line Solutions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-ai-coding-agents-prices-in-usd-month">5.3 Other AI Coding Agents (Prices in USD/month)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#vs-code-extensions">5.3.1 VS Code Extensions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ides-integrated-development-environment">5.3.2 IDEs (integrated development environment)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#command-line-tools">5.3.3 Command Line Tools</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-for-reading">6. AI for Reading</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#notebooklm">6.1 NotebookLM</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-based-search-engines">7. AI-Based Search Engines</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perplexity">7.1 Perplexity</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Sky Sheng
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

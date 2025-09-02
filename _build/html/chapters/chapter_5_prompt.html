@@ -1,0 +1,978 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>💭 Chapter 4: Prompt Engineering &#8212; AI Tools &amp; Prompt Engineering for Data Science</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/chapter_5_prompt';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="📚 Chapter 5: AI Book Recommendations" href="chapter_6_ai_books.html" />
+    <link rel="prev" title="🎨 Chapter 6: Text-to-Image (T2I) Models" href="chapter_4_t2i.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo3.png" class="logo__image only-light" alt="AI Tools & Prompt Engineering for Data Science - Home"/>
+    <script>document.write(`<img src="../_static/logo3.png" class="logo__image only-dark" alt="AI Tools & Prompt Engineering for Data Science - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Welcome!
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">AI Tools &amp; Policies</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapter_1_ubc.html">⛑️ Chapter 1: UBC AI Policies &amp; Approved Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter_2_copilot_demo.html">🪄 Chapter 2: GitHub Copilot Demonstration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter_3_llm.html">🧙‍♀️ Chapter 3: Other AI tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter_4_t2i.html">🎨 Chapter 6: Text-to-Image (T2I) Models</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">💭 Chapter 4: Prompt Engineering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter_6_ai_books.html">📚 Chapter 5: AI Book Recommendations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Technical Setup Guides</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../setup/claude-setup.html">🤖 Claude AI Setup Guide</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">References</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../references/index.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/skysheng7/ai_tools_playground" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/skysheng7/ai_tools_playground/issues/new?title=Issue%20on%20page%20%2Fchapters/chapter_5_prompt.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/chapters/chapter_5_prompt.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>💭 Chapter 4: Prompt Engineering</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-ai">1. What is AI?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-from-experts">1.1 Definition from Experts</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-power-of-system-prompts">2. The Power of System Prompts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-prompts-as-your-ai-navigator">2.1 📝 System Prompts as Your AI Navigator</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prompt-engineering-techniques">3. Prompt Engineering Techniques</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#think-and-plan">3.1 Think and plan</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-ai-to-think-step-by-step">3.1.1 🧠 Ask AI to Think Step by Step</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#give-ai-time-to-think">3.1.2 ⏰ Give AI Time to Think</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-before-execute">3.1.3 🤔 Plan before execute</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#give-ai-a-persona-role-play">3.1.4 🎭 Give AI a Persona (Role-Play!)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structured-communication">3.2 Structured Communication</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#use-structured-formats">3.2.1 📋 Use Structured Formats</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-questions-in-json-format">3.2.2 🤓 Ask Questions in JSON Format</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-alternatives">3.3 Examples &amp; alternatives</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#provide-clear-examples">3.3.1 📚 Provide Clear Examples</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-for-explanations">3.3.2 🔍 Ask for Explanations</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#use-fun-analogies">3.3.3 🍳 Use Fun Analogies</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-for-alternatives">3.3.4 🎨 Ask for Alternatives</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#communication-tips">3.4 Communication Tips</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#set-clear-constraints">3.4.1 📏 Set Clear Constraints</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#be-polite-it-really-helps">3.4.2 😊 Be Polite (It Really Helps!)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#be-super-specific">3.4.3 🎯 Be Super Specific</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#context-management">3.5 Context Management</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#start-new-chats-for-big-tasks">3.5.1 🤯 Start New Chats for Big Tasks</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#build-on-previous-answers">3.5.2 🏗️ Build on Previous Answers</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-magic-formula">3.6 ✨ The Magic Formula</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verifying-ai-code-quality">4. Verifying AI Code Quality</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-check-ai-code">4.1 🔍 Why Check AI Code?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verification-methods">4.2 Verification Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-two-different-ai-models">4.2.1 🤖 Ask Two Different AI Models</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#create-test-data">4.2.2 🧪 Create Test Data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#team-up-two-ai-models">4.2.3 🎭 Team Up Two AI Models</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-testing-tricks">4.2.4 🔬 Simple Testing Tricks</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#professional-testing-advanced-concept">4.3 💼 Professional Testing (Advanced Concept)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-messages">5. Key Messages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remember-you-are-the-boss">5.1 👑 Remember you are the boss!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-is-cheap-show-me-the-talk">5.2 💬✨ Code is cheap, show me the talk.</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-4-prompt-engineering">
+<h1>💭 Chapter 4: Prompt Engineering<a class="headerlink" href="#chapter-4-prompt-engineering" title="Link to this heading">#</a></h1>
+<img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3d3JoczFnc2wzbzMwN3JqeXNhM2Nxd3AwdGN4NTU1bHBtdHUza3p3bCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/aDKMe14FKM1TEyjm1l/giphy.gif" alt="robot_learning" style="width: 100%; height: auto;">
+<section id="what-is-ai">
+<h2>1. What is AI?<a class="headerlink" href="#what-is-ai" title="Link to this heading">#</a></h2>
+<section id="definition-from-experts">
+<h3>1.1 Definition from Experts<a class="headerlink" href="#definition-from-experts" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Definition from Dr. Joy Buolamiwini <span id="id1">[<a class="reference internal" href="../references/index.html#id7" title="Joy Buolamwini. Unmasking AI: My Mission to Protect What Is Human in a World of Machines. Random House, 2023. ISBN 9780593241837. URL: https://www.unmasking.ai/.">Buolamwini, 2023</a>]</span>:</p></li>
+</ol>
+<blockquote>
+<div><p>“Artificial Intelligence is the ongoing quest to give computers the ability to perceive the world (that is, make meaning of visual, aural, and other sensory inputs), to make judgments, to generate creative work, and to give them the ability to communicate with humans.”</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>Definition from Drs. Stuart Russell and Peter Norvig <span id="id2">[<a class="reference internal" href="../references/index.html#id8" title="Stuart Russell and Peter Norvig. Artificial Intelligence: A Modern Approach. Pearson, 4th edition, 2020. ISBN 9780134610993. URL: https://aima.cs.berkeley.edu/.">Russell and Norvig, 2020</a>]</span>:</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/russell.png"><img alt="russell" src="../_images/russell.png" style="width: 70%;" />
+</a>
+<ol class="arabic simple" start="3">
+<li><p>More Definitions:</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/ai.png"><img alt="ai" src="../_images/ai.png" style="width: 100%;" />
+</a>
+<p>*Image credit: <span id="id3">[<a class="reference internal" href="../references/index.html#id8" title="Stuart Russell and Peter Norvig. Artificial Intelligence: A Modern Approach. Pearson, 4th edition, 2020. ISBN 9780134610993. URL: https://aima.cs.berkeley.edu/.">Russell and Norvig, 2020</a>]</span></p>
+<p><strong>💡 Take home message:</strong> The definitions of AI we listed above are just for your reference. Ultimately, YOU define what is AI for yourself!</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="the-power-of-system-prompts">
+<h2>2. The Power of System Prompts<a class="headerlink" href="#the-power-of-system-prompts" title="Link to this heading">#</a></h2>
+<section id="system-prompts-as-your-ai-navigator">
+<h3>2.1 📝 System Prompts as Your AI Navigator<a class="headerlink" href="#system-prompts-as-your-ai-navigator" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>🙋‍♀️ Who loves taking notes, organizing class notes?</p>
+</div></blockquote>
+<p>🎯 <strong>The Power of System Prompts</strong></p>
+<p>AI can get lost in the woods with too much information it reads all over the internet. System prompts allow the AI agent to focus on solving specific tasks with best practices.</p>
+<p>🧭 System prompts allow you to be the guide for AI - you become the navigator!</p>
+<p><strong>💡 What is a System Prompt?</strong>
+A system prompt is like giving the AI a “personality” or “role” before it starts helping you. It’s like telling someone “You are now a cooking teacher” before asking cooking questions!</p>
+<p><strong>💡 Pro Tip:</strong></p>
+<ul class="simple">
+<li><p>When you learn a new concept or workflow, write notes for yourself</p></li>
+<li><p>The note you write can be turned into system prompts for AI</p></li>
+<li><p>This highlights the importance of <strong>communication skills with humans AND with AI</strong> → prompt engineering!</p></li>
+</ul>
+<p>⚠️ Always fact-check against textbooks or credible resources - AI can hallucinate!</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="prompt-engineering-techniques">
+<h2>3. Prompt Engineering Techniques<a class="headerlink" href="#prompt-engineering-techniques" title="Link to this heading">#</a></h2>
+<section id="think-and-plan">
+<h3>3.1 Think and plan<a class="headerlink" href="#think-and-plan" title="Link to this heading">#</a></h3>
+<section id="ask-ai-to-think-step-by-step">
+<h4>3.1.1 🧠 Ask AI to Think Step by Step<a class="headerlink" href="#ask-ai-to-think-step-by-step" title="Link to this heading">#</a></h4>
+<p><em>Make the AI show its work like in math class!</em></p>
+<p><strong>Examples:</strong></p>
+<ul class="simple">
+<li><p>“Step by step, how do I make a peanut butter sandwich?”</p></li>
+<li><p>“Walk me through the process of solving 2x + 5 = 15 step by step”</p></li>
+</ul>
+</section>
+<section id="give-ai-time-to-think">
+<h4>3.1.2 ⏰ Give AI Time to Think<a class="headerlink" href="#give-ai-time-to-think" title="Link to this heading">#</a></h4>
+<p><em>Tell the AI it’s okay to take its time</em></p>
+<p><strong>Examples:</strong></p>
+<ul class="simple">
+<li><p>“Take your time and think carefully before answering”</p></li>
+<li><p>“Use the maximum amount of thinking. It’s better to think too much than too little”</p></li>
+<li><p>“Don’t rush - I want your best answer”</p></li>
+</ul>
+</section>
+<section id="plan-before-execute">
+<h4>3.1.3 🤔 Plan before execute<a class="headerlink" href="#plan-before-execute" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Prompt AI to plan the thinkng process or workflow before it writes any code</p></li>
+</ul>
+<p><strong>Examples:</strong></p>
+<ul class="simple">
+<li><p>“I wish to generate images of otter doing data analysis. Give me a few ideas about how the images should look like.” –&gt; Select the description that you like, then ask it to generate images</p></li>
+<li><p>“Let’s plan the data analysis workflow first, from raw data to stats analysis and visualization.”</p></li>
+</ul>
+</section>
+<section id="give-ai-a-persona-role-play">
+<h4>3.1.4 🎭 Give AI a Persona (Role-Play!)<a class="headerlink" href="#give-ai-a-persona-role-play" title="Link to this heading">#</a></h4>
+<p><em>Make the AI pretend to be someone specific!</em></p>
+<p><strong>Examples:</strong></p>
+<ul class="simple">
+<li><p>“You are a friendly pirate captain. Teach me about ocean currents!”</p></li>
+<li><p>“You are a wise wizard. Explain photosynthesis using magical terms”</p></li>
+<li><p>“You are an expert data scientist with 20 years of experience”</p></li>
+</ul>
+</section>
+</section>
+<section id="structured-communication">
+<h3>3.2 Structured Communication<a class="headerlink" href="#structured-communication" title="Link to this heading">#</a></h3>
+<section id="use-structured-formats">
+<h4>3.2.1 📋 Use Structured Formats<a class="headerlink" href="#use-structured-formats" title="Link to this heading">#</a></h4>
+<p><em>Ask for answers in organized ways!</em></p>
+<p><strong>JSON Format Example:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Give me information about dogs in this JSON format:</span>
+<span class="p">{</span>
+  <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Golden Retriever&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="s1">&#39;Large&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;personality&#39;</span><span class="p">:</span> <span class="s1">&#39;Friendly and energetic&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;good_with_kids&#39;</span><span class="p">:</span> <span class="n">true</span>
+<span class="p">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p><strong>List Format Example:</strong></p>
+<ul class="simple">
+<li><p>“Give me 5 facts about space as a numbered list”</p></li>
+<li><p>“Create a bullet point summary of this article”</p></li>
+</ul>
+</section>
+<section id="ask-questions-in-json-format">
+<h4>3.2.2 🤓 Ask Questions in JSON Format<a class="headerlink" href="#ask-questions-in-json-format" title="Link to this heading">#</a></h4>
+<p><em>AI loves structures!</em></p>
+<p><strong>Example:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;task&quot;</span><span class="p">:</span> <span class="s2">&quot;book recommendations&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;topic&quot;</span><span class="p">:</span> <span class="s2">&quot;prompt engineering&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;audience&quot;</span><span class="p">:</span> <span class="s2">&quot;kids 10-15 years old who started learning about data science&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;output_format&quot;</span><span class="p">:</span> <span class="s2">&quot;A list of book followed by a one sentence summary for each book&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="examples-alternatives">
+<h3>3.3 Examples &amp; alternatives<a class="headerlink" href="#examples-alternatives" title="Link to this heading">#</a></h3>
+<section id="provide-clear-examples">
+<h4>3.3.1 📚 Provide Clear Examples<a class="headerlink" href="#provide-clear-examples" title="Link to this heading">#</a></h4>
+<p><em>Show the AI exactly what you want!</em></p>
+<p><strong>Example:</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;Write animal facts in this format:
+🐘 Elephants: These gentle giants can weigh up to 6 tons and have amazing memories!
+🦁 Lions: Known as the king of the jungle, they actually live in grasslands!
+
+Now do the same for: dolphins, penguins, and butterflies&quot;
+</pre></div>
+</div>
+</section>
+<section id="ask-for-explanations">
+<h4>3.3.2 🔍 Ask for Explanations<a class="headerlink" href="#ask-for-explanations" title="Link to this heading">#</a></h4>
+<p><em>Don’t just get answers - understand the “why”!</em></p>
+<p><strong>Examples:</strong></p>
+<ul class="simple">
+<li><p>“Don’t just tell me the answer - explain why 2+2=4”</p></li>
+<li><p>“Explain your reasoning behind this recommendation”</p></li>
+</ul>
+<p>When you ask AI to explain and reflect on its own answer, it tend to correct the mistakes it makes if there is any.</p>
+</section>
+<section id="use-fun-analogies">
+<h4>3.3.3 🍳 Use Fun Analogies<a class="headerlink" href="#use-fun-analogies" title="Link to this heading">#</a></h4>
+<p><em>Make complex things simple with comparisons!</em></p>
+<p><strong>Examples:</strong></p>
+<ul class="simple">
+<li><p>“Explain DNA using LEGO building blocks”</p></li>
+<li><p>“Compare the internet to a giant library”</p></li>
+</ul>
+</section>
+<section id="ask-for-alternatives">
+<h4>3.3.4 🎨 Ask for Alternatives<a class="headerlink" href="#ask-for-alternatives" title="Link to this heading">#</a></h4>
+<p><em>Get multiple options to choose from!</em></p>
+<p><strong>Examples:</strong></p>
+<ul class="simple">
+<li><p>“Show me 3 different ways to solve this math problem”</p></li>
+<li><p>“Give me 5 creative project ideas about butterflies”</p></li>
+</ul>
+</section>
+</section>
+<section id="communication-tips">
+<h3>3.4 Communication Tips<a class="headerlink" href="#communication-tips" title="Link to this heading">#</a></h3>
+<section id="set-clear-constraints">
+<h4>3.4.1 📏 Set Clear Constraints<a class="headerlink" href="#set-clear-constraints" title="Link to this heading">#</a></h4>
+<p><em>Give the AI specific rules to follow!</em></p>
+<p><strong>Examples:</strong></p>
+<ul class="simple">
+<li><p>“Explain this using only words a 10-year-old would know”</p></li>
+<li><p>“Write a story that’s exactly 100 words”</p></li>
+</ul>
+</section>
+<section id="be-polite-it-really-helps">
+<h4>3.4.2 😊 Be Polite (It Really Helps!)<a class="headerlink" href="#be-polite-it-really-helps" title="Link to this heading">#</a></h4>
+<p><em>Good manners work with AI too!</em></p>
+<img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3Z3diMjJnZjFvMHhhZmNjNmh0ODJlbjZ2cm9hMGEwYXhranphN2VqdSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/jLKvwWHIXUS4/giphy.gif" alt="please" style="width: 60%; height: auto;">
+<p><strong>Examples:</strong></p>
+<ul class="simple">
+<li><p>“Please explain what stars are made of”</p></li>
+<li><p>“Could you help me understand fractions?”</p></li>
+<li><p>“Thank you! Could you give me one more example?”</p></li>
+</ul>
+</section>
+<section id="be-super-specific">
+<h4>3.4.3 🎯 Be Super Specific<a class="headerlink" href="#be-super-specific" title="Link to this heading">#</a></h4>
+<p><em>The more details you give, the better the answer!</em></p>
+<p><strong>Examples:</strong></p>
+<ul class="simple">
+<li><p>❌ “Help with science”</p></li>
+<li><p>✅ “I’m studying the water cycle for 6th grade science. Can you explain evaporation in simple terms?”</p></li>
+<li><p>❌ “Write a story”</p></li>
+<li><p>✅ “Write a 200-word adventure story about a kid who discovers a secret door in their school library”</p></li>
+</ul>
+</section>
+</section>
+<section id="context-management">
+<h3>3.5 Context Management<a class="headerlink" href="#context-management" title="Link to this heading">#</a></h3>
+<section id="start-new-chats-for-big-tasks">
+<h4>3.5.1 🤯 Start New Chats for Big Tasks<a class="headerlink" href="#start-new-chats-for-big-tasks" title="Link to this heading">#</a></h4>
+<p><em>AI can be overwhelmed by large amounts of information &amp; get lost if the conversation gets too long</em></p>
+<p>Start a new chat when your conversation gets really long (20+ messages) to keep the AI focused!</p>
+</section>
+<section id="build-on-previous-answers">
+<h4>3.5.2 🏗️ Build on Previous Answers<a class="headerlink" href="#build-on-previous-answers" title="Link to this heading">#</a></h4>
+<p><em>Keep the conversation going!</em></p>
+<p><strong>Examples:</strong></p>
+<ul class="simple">
+<li><p>“That’s great! Now can you give me a harder example?”</p></li>
+<li><p>“Can you make this explanation simpler?”</p></li>
+<li><p>“I understand that part. What about…?”</p></li>
+</ul>
+</section>
+</section>
+<section id="the-magic-formula">
+<h3>3.6 ✨ The Magic Formula<a class="headerlink" href="#the-magic-formula" title="Link to this heading">#</a></h3>
+<p><strong>Context + Clear Request + Specific Format + Politeness = Amazing Results!</strong></p>
+<p>🎯 <strong>Remember:</strong></p>
+<ul class="simple">
+<li><p><strong>Start fresh:</strong> New chat for new big topics</p></li>
+<li><p><strong>Be patient:</strong> Good prompts take practice</p></li>
+<li><p><strong>Experiment:</strong> Try different approaches</p></li>
+<li><p><strong>Have fun:</strong> The best learning happens when you’re enjoying yourself!</p></li>
+</ul>
+<p><em>Happy prompting, future AI wizards! 🧙‍♂️✨</em></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="verifying-ai-code-quality">
+<h2>4. Verifying AI Code Quality<a class="headerlink" href="#verifying-ai-code-quality" title="Link to this heading">#</a></h2>
+<section id="why-check-ai-code">
+<h3>4.1 🔍 Why Check AI Code?<a class="headerlink" href="#why-check-ai-code" title="Link to this heading">#</a></h3>
+<p><em>Because even AI makes mistakes sometimes! Here’s how to be a code detective 🕵️‍♂️</em></p>
+<p>Just like you double-check your math homework, you should double-check AI code! Even smart AI can make tiny mistakes or misunderstand what you wanted.</p>
+</section>
+<section id="verification-methods">
+<h3>4.2 Verification Methods<a class="headerlink" href="#verification-methods" title="Link to this heading">#</a></h3>
+<section id="ask-two-different-ai-models">
+<h4>4.2.1 🤖 Ask Two Different AI Models<a class="headerlink" href="#ask-two-different-ai-models" title="Link to this heading">#</a></h4>
+<p><em>Get a second opinion, just like asking two teachers!</em></p>
+<p><strong><a class="reference external" href="https://lmarena.ai/">LMArena</a></strong> would be a great platform to do so!</p>
+<p><strong>How to do it:</strong></p>
+<ul class="simple">
+<li><p>Ask ChatGPT: “Create R code to make a bar chart of favorite ice cream flavors”</p></li>
+<li><p>Ask Claude: “Create R code to make a bar chart of favorite ice cream flavors”</p></li>
+<li><p>Compare the answers - are they similar? Do they both make sense?</p></li>
+</ul>
+</section>
+<section id="create-test-data">
+<h4>4.2.2 🧪 Create Test Data<a class="headerlink" href="#create-test-data" title="Link to this heading">#</a></h4>
+<p><em>Make fake data to see if your code actually works!</em></p>
+<p><strong>Step 1: Ask AI to create simple test data</strong></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;Create a simple data frame in R with 5 students, their names, </span>
+<span class="s">ages (between 10-15), and favorite colors. Call it &#39;test_data&#39;&quot;</span>
+</pre></div>
+</div>
+<p><strong>Step 2: Test your code with this data</strong></p>
+</section>
+<section id="team-up-two-ai-models">
+<h4>4.2.3 🎭 Team Up Two AI Models<a class="headerlink" href="#team-up-two-ai-models" title="Link to this heading">#</a></h4>
+<p><em>Have one AI write code, another AI check it!</em></p>
+<p><strong>The Process:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>AI #1 (The Coder):</strong> Write the code</p></li>
+<li><p><strong>AI #2 (The Checker):</strong> Review and explain the code</p></li>
+</ol>
+</section>
+<section id="simple-testing-tricks">
+<h4>4.2.4 🔬 Simple Testing Tricks<a class="headerlink" href="#simple-testing-tricks" title="Link to this heading">#</a></h4>
+<p><strong>Method 1: The “Does it Run?” Test</strong>
+Copy the code and see if it runs without errors!</p>
+<p><strong>Method 2: The “Does it Make Sense?” Test</strong>
+Ask yourself logical questions about the expected output</p>
+<p><strong>Method 3: The “Explain It Back” Test</strong>
+Ask the AI: “Explain what this code does line by line”</p>
+</section>
+</section>
+<section id="professional-testing-advanced-concept">
+<h3>4.3 💼 Professional Testing (Advanced Concept)<a class="headerlink" href="#professional-testing-advanced-concept" title="Link to this heading">#</a></h3>
+<p><strong>Professional data scientists write functions</strong> and create <strong>unit tests</strong> to thoroughly test every piece of code they write.</p>
+<p><strong>What are unit tests?</strong> 🧪</p>
+<ul class="simple">
+<li><p>Small tests that check if each part of your code works correctly</p></li>
+<li><p>Professional data scientists write these tests to catch bugs before they cause problems</p></li>
+<li><p><strong>Test-Driven Development:</strong> Write tests <em>before</em> writing the actual code!</p></li>
+</ul>
+<p>💡 <strong>Professional Tip:</strong> Real data scientists spend a large amount of their time writing tests! It saves huge amounts of time by catching errors early.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="key-messages">
+<h2>5. Key Messages<a class="headerlink" href="#key-messages" title="Link to this heading">#</a></h2>
+<section id="remember-you-are-the-boss">
+<h3>5.1 👑 Remember you are the boss!<a class="headerlink" href="#remember-you-are-the-boss" title="Link to this heading">#</a></h3>
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeThhcGNoMmR3dGNsNjNsamo0eDZscjFnbGF3M3hscnBhY3luM2VoNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/hpR27uz9Nk3M9SFPSu/giphy.gif" alt="boss" style="width: 60%; height: auto;">
+<p>The key message I want to emphasize is that:</p>
+<p><strong>⚡️ You want to be the boss of AI, not the other way around.</strong></p>
+<p>AI can only be your copilot, but you are the main pilot who needs to be ready to take over manual control at any time if the plane ✈️ is not flying in the right direction.</p>
+<p>Here’s the good news and the bad news:</p>
+<ul class="simple">
+<li><p><strong>😱 The bad news:</strong> From now on, it’s all up to you. Nobody else can watch over your shoulder all the time.</p></li>
+<li><p><strong>🎉 The good news:</strong> It is all UP TO YOU! You have full control of what kind of data scientist you want to be in the next year.</p></li>
+</ul>
+<p>Taking shortcuts might feel like you’re moving fast in the short term 🏃‍♂️, but you could get lost in the woods 🌲🤷‍♀️ and end up at the wrong destination. Learning about the fundamentals will allow you to shine hundreds of times brighter ✨ when you collaborate with AI.</p>
+<p>I’m a very heavy user of AI, I try different tools for fun, and integrate AI into every aspect of my workflow. We can learn and explore together, holding each other accountable for collaborating with AI in a responsible way.</p>
+<a class="reference internal image-reference" href="../_images/messages.png"><img alt="messages" src="../_images/messages.png" style="width: 100%;" />
+</a>
+</section>
+<section id="code-is-cheap-show-me-the-talk">
+<h3>5.2 💬✨ Code is cheap, show me the talk.<a class="headerlink" href="#code-is-cheap-show-me-the-talk" title="Link to this heading">#</a></h3>
+<p>The famous quote “Talk is cheap. Show me the code” 💻 by Linus Torvalds in 2000 reflected the era when coding was the bottleneck—when having the technical skills to implement ideas was the scarce resource.</p>
+<p>But in 2025, with AI as our coding companion 🤖, the paradigm has shifted:</p>
+<p><strong>💡 “Code is cheap, show me the talk.”</strong></p>
+<p>In the age of AI:</p>
+<ul class="simple">
+<li><p>🏭 <strong>Code generation is becoming commoditized</strong> - AI can write code from simple prompts</p></li>
+<li><p>💭 <strong>Communication and problem-solving skills are now the differentiators</strong></p></li>
+<li><p>🤔 <strong>The ability to articulate problems, requirements, and solutions clearly</strong> becomes your superpower</p></li>
+<li><p>🎯 <strong>Understanding what to build and why</strong> matters more than just knowing how to build it</p></li>
+</ul>
+<p>Your ability to <strong>talk through problems, explain concepts, and communicate with both humans and AI</strong> will determine your success in the AI era. 🚀</p>
+<a class="reference internal image-reference" href="../_images/talk.png"><img alt="talk" src="../_images/talk.png" style="width: 70%;" />
+</a>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chapter_4_t2i.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">🎨 Chapter 6: Text-to-Image (T2I) Models</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="chapter_6_ai_books.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">📚 Chapter 5: AI Book Recommendations</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-ai">1. What is AI?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definition-from-experts">1.1 Definition from Experts</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-power-of-system-prompts">2. The Power of System Prompts</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#system-prompts-as-your-ai-navigator">2.1 📝 System Prompts as Your AI Navigator</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prompt-engineering-techniques">3. Prompt Engineering Techniques</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#think-and-plan">3.1 Think and plan</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-ai-to-think-step-by-step">3.1.1 🧠 Ask AI to Think Step by Step</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#give-ai-time-to-think">3.1.2 ⏰ Give AI Time to Think</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#plan-before-execute">3.1.3 🤔 Plan before execute</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#give-ai-a-persona-role-play">3.1.4 🎭 Give AI a Persona (Role-Play!)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structured-communication">3.2 Structured Communication</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#use-structured-formats">3.2.1 📋 Use Structured Formats</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-questions-in-json-format">3.2.2 🤓 Ask Questions in JSON Format</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-alternatives">3.3 Examples &amp; alternatives</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#provide-clear-examples">3.3.1 📚 Provide Clear Examples</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-for-explanations">3.3.2 🔍 Ask for Explanations</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#use-fun-analogies">3.3.3 🍳 Use Fun Analogies</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-for-alternatives">3.3.4 🎨 Ask for Alternatives</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#communication-tips">3.4 Communication Tips</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#set-clear-constraints">3.4.1 📏 Set Clear Constraints</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#be-polite-it-really-helps">3.4.2 😊 Be Polite (It Really Helps!)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#be-super-specific">3.4.3 🎯 Be Super Specific</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#context-management">3.5 Context Management</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#start-new-chats-for-big-tasks">3.5.1 🤯 Start New Chats for Big Tasks</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#build-on-previous-answers">3.5.2 🏗️ Build on Previous Answers</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-magic-formula">3.6 ✨ The Magic Formula</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verifying-ai-code-quality">4. Verifying AI Code Quality</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-check-ai-code">4.1 🔍 Why Check AI Code?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verification-methods">4.2 Verification Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-two-different-ai-models">4.2.1 🤖 Ask Two Different AI Models</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#create-test-data">4.2.2 🧪 Create Test Data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#team-up-two-ai-models">4.2.3 🎭 Team Up Two AI Models</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-testing-tricks">4.2.4 🔬 Simple Testing Tricks</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#professional-testing-advanced-concept">4.3 💼 Professional Testing (Advanced Concept)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-messages">5. Key Messages</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remember-you-are-the-boss">5.1 👑 Remember you are the boss!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#code-is-cheap-show-me-the-talk">5.2 💬✨ Code is cheap, show me the talk.</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Sky Sheng
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

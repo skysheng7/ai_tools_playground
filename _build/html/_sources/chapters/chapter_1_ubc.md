@@ -1,6 +1,8 @@
 # ⛑️ Chapter 1: UBC AI Policies & Approved Tools
 
-<img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3MngzNnRhN3lzNmhrd3Mxb2hhM200bThiaGN0YXh2bXVlNWdtZm0xYiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/26FPwppc3RioM4z6w/giphy.gif" alt="Hello GIF" style="width: 100%; height: auto;">
+<img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDZ3bXN5ZHdjczNobWV3M3hqb2c2bHQ5YTltN245ZW9zM2RsbzV2cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZLMptAeMiwGbe/giphy.gif" alt="ai" style="width: 100%; height: auto;">
+
+
 
 ---
 
