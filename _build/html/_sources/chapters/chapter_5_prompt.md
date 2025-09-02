@@ -332,3 +332,5 @@ Your ability to **talk through problems, explain concepts, and communicate with 
 :alt: talk
 :width: 70%
 ```
+
+*Note: This image was generated using OpenAI GPT-5*

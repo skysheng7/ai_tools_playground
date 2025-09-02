@@ -103,6 +103,7 @@ How is AI's algorithms and programming different or similar to animals' cognitiv
 - How should AI be programmed towards its treatment with animals?
 
 > "👨🏻‍🌾 `Roz, you're a farmer now, and sometimes farmers have to kill animals!` It was the first time Mr.Shareef had ever yelled at Roz... `My farm and my family are in danger! Roz, I order you to kill those wolves!`" 
+
 > "🤖 `I cannot follow that order because I am not programmed to be violent.`"  {cite}`Brown2018WildRobotEscapes`
 
 ---
