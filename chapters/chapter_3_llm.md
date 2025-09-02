@@ -32,11 +32,6 @@
 
 Here is an [otter game](https://claude.ai/public/artifacts/5e040757-5e52-4b89-9b8a-dbedb90e07e3) that I created just for fun, using the free tier of Claude and Opus 4.1 model.
 
-```{image} ../images/otter_game.png
-:alt: otter
-:width: 60%
-```
-
 You can see the process in this [video](https://youtu.be/CQr79gKsy64).
 
 Prompt I used:
