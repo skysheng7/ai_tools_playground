@@ -1,4 +1,4 @@
-# 🎨 Chapter 6: Text-to-Image (T2I) Models
+# 🎨 Chapter 4: Text-to-Image (T2I) Models
 
 *Note: All GenAI tools & models demonstrated below are NOT recommended by UBC due to privacy and safety reasons (but you are NOT restricted from using them)*
 

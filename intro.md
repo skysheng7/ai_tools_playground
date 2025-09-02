@@ -22,6 +22,8 @@ This repository includes a list of AI tools you could try. It covers introductio
 :width: 100%
 ```
 
+*Note: This image was generated using OpenAI GPT-5*
+
 ## 👐 Acknowledgement
 
 Many images used in this tutorial is created using OpenAI's GPT-5. The GIFs used are referenced from the [Giphy website](https://giphy.com/)

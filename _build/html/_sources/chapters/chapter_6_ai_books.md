@@ -1,4 +1,4 @@
-# 📚 Chapter 5: AI Book Recommendations
+# 📚 Chapter 6: AI Book Recommendations
 
 <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZHlrZ292MXN2YmlqYmJnODliaHl4NjU4YmdydzFud2J1cDZ2dDI0YiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/g2lH60ZcvUGL6/giphy.gif" alt="hello_penguine" style="width: 60%; height: auto;">
 ---
@@ -105,5 +105,3 @@ How is AI's algorithms and programming different or similar to animals' cognitiv
 > "👨🏻‍🌾 `Roz, you're a farmer now, and sometimes farmers have to kill animals!` It was the first time Mr.Shareef had ever yelled at Roz... `My farm and my family are in danger! Roz, I order you to kill those wolves!`" 
 
 > "🤖 `I cannot follow that order because I am not programmed to be violent.`"  {cite}`Brown2018WildRobotEscapes`
-
----
