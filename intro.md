@@ -15,7 +15,7 @@ This repository includes a list of AI tools you could try. It covers introductio
 - GitHub: [@skysheng7](https://github.com/skysheng7)
 - Project: [ai_tools_playground](https://github.com/skysheng7/ai_tools_playground)
 
-```{image} ../images/sky_bg.png
+```{image} images/sky_bg.png
 :alt: sky background
 :width: 100%
 ```
