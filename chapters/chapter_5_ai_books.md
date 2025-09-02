@@ -9,7 +9,7 @@
 
 ```{image} ../images/unmasking_ai.png  
 :alt: unmasking_ai
-:width: 60%
+:width: 100%
 ```
 
 > "AI reflects both the aspirations and the limitations of its makers." {cite}`Buolamwini2023UnmaskingAI`
