@@ -3,7 +3,17 @@
 
 title: AI Tools & Prompt Engineering for Data Science
 author: Sky Sheng
+copyright: "2025"
+only_build_toc_files: true # only build the files listed under _toc.yml
 logo: images/logo3.png
+
+# Exclude directories and files from build
+exclude_patterns:
+  - .virtual_documents/**
+  - .ipynb_checkpoints/**
+  - _build/**
+  - .github/**
+  - .cursor/**
 
 # Information about where the book exists on the web
 repository:
@@ -23,3 +33,17 @@ parse:
     - linkify
     - substitution
     - tasklist
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: ai_tools_playground.tex
+
+# add a bibtex file so that we can create citations
+bibtex_bibfiles:
+  - references/references.bib
+
+# For citation style
+sphinx:
+  config:
+    bibtex_reference_style: author_year

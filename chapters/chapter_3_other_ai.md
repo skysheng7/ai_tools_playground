@@ -132,6 +132,10 @@
 
 ### 5.1 Cursor: IDE-Based Solutions
 
+*💡 What is Cursor IDE?**
+[Cursor](https://cursor.com/agents) is an advanced code editor where AI agents helps you write code in real-time! It's like having a super-smart coding partner sitting next to you.
+
+
 ```{image} ../images/cursor.png
 :alt: cursor
 :width: 100%
@@ -160,6 +164,10 @@ This is a perfect example of how AI can serve as an additional safety net - even
 **Key Takeaway**: AI tools like bugbot don't replace good testing practices, but they add an extra layer of code review that can catch what humans and tests miss! 🛡️
 
 #### 5.1.2 🎥 Demo: System Prompts + GitHub Pages Tutorial
+
+**💡 What is a System Prompt?**
+A system prompt is like giving the AI a "personality" or "role" before it starts helping you. It's like telling someone "You are now a cooking teacher" before asking cooking questions!
+
 
 **Watch the Demo**: [System Prompt Guided Web Development](https://youtu.be/OCFxZeypj2w) 📹
 
@@ -235,8 +243,14 @@ AI tools will **shine hundreds of times brighter** ✨ when collaborating with y
 
 ### 6.1 NotebookLM
 
+**💡 What is NotebookLM?**
+[NotebookLM](https://notebooklm.google.com/) is Google's AI-powered research assistant that can read your documents, notes, and sources to create summaries, answer questions, and even generate study guides!
 
-- **Website**: [https://notebooklm.google.com](https://notebooklm.google.com)
+**🎈 Amazing Features:**
+- **Document Chat:** Ask questions about specific documents (PDFs, text files, websites, and more) you've uploaded
+- **Source Synthesis:** Knows all your sources and can connect ideas across them. Combines information from multiple sources
+- **Study Guide Creation:** Automatically creates organized notes and summaries
+- **Audio Overviews:** Generates engaging podcast conversations about your content!
 - **Free to use**
 - Helps with document comprehension and analysis
 - Upload documents and chat with them
@@ -255,11 +269,19 @@ Below is an example usecase of notebookLM: [https://notebooklm.google.com/notebo
 
 ### 7.1 Perplexity
 
-- **Website**: [https://www.perplexity.ai](https://www.perplexity.ai)
+**💡 What is Perplexity?**
+[Perplexity](https://www.perplexity.ai/) is like a super-smart search engine that reads the internet and gives you answers with sources, perfect for research!
+
+**🔍 How is Perplexity Different from Google?**
+- **Google:** Shows you links to websites
+- **Perplexity:** Reads those websites and summarizes the answer for you
+- **Perplexity** provides sources and citations for answers
+- **Perplexity** is great for research and fact-checking
+
+Perplexity subscriptions:
 - **Free tier**: 3 questions per day
 - **Pro version**: $20 USD/month for unlimited questions
-- Provides sources and citations for answers
-- Great for research and fact-checking
+
 
 Below is an example usecase of perplexity: [https://www.perplexity.ai/search/you-are-an-expert-software-eng-RPxbHEJKTzO064CJ86yZOA](https://www.perplexity.ai/search/you-are-an-expert-software-eng-RPxbHEJKTzO064CJ86yZOA)
 
@@ -270,96 +292,5 @@ Below is an example usecase of perplexity: [https://www.perplexity.ai/search/you
 
 ---
 
-## 8. Prompt Engineering Tips
-
-### 8.1 📝 The Power of Note-Taking & System Prompts
-
-Who loves taking notes, organizing class notes? 🙋‍♀️
-
-🎯 **The Power of System Prompts** 
-
-AI can get lost in the woods with too much information it reads all over the internet. System prompts allow the AI agent to focus on solving specific tasks with best practices.
-
-🧭 System prompts allow **you to be the guide for AI** - you become the navigator! 
-
-**💡 Pro Tip:**
-- When you learn a new concept or workflow, write notes for yourself
-- **But also design system prompts for AI** 
-- This highlights the importance of **communication skills with humans AND with AI** → prompt engineering! 
-
-**⚠️ Always fact-check against textbooks or credible resources** - AI can hallucinate!
-
-### 8.2 Core Techniques
-
-- **Ask AI to think step by step** - Break down complex problems
-- **Give AI time to think** - "Take your time and think carefully before answering"
-- **Use structured formats** - Request JSON, numbered lists, or bullet points for answers
-- **Give AI a persona** - "You are an expert data scientist with 20 years of experience"
-
-### 8.3 Best Practices
-
-- **Provide clear examples** - Show exactly what format or style you want
-- **Ask for explanations** - Don't just get answers, ask about the "why" behind them
-- **Use fun analogies** - "Explain MCP using LEGO building blocks"
-- **Ask for alternatives** - Get multiple options: "Show me 3 different ways to solve this"
-
-### 8.4 Communication Tips
-
-- **Set clear constraints** - "You can only answer in 200 words"
-- **Be polite** - Good manners really do help! Say "please" and "thank you"
-- **Be super specific** - More details = better answers
-- **Ask questions in JSON format** - AI loves structured requests
-
-### 8.5 Context Management
-
-- **Manage context window** - Start new chats for big tasks
-- **Avoid overwhelming AI** - AI can get overwhelmed with 20+ messages
-
 ![Code Order Magic](https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3c2ZmZXRwbHhsdmhuazU5Ym9xZGNwcWhibHFka2Z5eG9lOHJpcWhxYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/hEIuLmpW9DmGA/giphy.gif)
 
----
-
-## 9. Key Messages
-
-### 9.1 👑 Remember you are the boss! 
-
-The key message I want to emphasize is that:
-
-**⚡️ You want to be the boss of AI, not the other way around.**
-
-AI can only be your copilot, but you are the main pilot who needs to be ready to take over manual control at any time if the plane ✈️ is not flying in the right direction.
-
-Here's the good news and the bad news:
-
-- **😱 The bad news:** From now on, it's all up to you. Nobody else can watch over your shoulder all the time.
-- **🎉 The good news:** It is all UP TO YOU! You have full control of what kind of data scientist you want to be in the next year.
-
-Taking shortcuts might feel like you're moving fast in the short term 🏃‍♂️, but you could get lost in the woods 🌲🤷‍♀️ and end up at the wrong destination. Learning about the fundamentals will allow you to shine hundreds of times brighter ✨ when you collaborate with AI.
-
-I'm a very heavy user of AI, I try different tools for fun, and integrate AI into every aspect of my workflow. We can learn and explore together, holding each other accountable for collaborating with AI in a responsible way.
-
-```{image} ../images/messages.png
-:alt: messages
-:width: 100%
-```
-
-### 9.2 💬✨ Code is cheap, show me the talk. 
-
-The famous quote "Talk is cheap. Show me the code" 💻 by Linus Torvalds in 2000 reflected the era when coding was the bottleneck—when having the technical skills to implement ideas was the scarce resource.
-
-But in 2025, with AI as our coding companion 🤖, the paradigm has shifted:
-
-**💡 "Code is cheap, show me the talk."** 
-
-In the age of AI:
-- 🏭 **Code generation is becoming commoditized** - AI can write code from simple prompts
-- 💭 **Communication and problem-solving skills are now the differentiators**
-- 🤔 **The ability to articulate problems, requirements, and solutions clearly** becomes your superpower
-- 🎯 **Understanding what to build and why** matters more than just knowing how to build it
-
-Your ability to **talk through problems, explain concepts, and communicate with both humans and AI** will determine your success in the AI era. 🚀
-
-```{image} ../images/talk.png
-:alt: talk
-:width: 70%
-```
