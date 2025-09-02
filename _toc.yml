@@ -8,9 +8,10 @@ parts:
   chapters:
   - file: chapters/chapter_1_ubc
   - file: chapters/chapter_2_copilot_demo 
-  - file: chapters/chapter_3_other_ai
-  - file: chapters/chapter_4_prompt
-  - file: chapters/chapter_5_ai_books
+  - file: chapters/chapter_3_llm
+  - file: chapters/chapter_4_t2i
+  - file: chapters/chapter_5_prompt
+  - file: chapters/chapter_6_ai_books
 - caption: "Technical Setup Guides"
   chapters:
   - file: setup/claude-setup

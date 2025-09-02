@@ -289,6 +289,9 @@ Ask the AI: "Explain what this code does line by line"
 
 ### 5.1 👑 Remember you are the boss! 
 
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeThhcGNoMmR3dGNsNjNsamo0eDZscjFnbGF3M3hscnBhY3luM2VoNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/hpR27uz9Nk3M9SFPSu/giphy.gif" alt="boss" style="width: 60%; height: auto;">
+
+
 The key message I want to emphasize is that:
 
 **⚡️ You want to be the boss of AI, not the other way around.**

@@ -5,7 +5,7 @@
 <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnV0YzFleHFjNjMyemxzc2M5emkwZTl6cmMyeTl5NW1sYWFsZnZzMSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/50WoQ8JdjyqzhxpBjP/giphy.gif" alt="surprise" style="width: 60%; height: auto;">
 
 
-## 1. Common large language models & interface
+## 1. Common large language models (LLM) & interface
 
 ### 1.1 Anthropic Claude
 
@@ -97,7 +97,6 @@
 :alt: arena
 :width: 100%
 ```
-
 
 [Text-to-image arena](https://lmarena.ai/?chat-modality=image) uses the same logic, but it is a battle field for different text-to-image generative models.
 

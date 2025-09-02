@@ -1,6 +1,6 @@
 # 📚 Chapter 5: AI Book Recommendations
 
-<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDlkdXZvdmRsZTVpY2RqNnJwcTRsNnd3eWszbmxrcGlhZzJ2c2I1biZlcD12MV9naWZzX3NlYXJjaCZjdD1n/Cmr1OMJ2FN0B2/giphy.gif" alt="hello_penguine" style="width: 40%; height: auto;">
+<img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZHlrZ292MXN2YmlqYmJnODliaHl4NjU4YmdydzFud2J1cDZ2dDI0YiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/g2lH60ZcvUGL6/giphy.gif" alt="hello_penguine" style="width: 60%; height: auto;">
 ---
 
 ## 1. "Unmasking AI: My Mission to Protect What Is Human in a World of Machines"
@@ -66,11 +66,19 @@ This groundbreaking book by MIT researcher Dr. Joy Buolamwini exposes the hidden
 :width: 60%
 ```
 
+- This is the sequal (volume 2) of the original book "The Wild Robot" which is now a movie too.
+
+<img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3bjNvem5kYmN0bnM4OWdncDFmMWdtZHRmbGkwd2lqZHJmcW41NmZlciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/1EZYVwO4tDVYfbQauo/giphy.gif" alt="duck" style="width: 70%; height: auto;">
+
 ### 2.1 Why This Book Is Special
 
 This beautifully illustrated novel explores themes of artificial intelligence, consciousness, and what it means to be "alive" through the story of a robot who learns to survive in the wild. It's perfect for readers of all ages who want to think about AI in a more emotional and philosophical way.
 
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzc4ODgxMmVuOTA3YWIxZTQzbmY0dmNqYTFldHkzeHgxcjNlbHM1OCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/h7MVMdzWDfNdxscGVe/giphy.gif" alt="fly" style="width: 90%; height: auto;">
+
 How is AI's algorithms and programming different or similar to animals' cognitive "algorithms" and "programming"?
+
+<img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3Z3Rkd2MxZGI3ZGlvNmxveGJvOHo1ZGFiYnJtanJjdDk5N25rbGtwMiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/08KoslGrHCwctXi8nf/giphy.gif" alt="robot_runing" style="width: 90%; height: auto;">
 
 ### 2.2 Key Themes
 
@@ -79,8 +87,22 @@ How is AI's algorithms and programming different or similar to animals' cognitiv
 - How do we define life and intelligence?
 - What happens when AI learns to care?
 
+<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzc4ODgxMmVuOTA3YWIxZTQzbmY0dmNqYTFldHkzeHgxcjNlbHM1OCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/CQtWzraU5CSIjDxxkL/giphy.gif" alt="hug" style="width: 90%; height: auto;">
+
 **🌿 Nature & Technology**
-- The author imagined the future of AI, being used for dairy farming
+- The author imagined the future of AI, the robot speaks the lanaguge of the animals, and is being used for dairy farming
+
+> "...the entire farm was equipped with technology that made life easier for everyone. Doors and gates opened automatically. The cows wore electronic collars that kept track of their health automatically. When a cow's udders were full, she simply had to stroll into the parlor, where she'll be milked by gentle machines automatically" {cite}`Brown2018WildRobotEscapes`
+
 - The AI depiction is very futuristic, while the description of dairy farming is very historical (i.e., cows on pasture, with their calves)
+
+> "...sprawling, rolling pasture, lush with tall grass and a few leafy trees, where a herd of cows was grazing. The cows swished their tails and chewed their cud..." {cite}`Brown2018WildRobotEscapes`
+
+> "Roz was more content than she had ever expected to be. Most of her time was spent outdoors, with animals, under the wide-open sky." {cite}`Brown2018WildRobotEscapes`
+
+- How should AI be programmed towards its treatment with animals?
+
+> "👨🏻‍🌾 `Roz, you're a farmer now, and sometimes farmers have to kill animals!` It was the first time Mr.Shareef had ever yelled at Roz... `My farm and my family are in danger! Roz, I order you to kill those wolves!`" 
+> "🤖 `I cannot follow that order because I am not programmed to be violent.`"  {cite}`Brown2018WildRobotEscapes`
 
 ---
