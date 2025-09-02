@@ -1,6 +1,7 @@
 # 📚 Chapter 6: AI Book Recommendations
 
 <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZHlrZ292MXN2YmlqYmJnODliaHl4NjU4YmdydzFud2J1cDZ2dDI0YiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/g2lH60ZcvUGL6/giphy.gif" alt="hello_penguine" style="width: 60%; height: auto;">
+
 ---
 
 ## 1. "Unmasking AI: My Mission to Protect What Is Human in a World of Machines"
