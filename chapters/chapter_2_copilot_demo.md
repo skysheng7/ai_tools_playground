@@ -61,5 +61,5 @@ Show how to call the prompt using `/`
 
 3. Show how the answer LLM give is wrong. --> Shows how it is important for you to know what you are doing.
 
-4. Ask LLM to **"explain the concepts of nvm, npm, node.js like I'm 5 years old. Please use analogies of animals."** --> Shows how LLM tailor explanation to yoru own interest.
+4. Ask LLM to **"explain the concepts of nvm, npm, node.js like I'm 5 years old. Please use analogies of animals."** --> Shows how LLM tailor explanation to your own interest.
 

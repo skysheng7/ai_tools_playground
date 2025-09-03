@@ -165,16 +165,12 @@ Prompt I used:
 
 **Personal Experience**: I use Cursor's **bugbot feature** that automatically checks my newly edited code in Pull Requests (PRs). 
 
-🐛 **Amazing Discovery**: The bugbot actually **spotted a bug that I did not catch after running 100 tests!** 
-
-This is a perfect example of how AI can serve as an additional safety net - even when your code passes all tests, AI can still catch logical errors, edge cases, or potential issues that traditional testing might miss.
-
-**Key Takeaway**: AI tools like bugbot don't replace good testing practices, but they add an extra layer of code review that can catch what humans and tests miss! 🛡️
+🐛 The bugbot actually **spotted a bug that I did not catch after running 100+ tests!** This is a perfect example of how AI can serve as an additional safety net - even when your code passes all tests, AI can still catch logical errors, edge cases, or potential issues that traditional testing might miss.
 
 #### 5.1.2 🎥 Demo: System Prompts + GitHub Pages Tutorial
 
 **💡 What is a System Prompt?**
-A system prompt is like giving the AI a "personality" or "role" before it starts helping you. It's like telling someone "You are now a cooking teacher" before asking cooking questions!
+A system prompt is a piece of text that set context, define the agents' persona, and guide the agents' behaviours, before it starts helping you. It's like telling someone "You are now a cooking teacher, only allowed to answer questions related to cooking" before asking cooking questions!
 
 
 **Watch the Demo**: [System Prompt Guided Web Development](https://youtu.be/Nt_WPfcwYZA) 
@@ -255,16 +251,14 @@ AI tools will **shine hundreds of times brighter** ✨ when collaborating with y
 [NotebookLM](https://notebooklm.google.com/) is Google's AI-powered research assistant that can read your documents, notes, and sources to create summaries, answer questions, and even generate study guides!
 
 **🎈 Amazing Features:**
-- **Document Chat:** Ask questions about specific documents (PDFs, text files, websites, and more) you've uploaded
+- **Document Chat:** Ask questions about specific documents that you upload(PDFs, text files, websites, and more) you've uploaded
 - **Source Synthesis:** Knows all your sources and can connect ideas across them. Combines information from multiple sources
-- **Study Guide Creation:** Automatically creates organized notes and summaries
+- **Study Guide Creation:** Automatically creates organized notes, mind maps, and summaries
 - **Audio Overviews:** Generates engaging podcast conversations about your content!
+- - **Video Overviews:** Creates a video presentation about the document you uploaded
 - **Free to use**
-- Helps with document comprehension and analysis
-- Upload documents and chat with them
-- Generate audio overviews and summaries
 
-Below is an example usecase of notebookLM: [https://notebooklm.google.com/notebook/16d16956-5cad-47b0-94ba-b33a353eb26c](https://notebooklm.google.com/notebook/16d16956-5cad-47b0-94ba-b33a353eb26c)
+Below is an example usecase of notebookLM: [a scientific review paper about how dairy cows change their behaviours when they are sick](https://notebooklm.google.com/notebook/16d16956-5cad-47b0-94ba-b33a353eb26c)
 
 ```{image} ../images/notebooklm.png
 :alt: notebook LM
@@ -274,6 +268,8 @@ Below is an example usecase of notebookLM: [https://notebooklm.google.com/notebo
 ---
 
 ## 7. AI-Based Search Engines
+
+*Most chatbot interface like ChatGPT, and Claude has enabled web search feature and will show you the link to source too if you ask for it.*
 
 ### 7.1 Perplexity
 

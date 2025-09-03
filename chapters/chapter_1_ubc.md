@@ -70,10 +70,6 @@ I do want to highlight that **this restriction only applies to applications, but
 - Downloading the model and using it locally is completely fine
 - The underlying open-source architecture is not considered high risk
 
-❌ **What is NOT allowed:**
-- Using DeepSeek applications (mobile, desktop, web/browser access)
-- Any DeepSeek applications on UBC-owned or personal devices used for university business
-
 #### 📋 Official UBC Policy
 
 As stated in UBC's official policy on Privacy Matters:
