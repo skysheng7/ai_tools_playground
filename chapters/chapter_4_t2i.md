@@ -16,10 +16,10 @@ Text-to-Image (T2I) models have revolutionized the way we create and edit visual
 
 #### GPT-5 
 - State-of-the-art T2I model for image generation and image editing
-- **Access**: Available through ChatGPT Plus subscription ($20/month)
+- **Access**: Available through [ChatGPT](https://chatgpt.com/) Plus subscription ($20/month)
 
 #### GPT-4o
-- **Access**: Available through ChatGPT Plus subscription ($20/month)
+- **Access**: Available through [ChatGPT](https://chatgpt.com/) Plus subscription ($20/month)
 - **Strengths**: Excellent prompt following and realistic image generation
 
 Here are some example output images from GPT-4o:
@@ -31,8 +31,8 @@ Here are some example output images from GPT-4o:
 
 ### 1.2 Google's Nano Banana (Gemini Flash 2.5)
 
-**💡 What is [Nano Banana](https://aistudio.google.com/?model=gemini-2.5-flash-image-preview)?**
-Google's latest AI image editing model, also known as **Gemini Flash 2.5**, has recently gone viral for its advanced image editing capabilities.
+**💡 What is Nano Banana?**
+[Nano Banana](https://aistudio.google.com/?model=gemini-2.5-flash-image-preview) is Google's latest AI image editing model, also known as **Gemini Flash 2.5**, has recently gone viral for its advanced image editing capabilities.
 
 <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGlxdHQ4emE1M2tjbTNnMG9kcWx3Nmh0YWZjMXA5NG4zdmRmazg0ciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/bh4jzePjmd9iE/giphy.gif" alt="banana" style="width: 80%; height: auto;">
 
@@ -41,26 +41,23 @@ Google's latest AI image editing model, also known as **Gemini Flash 2.5**, has 
 - **Advanced Editing**: Blur backgrounds, remove objects, modify poses
 - **Colorization**: Transform black-and-white photos into color
 - **Multi-image Combination**: Seamlessly blend multiple images
-- **Simple Instructions**: Works with natural language commands
-
-**Free access**: Available through the [Google Gemini](https://gemini.google.com)
+- **Free Access**
 
 
 ### 1.3 Midjourney
 
 **💡 What is Midjourney?**
-A popular AI program that generates images from textual descriptions, known for its artistic and creative outputs.
+[Midjourney](https://midjourney.com) is a  popular AI program that generates images from textual descriptions, known for its artistic and creative outputs.
 
 **🎨 Key Strengths:**
 - **Artistic Style**: Exceptional at creating artistic and stylized images
 - **Community**: Large community of digital artists and designers
-- **Quality**: High-quality, creative outputs
-- **Variety**: Wide range of artistic styles and aesthetics
+- **Quality**: High-quality, creative outputs, with wide range of artistic styles
+- Perfect for digital art creation, concept art and design
 
 **Access**: 
 - **Platform**: Discord-based interface
-- **Website**: [https://midjourney.com](https://midjourney.com)
-- **Pricing**: Subscription-based ($10-$60/month)
+- **Pricing**: Subscription-based ($10-60/month)
 
 Here are some example output images from Midjourney:
 
@@ -69,15 +66,10 @@ Here are some example output images from Midjourney:
 :width: 100%
 ```
 
-**🎯 Perfect For**: 
-- Digital art creation
-- Concept art and design
-- Creative and artistic projects
-
 ### 1.4 Stable Diffusion
 
 **💡 What is Stable Diffusion?**
-An open-source AI model capable of generating high-quality images from text prompts, offering flexibility and control.
+[Stable Diffusion](https://stability.ai) is an open-source AI model capable of generating high-quality images from text prompts, offering flexibility and control.
 
 **🔓 Key Advantages:**
 - **Open Source**: Free to use and modify
@@ -85,11 +77,7 @@ An open-source AI model capable of generating high-quality images from text prom
 - **Customization**: Fine-tune models for specific needs
 - **Control**: Advanced parameters for precise control
 - **Community**: Large open-source community and extensions
-
-**Access**: 
-- **Free**: Open-source model
-- **Platforms**: Multiple interfaces available (Automatic1111, ComfyUI, etc.)
-- **Website**: [https://stability.ai](https://stability.ai)
+- Perfect for developers, customized model training, local image generation
 
 
 Here are some example output images from Stable Diffusion:
@@ -98,12 +86,6 @@ Here are some example output images from Stable Diffusion:
 :alt: stable diffusion
 :width: 100%
 ```
-
-**🎯 Perfect For**: 
-- Developers and tech enthusiasts
-- Custom model training
-- Local/private image generation
-- Experimental projects
 
 ---
 
@@ -128,26 +110,18 @@ Here are some example output images from Stable Diffusion:
 4. Model names are revealed after voting
 5. Your votes contribute to the global rankings
 
-
-**💡 Pro Tips for Better Results:**
-- **Use LLM to describe image:** Use LLM (e.g., Claude, ChatGPT) to first generate a few ideas, or create a vivid description of the image you wish to generate, then use the well-crafted text description to generate the image
-- **Be Specific**: "A red sports car" vs "A bright red Ferrari 488 GTB parked on a mountain road at sunset"
-- **Include Style**: Add artistic style descriptions like "in the style of Van Gogh" or "photorealistic"
-- **Specify Details**: Mention lighting, composition, colors, and mood
-- **Experiment**: Try the same prompt multiple times to see variations
-
 ---
 
 ## 3. Choosing the Right T2I Model
 
 ### 3.1 Model Comparison
 
-| Model | Best For | Cost | Strengths | Access |
-|-------|----------|------|-----------|--------|
-| **GPT-4o/GPT-5** | General use, realistic images | $20/month | Prompt following, integration | ChatGPT Plus |
-| **Nano Banana** | Photo editing, character consistency | Free | Editing features, free access | Gemini app |
-| **Midjourney** | Artistic creation, creative projects | $10-60/month | Artistic quality, community | Discord |
-| **Stable Diffusion** | Customization, local use | Free | Open source, control | Various platforms |
+| Model | Best For | Cost | Access |
+|-------|----------|------|--------|
+| **GPT-4o/GPT-5** | General use, realistic images | $20/month | ChatGPT Plus |
+| **Nano Banana** | Photo editing, character consistency | Free | Google AI Studio |
+| **Midjourney** | Artistic creation, creative projects | $10-60/month | Discord |
+| **Stable Diffusion** | Customization, local use | Free | Various platforms |
 
 ### 3.2 Workflow Recommendations
 
@@ -163,25 +137,33 @@ Here are some example output images from Stable Diffusion:
 
 ---
 
-## 4. Ethical Considerations
+## 4. Tips for prompting for images
+
+- **Use LLM to describe image:** Use LLM (e.g., Claude, ChatGPT) to first generate a few ideas, or create a vivid description of the image you wish to generate, then use the well-crafted text description to generate the image
+- **Be Specific**: "A red sports car" is less effective than prompting "A bright red Ferrari 488 GTB parked on a mountain road at sunset"
+- **Include Style**: Add artistic style descriptions like "in the style of Van Gogh" or "photorealistic"
+- **Specify Details**: Mention lighting, composition, colors, and mood
+- **Experiment**: Try the same prompt multiple times to see variations
+
+
+---
+
+## 5. Ethical Considerations
 
 <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzdjeTdrcXJhNXlld2Vkc20yamtoMmU2bTE5b3JhOXJ0ZjlzamVyaCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/MDirxIJDu0372/giphy.gif" alt="look" style="width: 80%; height: auto;">
 
 
-### 4.1 Important Reminders
+### 5.1 Important Reminders
 
 ⚠️ **Lack of Consent from Artist**: Most of the training data used for developing these T2I models are images automatically scapped from the internet, without the consent from original artists who created them!
 
 ⚠️ **Copyright and Fair Use**: Be mindful of generating images in copyrighted styles or of copyrighted characters
 
-⚠️ **Deepfakes and Misinformation**: Avoid creating misleading or harmful content
-
-⚠️ **Attribution**: When sharing AI-generated art, consider mentioning it was AI-created
-
 ⚠️ **Commercial Use**: Check licensing terms before using generated images commercially
 
 ### 4.2 Responsible AI Art Creation
 
+- **Machine Unlearning**: Contribute to the [Machine Unlearning](https://www.ibm.com/think/insights/machine-unlearning) work and research where we can teach model to "forget" about some of its training data, if some artists or creators do not want their work to be used in training genAI
 - **Respect Artists**: Don't try to replicate living artists' exact styles without permission
 - **Be Transparent**: Disclose when content is AI-generated when appropriate
 - **Avoid Harmful Content**: Don't create images that could harm or mislead others

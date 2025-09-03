@@ -172,6 +172,16 @@ Prompt I used:
 **💡 What is a System Prompt?**
 A system prompt is a piece of text that set context, define the agents' persona, and guide the agents' behaviours, before it starts helping you. It's like telling someone "You are now a cooking teacher, only allowed to answer questions related to cooking" before asking cooking questions!
 
+🎯 **The Power of System Prompts** 
+
+AI can get lost in the woods with too much information it reads all over the internet. System prompts allow the AI agent to focus on solving specific tasks with best practices.
+
+🧭 System prompts allow you to be the guide for AI - you become the navigator! 
+
+**💡 Pro Tip:**
+- When you learn a new concept or workflow, write notes for yourself
+- The note you write can be turned into system prompts for AI
+- This highlights the importance of **communication skills with humans AND with AI** → prompt engineering! 
 
 **Watch the Demo**: [System Prompt Guided Web Development](https://youtu.be/Nt_WPfcwYZA) 
 

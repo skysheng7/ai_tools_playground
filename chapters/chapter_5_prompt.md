@@ -29,41 +29,24 @@
 
 **💡 Take home message:** The definitions of AI we listed above are just for your reference. Ultimately, YOU define what is AI for yourself!
 
----
-
-## 2. The Power of System Prompts
-
-### 2.1 📝 System Prompts as Your AI Navigator
-
-> 🙋‍♀️ Who loves taking notes, organizing class notes? 
-
-🎯 **The Power of System Prompts** 
-
-AI can get lost in the woods with too much information it reads all over the internet. System prompts allow the AI agent to focus on solving specific tasks with best practices.
-
-🧭 System prompts allow you to be the guide for AI - you become the navigator! 
-
-**💡 Pro Tip:**
-- When you learn a new concept or workflow, write notes for yourself
-- The note you write can be turned into system prompts for AI
-- This highlights the importance of **communication skills with humans AND with AI** → prompt engineering! 
-
-⚠️ Always fact-check against textbooks or credible resources - AI can hallucinate!
 
 ---
 
-## 3. Prompt Engineering Techniques
+## 2. Prompt Engineering Techniques
 
-### 3.1 Think and plan
+*⚠️ Always fact-check against textbooks or credible resources - AI can hallucinate!*
 
-#### 3.1.1 🧠 Ask AI to Think Step by Step
+
+### 2.1 Think and plan
+
+#### 2.1.1 🧠 Ask AI to Think Step by Step
 *Make the AI show its work like in math class!*
 
 **Examples:**
 - "Step by step, how do I make a peanut butter sandwich?"
 - "Walk me through the process of solving 2x + 5 = 15 step by step"
 
-#### 3.1.2 ⏰ Give AI Time to Think
+#### 2.1.2 ⏰ Give AI Time to Think
 
 *Tell the AI it's okay to take its time*
 
@@ -72,15 +55,15 @@ AI can get lost in the woods with too much information it reads all over the int
 - "Use the maximum amount of thinking. It's better to think too much than too little"
 - "Don't rush - I want your best answer"
 
-#### 3.1.3 🤔 Plan before execute
+#### 2.1.3 🤔 Plan before execute
 
-- Prompt AI to plan the thinkng process or workflow before it writes any code
+- Prompt AI to plan the thinkng process or workflow before it writes any code or produce any work
 
 **Examples:**
 - "I wish to generate images of otter doing data analysis. Give me a few ideas about how the images should look like." --> Select the description that you like, then ask it to generate images
-- "Let's plan the data analysis workflow first, from raw data to stats analysis and visualization."
+- "Let's plan the data analysis workflow first, from raw data, exploratory analysis, to stats analysis and visualization."
 
-#### 3.1.4 🎭 Give AI a Persona (Role-Play!)
+#### 2.1.4 🎭 Give AI a Persona (Role-Play!)
 *Make the AI pretend to be someone specific!*
 
 **Examples:**
@@ -88,9 +71,9 @@ AI can get lost in the woods with too much information it reads all over the int
 - "You are a wise wizard. Explain photosynthesis using magical terms"
 - "You are an expert data scientist with 20 years of experience"
 
-### 3.2 Structured Communication
+### 2.2 Structured Communication
 
-#### 3.2.1 📋 Use Structured Formats
+#### 2.2.1 📋 Ask for Structured Formatted Output
 *Ask for answers in organized ways!*
 
 **JSON Format Example:**
@@ -108,7 +91,7 @@ AI can get lost in the woods with too much information it reads all over the int
 - "Give me 5 facts about space as a numbered list"
 - "Create a bullet point summary of this article"
 
-#### 3.2.2 🤓 Ask Questions in JSON Format
+#### 2.2.2 🤓 Ask Questions in Structured Format (e.g., JSON Format)
 
 *AI loves structures!*
 
@@ -122,9 +105,9 @@ AI can get lost in the woods with too much information it reads all over the int
 }
 ```
 
-### 3.3 Examples & alternatives
+### 2.3 Examples & alternatives
 
-#### 3.3.1 📚 Provide Clear Examples
+#### 2.3.1 📚 Provide Clear Examples
 
 *Show the AI exactly what you want!*
 
@@ -137,49 +120,49 @@ AI can get lost in the woods with too much information it reads all over the int
 Now do the same for: dolphins, penguins, and butterflies"
 ```
 
-#### 3.3.2 🔍 Ask for Explanations
+#### 2.3.2 🔍 Ask for Explanations
 *Don't just get answers - understand the "why"!*
+*When you ask AI to explain and reflect on its own answer, it also tend to correct the mistakes it makes if there is any.*
 
 **Examples:**
 - "Don't just tell me the answer - explain why 2+2=4"
 - "Explain your reasoning behind this recommendation"
 
-When you ask AI to explain and reflect on its own answer, it tend to correct the mistakes it makes if there is any.
 
-#### 3.3.3 🍳 Use Fun Analogies
+#### 2.3.3 🍳 Use Fun Analogies
 *Make complex things simple with comparisons!*
 
 **Examples:**
 - "Explain DNA using LEGO building blocks"
 - "Compare the internet to a giant library"
 
-#### 3.3.4 🎨 Ask for Alternatives
+#### 2.3.4 🎨 Ask for Alternatives
 *Get multiple options to choose from!*
 
 **Examples:**
 - "Show me 3 different ways to solve this math problem"
 - "Give me 5 creative project ideas about butterflies"
 
-### 3.4 Communication Tips
+### 2.4 Communication Tips
 
-#### 3.4.1 📏 Set Clear Constraints
+#### 2.4.1 📏 Set Clear Constraints
 *Give the AI specific rules to follow!*
 
 **Examples:**
 - "Explain this using only words a 10-year-old would know"
 - "Write a story that's exactly 100 words"
 
-#### 3.4.2 😊 Be Polite (It Really Helps!)
+#### 2.4.2 😊 Be Polite (It Really Helps!)
 *Good manners work with AI too!*
 
 <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3Z3diMjJnZjFvMHhhZmNjNmh0ODJlbjZ2cm9hMGEwYXhranphN2VqdSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/jLKvwWHIXUS4/giphy.gif" alt="please" style="width: 60%; height: auto;">
 
 **Examples:**
-- "Please explain what stars are made of"
-- "Could you help me understand fractions?"
-- "Thank you! Could you give me one more example?"
+- "**Please** explain what stars are made of"
+- "**Good job** with the previous answer, now could you **please** help me understand fractions?"
+- "**Thank you!** Could you give me one more example?"
 
-#### 3.4.3 🎯 Be Super Specific
+#### 2.4.3 🎯 Be Super Specific
 *The more details you give, the better the answer!*
 
 **Examples:**
@@ -189,14 +172,14 @@ When you ask AI to explain and reflect on its own answer, it tend to correct the
 - ❌ "Write a story"
 - ✅ "Write a 200-word adventure story about a kid who discovers a secret door in their school library"
 
-### 3.5 Context Management
+### 2.5 Context Management
 
-#### 3.5.1 🤯 Start New Chats for Big Tasks
+#### 2.5.1 🤯 Start New Chats for Big Tasks
 *AI can be overwhelmed by large amounts of information & get lost if the conversation gets too long*
 
-Start a new chat when your conversation gets really long (20+ messages) to keep the AI focused!
+Start a new chat when your conversation gets really long (15+ messages) to keep the AI focused!
 
-#### 3.5.2 🏗️ Build on Previous Answers
+#### 2.5.2 🏗️ Build on Previous Answers
 *Keep the conversation going!*
 
 **Examples:**
@@ -204,32 +187,27 @@ Start a new chat when your conversation gets really long (20+ messages) to keep 
 - "Can you make this explanation simpler?"
 - "I understand that part. What about...?"
 
-### 3.6 ✨ The Magic Formula
+### 2.6 ✨ The Magic Formula
 
 **Context + Clear Request + Specific Format + Politeness = Amazing Results!**
 
-🎯 **Remember:**
-- **Start fresh:** New chat for new big topics
-- **Be patient:** Good prompts take practice
-- **Experiment:** Try different approaches
-- **Have fun:** The best learning happens when you're enjoying yourself!
-
-*Happy prompting, future AI wizards! 🧙‍♂️✨*
+*Happy prompting!🧙‍♂️✨*
 
 ---
 
-## 4. Verifying AI Code Quality
+## 3. Verifying AI Code Quality
 
-### 4.1 🔍 Why Check AI Code?
+### 3.1 🔍 Why Check AI Code?
 
 *Because even AI makes mistakes sometimes! Here's how to be a code detective 🕵️‍♂️*
 
-Just like you double-check your math homework, you should double-check AI code! Even smart AI can make tiny mistakes or misunderstand what you wanted.
+Just like you double-check your assignment before submitting, you should double-check AI code! Even smart AI can make tiny mistakes or misunderstand what you wanted.
 
-### 4.2 Verification Methods
+### 3.2 Verification Methods
 
-#### 4.2.1 🤖 Ask Two Different AI Models
+#### 3.2.1 🤖 Ask 2+ Different AI Models
 *Get a second opinion, just like asking two teachers!*
+*If I wish to get a quick overview of a topic I never encountered before, I like to prompt 3 AI models for a deep research into this topic, and read through all their summaries first.*
 
 **[LMArena](https://lmarena.ai/)** would be a great platform to do so!
 
@@ -238,25 +216,25 @@ Just like you double-check your math homework, you should double-check AI code! 
 - Ask Claude: "Create R code to make a bar chart of favorite ice cream flavors"  
 - Compare the answers - are they similar? Do they both make sense?
 
-#### 4.2.2 🧪 Create Test Data
+#### 3.2.2 🧪 Create Test Data
 *Make fake data to see if your code actually works!*
 
-**Step 1: Ask AI to create simple test data**
+**Step 1:** Ask AI to create simple test data**
 ```r
 "Create a simple data frame in R with 5 students, their names, 
-ages (between 10-15), and favorite colors. Call it 'test_data'"
+ages (between 25-30), and favorite colors. Call it 'test_data'"
 ```
 
-**Step 2: Test your code with this data**
+**Step 2:** Test your code with this data for data filtering, mutate, and sort!
 
-#### 4.2.3 🎭 Team Up Two AI Models
+#### 3.2.3 🎭 Team Up Two AI Models
 *Have one AI write code, another AI check it!*
 
 **The Process:**
 1. **AI #1 (The Coder):** Write the code
-2. **AI #2 (The Checker):** Review and explain the code
+2. **AI #2 (The Checker):** Review, critique and explain the code
 
-#### 4.2.4 🔬 Simple Testing Tricks
+#### 3.2.4 🔬 Simple Testing Tricks
 
 **Method 1: The "Does it Run?" Test**
 Copy the code and see if it runs without errors!
@@ -265,9 +243,9 @@ Copy the code and see if it runs without errors!
 Ask yourself logical questions about the expected output
 
 **Method 3: The "Explain It Back" Test**
-Ask the AI: "Explain what this code does line by line"
+Would you be able to explain what this code does line by line?
 
-### 4.3 💼 Professional Testing (Advanced Concept)
+### 3.3 💼 Professional Testing (Advanced Concept)
 
 **Professional data scientists write functions** and create **unit tests** to thoroughly test every piece of code they write.
 
@@ -276,20 +254,13 @@ Ask the AI: "Explain what this code does line by line"
 - Professional data scientists write these tests to catch bugs before they cause problems
 - **Test-Driven Development:** Write tests *before* writing the actual code!
 
-💡 **Professional Tip:** Real data scientists spend a large amount of their time writing tests! It saves huge amounts of time by catching errors early.
-
-
-
 ---
 
-## 5. Key Messages
+## 4. Key Messages
 
-### 5.1 👑 Remember you are the boss! 
+### 4.1 👑 Remember you are the boss! 
 
 <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeThhcGNoMmR3dGNsNjNsamo0eDZscjFnbGF3M3hscnBhY3luM2VoNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/hpR27uz9Nk3M9SFPSu/giphy.gif" alt="boss" style="width: 60%; height: auto;">
-
-
-The key message I want to emphasize is that:
 
 **⚡️ You want to be the boss of AI, not the other way around.**
 
@@ -302,14 +273,14 @@ Here's the good news and the bad news:
 
 Taking shortcuts might feel like you're moving fast in the short term 🏃‍♂️, but you could get lost in the woods 🌲🤷‍♀️ and end up at the wrong destination. Learning about the fundamentals will allow you to shine hundreds of times brighter ✨ when you collaborate with AI.
 
-I'm a very heavy user of AI, I try different tools for fun, and integrate AI into every aspect of my workflow. We can learn and explore together, holding each other accountable for collaborating with AI in a responsible way.
+I'm a very heavy user of AI (personally I love the emojis they create, and often insert manually myself too to make tutorials fun), I try different tools for fun, and integrate AI into every aspect of my workflow. We can learn and explore together, holding each other accountable for collaborating with AI in a responsible way.
 
 ```{image} ../images/messages.png
 :alt: messages
 :width: 100%
 ```
 
-### 5.2 💬✨ Code is cheap, show me the talk. 
+### 4.2 💬✨ Code is cheap, show me the talk. 
 
 The famous quote "Talk is cheap. Show me the code" 💻 by Linus Torvalds in 2000 reflected the era when coding was the bottleneck—when having the technical skills to implement ideas was the scarce resource.
 
