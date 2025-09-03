@@ -12,7 +12,7 @@ This repository includes a list of AI tools you could try. It covers introductio
 
 ## 👩‍🏫 Author
 
-[**Sky (Kehan) Sheng**](http://www.skysheng.io/) is a PhD candidate at UBC Animal Welfare Program, conducting interdisciplinary research in animal welfare science, data science, and AI bias. Sky is passionate about making data science and AI accessible to all.
+[**Sky (Kehan) Sheng**](http://www.skysheng.io/) is a PhD candidate at UBC, and a sessional lectuer at the Master of Data Science Program. Sky conducts interdisciplinary research in data science, AI bias, and animal welfare science. Sky is passionate about making data science and AI accessible to all.
 
 - GitHub: [@skysheng7](https://github.com/skysheng7)
 - Project: [ai_tools_playground](https://github.com/skysheng7/ai_tools_playground)
