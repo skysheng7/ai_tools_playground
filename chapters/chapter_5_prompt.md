@@ -43,9 +43,6 @@ AI can get lost in the woods with too much information it reads all over the int
 
 🧭 System prompts allow you to be the guide for AI - you become the navigator! 
 
-**💡 What is a System Prompt?**
-A system prompt is like giving the AI a "personality" or "role" before it starts helping you. It's like telling someone "You are now a cooking teacher" before asking cooking questions!
-
 **💡 Pro Tip:**
 - When you learn a new concept or workflow, write notes for yourself
 - The note you write can be turned into system prompts for AI
