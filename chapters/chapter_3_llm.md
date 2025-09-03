@@ -274,13 +274,11 @@ Below is an example usecase of notebookLM: [a scientific review paper about how 
 ### 7.1 Perplexity
 
 **💡 What is Perplexity?**
-[Perplexity](https://www.perplexity.ai/) is like a super-smart search engine that reads the internet and gives you answers with sources, perfect for research!
+[Perplexity](https://www.perplexity.ai/) is like a LLM-powered search engine that answers your questions by summarizing across multiple webpages, with citation provided.
 
 **🔍 How is Perplexity Different from Google?**
 - **Google:** Shows you links to websites
-- **Perplexity:** Reads those websites and summarizes the answer for you
-- **Perplexity** provides sources and citations for answers
-- **Perplexity** is great for research and fact-checking
+- **Perplexity:** Reads those websites and summarizes the answer for you, provides sources and citations.
 
 Perplexity subscriptions:
 - **Free tier**: 3 questions per day
