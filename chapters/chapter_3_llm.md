@@ -292,7 +292,3 @@ Below is an example usecase of perplexity: [https://www.perplexity.ai/search/you
 :width: 100%
 ```
 
----
-
-![Code Order Magic](https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3c2ZmZXRwbHhsdmhuazU5Ym9xZGNwcWhibHFka2Z5eG9lOHJpcWhxYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/hEIuLmpW9DmGA/giphy.gif)
-

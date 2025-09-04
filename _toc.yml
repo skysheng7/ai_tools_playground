@@ -12,9 +12,6 @@ parts:
   - file: chapters/chapter_4_t2i
   - file: chapters/chapter_5_prompt
   - file: chapters/chapter_6_ai_books
-- caption: "Technical Setup Guides"
-  chapters:
-  - file: setup/claude-setup
 - caption: References
   chapters:
   - file: references/index

@@ -103,6 +103,23 @@
 }
 ```
 
+#### 2.2.3 👩‍💻 Enclose your code with tick marks!
+
+*Programmers and AI both use tick marks to indicate sections of code*
+
+If you have questions about code, wrap your code inside of the tick marks like this:
+
+````
+   # 3 tick marks for big code chunk:
+   ```
+   INSERT YOUR CODE HERE
+   ```
+
+   # 1 tick mark for inline code:
+  `INSERT ONE LINE OF CODE`
+
+````
+
 ### 2.3 Examples & alternatives
 
 #### 2.3.1 📚 Provide Clear Examples
