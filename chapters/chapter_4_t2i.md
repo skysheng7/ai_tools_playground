@@ -32,7 +32,7 @@ Here are some example output images from GPT-4o:
 ### 1.2 Google's Nano Banana (Gemini Flash 2.5)
 
 **💡 What is Nano Banana?**
-[Nano Banana](https://aistudio.google.com/?model=gemini-2.5-flash-image-preview) is Google's latest AI image editing model, also known as **Gemini Flash 2.5**, has recently gone viral for its advanced image editing capabilities.
+[Nano Banana](https://aistudio.google.com/?model=gemini-2.5-flash-image-preview) is Google's latest AI image editing model, also known as **Gemini-2.5-flash-image-preview**, has recently gone viral for its advanced image editing capabilities.
 
 <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGlxdHQ4emE1M2tjbTNnMG9kcWx3Nmh0YWZjMXA5NG4zdmRmazg0ciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/bh4jzePjmd9iE/giphy.gif" alt="banana" style="width: 80%; height: auto;">
 
@@ -42,6 +42,18 @@ Here are some example output images from GPT-4o:
 - **Colorization**: Transform black-and-white photos into color
 - **Multi-image Combination**: Seamlessly blend multiple images
 - **Free Access**
+
+Here are some example output images from Nano Banana:
+
+```{image} ../images/banana1.png
+:alt: banana 1
+:width: 100%
+```
+
+```{image} ../images/banana2.png
+:alt: banana 2
+:width: 100%
+```
 
 
 ### 1.3 Midjourney
