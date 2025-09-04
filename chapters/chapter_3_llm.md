@@ -92,7 +92,7 @@ Prompt I used:
 ### 3.1 Chatbot Arena
 
 
-[LMArena](https://lmarena.ai/) is a battle field for different large language generative models. Everytime you prompt a question, 2 anonymous AI model will be asked to answer your question, and you will vote which model gave better response. After you give your vote, the system will reveal the models' names. After millions of pairwise comparisons are made, an Elo-rating algorithm is used to rank the AI models based on people's preferences.
+[LMArena](https://lmarena.ai/) is a battle field for different large language generative models. Everytime you prompt a question, 2 anonymous AI model will be asked to answer your question, and you will vote which model gave better response. After you give your vote, the system will reveal the models' names. After millions of pairwise comparisons are made, an Elo-rating algorithm is used to rank the AI models based on people's preferences. You can see the current ranking of different LLMs based on task on the [LMArena Leaderboard](https://lmarena.ai/leaderboard)
 
 ```{image} ../images/lmarena.png
 :alt: arena
