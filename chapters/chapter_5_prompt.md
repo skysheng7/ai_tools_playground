@@ -103,6 +103,57 @@
 }
 ```
 
+Below is a prompt I used to generate a complicated scientific figure:
+```
+{
+  "task": "Generate a scientific figure",
+  "format": {
+    "orientation": "landscape",
+    "size": "1536x1024",
+    "resolution": "high",
+    "color_theme": "earth-tone",
+    "style": "digital watercolor / pastel texture",
+    "publication_ready": true
+  },
+  "elements": {
+    "top": {
+      "title": "Climate Change",
+      "description": "Burning Earth illustration. Earth engulfed in fire with realistic smoke floating above."
+    },
+    "right": {
+      "title": "Livestock Intensification",
+      "description": "Many dairy cattle squeezed together indoors on concrete floor. The cattle show empty, expressionless faces."
+    },
+    "bottom_row": [
+      {
+        "title": "Zoonotic Disease Spillover",
+        "description": "Cluster of bat, pig, wild bird, and dairy cow with a central virus icon above. Arrow toward human silhouette. Emphasizes 'multi-species' risk."
+      },
+      {
+        "title": "Antibiotic Resistance",
+        "description": "Pig outline formed from capsules/pills. Surrounding pills scattered around pig. Next to pig is a bacterium with shield/armor deflecting capsules. Capsules bounce off the bacterium with motion lines."
+      },
+      {
+        "title": "Farmer Wellbeing Deterioration",
+        "description": "Barn structure splitting apart with visible cracks. In front, diverse group of farmers (different genders/skin tones) wearing hats and overalls. Standing on dry cracked soil, hunched with heads down. Some hold heads in hands, showing stress with sweat/worry lines."
+      }
+    ],
+    "left_cluster": {
+      "title": "SDG Icons",
+      "description": "Official UN SDG icons 1, 2, 3, 6, 8, 12, 14, 15 clustered together."
+    }
+  },
+  "connections": {
+    "type": "continuous feedback cycle",
+    "style": "soft watercolor halo/ribbon effect (instead of heavy arrows)"
+  },
+  "text": {
+    "requirement": "DO NOT ADD TEXT, except the text included in official UN SDG icon"
+  }
+}
+
+```
+
 #### 2.2.3 👩‍💻 Enclose your code with tick marks!
 
 *Programmers and AI both use tick marks to indicate sections of code*
