@@ -1,7 +1,5 @@
 # 📚 Chapter 6: AI Book Recommendations
 
-<img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3ZHlrZ292MXN2YmlqYmJnODliaHl4NjU4YmdydzFud2J1cDZ2dDI0YiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/g2lH60ZcvUGL6/giphy.gif" alt="hello_penguine" style="width: 60%; height: auto;">
-
 ---
 
 ## 1. "Unmasking AI: My Mission to Protect What Is Human in a World of Machines"
@@ -69,17 +67,11 @@ This groundbreaking book by MIT researcher Dr. Joy Buolamwini exposes the hidden
 
 - This is the sequal (volume 2) of the original book "The Wild Robot" which is now a movie too.
 
-<img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3bjNvem5kYmN0bnM4OWdncDFmMWdtZHRmbGkwd2lqZHJmcW41NmZlciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/1EZYVwO4tDVYfbQauo/giphy.gif" alt="duck" style="width: 70%; height: auto;">
-
 ### 2.1 Why This Book Is Special
 
 This beautifully illustrated novel explores themes of artificial intelligence, consciousness, and what it means to be "alive" through the story of a robot who learns to survive in the wild. It's perfect for readers of all ages who want to think about AI in a more emotional and philosophical way.
 
-<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzc4ODgxMmVuOTA3YWIxZTQzbmY0dmNqYTFldHkzeHgxcjNlbHM1OCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/h7MVMdzWDfNdxscGVe/giphy.gif" alt="fly" style="width: 90%; height: auto;">
-
 How is AI's algorithms and programming different or similar to animals' cognitive "algorithms" and "programming"?
-
-<img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3Z3Rkd2MxZGI3ZGlvNmxveGJvOHo1ZGFiYnJtanJjdDk5N25rbGtwMiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/08KoslGrHCwctXi8nf/giphy.gif" alt="robot_runing" style="width: 90%; height: auto;">
 
 ### 2.2 Key Themes
 
@@ -87,8 +79,6 @@ How is AI's algorithms and programming different or similar to animals' cognitiv
 - Can machines develop emotions and consciousness?
 - How do we define life and intelligence?
 - What happens when AI learns to care?
-
-<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzc4ODgxMmVuOTA3YWIxZTQzbmY0dmNqYTFldHkzeHgxcjNlbHM1OCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/CQtWzraU5CSIjDxxkL/giphy.gif" alt="hug" style="width: 90%; height: auto;">
 
 **🌿 Nature & Technology**
 - The author imagined the future of AI, the robot speaks the lanaguge of the animals, and is being used for dairy farming

@@ -1,8 +1,6 @@
 
 #  💭 Chapter 5: Prompt Engineering
 
-<img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3d3JoczFnc2wzbzMwN3JqeXNhM2Nxd3AwdGN4NTU1bHBtdHUza3p3bCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/aDKMe14FKM1TEyjm1l/giphy.gif" alt="robot_learning" style="width: 100%; height: auto;">
-
 ## 1. What is AI?
 
 ### 1.1 Definition from Experts
@@ -155,8 +153,6 @@ Now do the same for: dolphins, penguins, and butterflies"
 #### 2.4.2 😊 Be Polite (It Really Helps!)
 *Good manners work with AI too!*
 
-<img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3Z3diMjJnZjFvMHhhZmNjNmh0ODJlbjZ2cm9hMGEwYXhranphN2VqdSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/jLKvwWHIXUS4/giphy.gif" alt="please" style="width: 60%; height: auto;">
-
 **Examples:**
 - "**Please** explain what stars are made of"
 - "**Good job** with the previous answer, now could you **please** help me understand fractions?"
@@ -259,8 +255,6 @@ Would you be able to explain what this code does line by line?
 ## 4. Key Messages
 
 ### 4.1 👑 Remember you are the boss! 
-
-<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeThhcGNoMmR3dGNsNjNsamo0eDZscjFnbGF3M3hscnBhY3luM2VoNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/hpR27uz9Nk3M9SFPSu/giphy.gif" alt="boss" style="width: 60%; height: auto;">
 
 **⚡️ You want to be the boss of AI, not the other way around.**
 

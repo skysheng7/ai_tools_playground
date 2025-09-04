@@ -2,9 +2,6 @@
 
 *Note: All GenAI tools & models demonstrated below are NOT recommended by UBC due to privacy and safety reasons (but you are NOT restricted from using them)*
 
-<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbnV0YzFleHFjNjMyemxzc2M5emkwZTl6cmMyeTl5NW1sYWFsZnZzMSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/50WoQ8JdjyqzhxpBjP/giphy.gif" alt="surprise" style="width: 60%; height: auto;">
-
-
 ## 1. Common large language models (LLM) & interface
 
 ### 1.1 Anthropic Claude
@@ -61,8 +58,6 @@ Prompt I used:
 
 ## 2. What if I want to try them all?
 
-<img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3cnVnOGQ4bXFwcjdmMGhjeGIzcjI3ZGwyano2bTN6NzZnYW4zdGV0ciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/GiNyo8KD5j9mM/giphy.gif" alt="minion_yeah" style="width: 100%; height: auto;">
-
 ### 2.1 Poe (paid)
 
 ```{image} ../images/poe.png
@@ -92,9 +87,6 @@ Prompt I used:
 ## 3. Finding the Best Model for Your Task
 
 > How do I know which model(s) is best for what task?
-
-<img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3djkxamhiZ3FmZDMzOWszY3dmdTJlbTM4eHM1MjAxa2ltdHZzZWI3biZlcD12MV9naWZzX3JlbGF0ZWQmY3Q9Zw/143ujxyRoVMJVK/giphy.gif" alt="dragon" style="width: 80%; height: auto;">
-
 
 
 ### 3.1 Chatbot Arena
@@ -204,8 +196,6 @@ But if they don't have the fundamentals, **they can hit the wall very quickly to
 - AI could get stuck in circles when fixing bugs 🔄
 - Progress will slow down significantly 🐌
 - The product will break apart in the long run if you purely depend on vibe coding 💥
-
-<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTlrM2U4NmJvODRqZDJ6ZWF4ZWk3Y2J3eHFkajZzMW5wYnUwdGMxMCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/X7jjWeC03QDT2/giphy.gif" alt="snail walking" style="width: 100%; height: auto;">
 
 **🎯 You Do NOT Want to Be That Person**
 

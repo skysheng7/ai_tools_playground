@@ -5,9 +5,6 @@
 
 Text-to-Image (T2I) models have revolutionized the way we create and edit visual content by enabling users to generate images from textual descriptions. These AI systems can transform written prompts into stunning visual artwork, photographs, and creative designs.
 
-<img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHNycXdpZXR2cWduY3RzdzNjZDdwNzVobHBrbzN5cHZxbjh2bGFhbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/46KGKFRMZhLhrpTzC9/giphy.gif" alt="colorful" style="width: 100%; height: auto;">
-
-
 ---
 
 ## 1. Leading T2I Models
@@ -33,8 +30,6 @@ Here are some example output images from GPT-4o:
 
 **💡 What is Nano Banana?**
 [Nano Banana](https://aistudio.google.com/?model=gemini-2.5-flash-image-preview) is Google's latest AI image editing model, also known as **Gemini-2.5-flash-image-preview**, has recently gone viral for its advanced image editing capabilities.
-
-<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGlxdHQ4emE1M2tjbTNnMG9kcWx3Nmh0YWZjMXA5NG4zdmRmazg0ciZlcD12MV9naWZzX3NlYXJjaCZjdD1n/bh4jzePjmd9iE/giphy.gif" alt="banana" style="width: 80%; height: auto;">
 
 **🌟 Key Features:**
 - **Character Consistency**: Maintains the same character across multiple scenes
@@ -103,8 +98,6 @@ Here are some example output images from Stable Diffusion:
 
 ## 2. Try Them All for Free: T2I Arena
 
-<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaW43bjQ1aHZjcjl0ZWVtamQ5cTR0dG5lMHoyYTR6dzgzOTMwOHc4MiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/EOpZ7XsVfTN2E/giphy.gif" alt="excited" style="width: 100%; height: auto;">
-
 ### 2.1 What is T2I Arena?
 
 [**T2I Arena**](https://lmarena.ai/?chat-modality=image) is a battle field for different text-to-image generative models, similar to the Chatbot Arena for language models.
@@ -170,9 +163,6 @@ Here are some example output images from Stable Diffusion:
 ---
 
 ## 5. Ethical Considerations
-
-<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzdjeTdrcXJhNXlld2Vkc20yamtoMmU2bTE5b3JhOXJ0ZjlzamVyaCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/MDirxIJDu0372/giphy.gif" alt="look" style="width: 80%; height: auto;">
-
 
 ### 5.1 Important Reminders
 

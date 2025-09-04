@@ -1,9 +1,5 @@
 # ⛑️ Chapter 1: UBC AI Policies & Approved Tools
 
-<img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDZ3bXN5ZHdjczNobWV3M3hqb2c2bHQ5YTltN245ZW9zM2RsbzV2cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ZLMptAeMiwGbe/giphy.gif" alt="ai" style="width: 100%; height: auto;">
-
-
-
 ---
 
 ## 1. Free + UBC Approved GenAI Tools
@@ -49,8 +45,6 @@ You have **two ways** to access Microsoft Copilot:
 ---
 
 ## 2. 🚨 UBC Restricted GenAI Tools (Important Policy Information)
-
-<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExb24wdXFlNG9rZ3U3Z3FxOHo2a2o5dXpnMnM0ZzZzMmpmNXBmeW1vbSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/YAlhwn67KT76E/giphy.gif" alt="error" style="width: 40%; height: auto;">
 
 ### 2.1 🛑 DeepSeek Applications (Strictly Prohibited)
 

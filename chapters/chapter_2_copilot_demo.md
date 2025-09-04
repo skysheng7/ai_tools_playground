@@ -2,10 +2,6 @@
 
 This activity demonstrates how to use GitHub Copilot and LLMs in VS code, including prompt engineering, code generation, test creation, and documentation.
 
-<img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDJnNmZmNDMzaXZqZTk1NmQxejB6ZnNlcWhrMjN2ZmtpbXhkemI0ZyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/OOmn3L2GZB1w38CFW3/giphy.gif" alt="hello_robot" style="width: 60%; height: auto;">
-
-
-
 ## 1. Coding Task
 
 > 💭 "In Python, write a function that returns the product of the first and last odd numbers in the given list. If there's only one odd number, square it. If no odd numbers exist, return None."
@@ -56,8 +52,6 @@ Show how to call the prompt using `/`
 1. In the terminal, run `claude` and see the bug show up in terminal.
 
 2. Copy the error message and paste it into the chat box. Ask LLM that **"I'm pretty sure I have installed claude code yesterday, I remember also installing node.js, nvm etc. But why can't I find it anymore?"**
-
-![what](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNG9ocWlpcW1vMXJsazQ4MGRzOGswa2psMjNlYWtmYzF6a3ZjNHFyaSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/SqmkZ5IdwzTP2/giphy.gif)
 
 3. Show how the answer LLM give is wrong. --> Shows how it is important for you to know what you are doing.
 
