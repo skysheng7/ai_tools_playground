@@ -153,19 +153,19 @@ Here are some example output images from Stable Diffusion:
 
 **Be Specific!** "A red sports car" is less effective than prompting "A bright red Ferrari 488 GTB parked on a mountain road at sunset"
 
-### Here is my usual workflow:
+### 🧙‍♀️ Here is my usual workflow:
 
-1. **Use LLM to describe image:** Use LLM (e.g., Claude, ChatGPT) to first generate a few ideas, or create a vivid description of the image you wish to generate
+1. 💭 **Use LLM to describe image:** Use LLM (e.g., Claude, ChatGPT) to first generate a few ideas, or create a vivid description of the image you wish to generate
 
-2. (Optional) **Include Style**: Add artistic style descriptions like "in the style of Van Gogh" or "photorealistic". Here is a [guide for artistic style](https://zapier.com/blog/ai-art-styles/).
+2. 🎨 (Optional) **Include Style**: Add artistic style descriptions like "in the style of Van Gogh" or "photorealistic". Here is a [guide for artistic style](https://zapier.com/blog/ai-art-styles/).
 
-3. (Optional) **Specify Details**: Mention lighting, composition, color theme, and mood
+3. 🔅 (Optional) **Specify Details**: Mention lighting, composition, color theme, and mood
 
-4. Use the well-crafted text description to prompt one of the T2I model for image generation
+4. 🪄 Use the well-crafted text description to prompt one of the T2I model for image generation
 
-5. (Optional) **Experiment**: Try the same prompt multiple times to see variations
+5. 🎲 (Optional) **Experiment**: Try the same prompt multiple times to see variations
 
-6. If there are small details or words that you wish to change in the image, use Google's Nano Banana to edit the generated image for final perfection
+6. 🤩 If there are small details or words that you wish to change in the image, use Google's [**Nano Banana**](https://aistudio.google.com/?model=gemini-2.5-flash-image-preview) to edit the generated image for final perfection (adjust the temperature as needed, more randomness if temperature is closer to 1).
 
 ---
 
