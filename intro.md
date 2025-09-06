@@ -1,4 +1,4 @@
-# Welcome!
+# AI Tools Playground: Responsible Use of Generative AI
 
 [![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://skysheng7.github.io/ai_tools_playground/)
 [![Jupyter Book](https://img.shields.io/badge/Jupyter%20Book-Powered-orange)](https://jupyterbook.org/)
@@ -6,7 +6,7 @@
 
 ## 📖 About
 
-This repository includes a list of AI tools you could try. It covers introduction to AI tools and advanced implementations. 
+Welcome to the AI Tools Playground! This tutorial includes a list of AI tools you could try. It covers introduction to AI tools and advanced implementations. 
 
 ## 👩‍🏫 Author
 
